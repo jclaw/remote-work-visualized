@@ -1,0 +1,6 @@
+<query schema-version="1.0" lang="en" type="search" sig="v6U8qA1ZyxrZ6ktbFJscR39qQUc">
+  <search-config>
+    <text-search>MEANS OF TRANSPORTATION TO WORK FOR WORKPLACE GEOGRAPHY</text-search>
+    <topic-search dimension-name="d_people_employment" dimension-value-name="Place of Work"/>
+  </search-config>
+</query>
