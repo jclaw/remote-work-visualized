@@ -42,6 +42,7 @@ def parse(jsonfile, columns_to_keep):
 
     # initialize the json object with years and states
     data = initialize_json_obj()
+    new_data = {}
 
     # directories = [x for x in os.listdir('.') if not x.startswith('.') and x.startswith('ACS_')]
     # for directory_str in directories:
@@ -54,29 +55,59 @@ def parse(jsonfile, columns_to_keep):
     #         csvfile = open(path + '/' + filename, 'rb')
     #         reader = csv.reader( csvfile )
     #
-    #         data = process_file(next(reader), data)
+    #         next(reader)
+    #         abbrev_year = sub_dir_str[:-11].lstrip('ACS_')
+    #         year = '20' + abbrev_year
+    #
+    #         new_data[year] = process_file(reader, data[year], columns_to_keep, {
+    #             'abbrev_year': abbrev_year,
+    #             'title': 'age'
+    #         })
+
+
+
 
     pprint(data)
 
-    csvfile = open('ACS_age/ACS_15_1YR_B08501/ACS_15_1YR_B08501_with_ann.csv', 'rb')
-    reader = csv.reader( csvfile )
+    directory_str = 'ACS_age'
+    title = directory_str.lstrip('ACS_')
+    subdirectories = [x for x in os.listdir('./' + directory_str) if not x.startswith('.') and x.startswith('ACS_') and not x.endswith('.zip')]
+
+    for sub_dir_str in subdirectories:
+        path = directory_str + '/' + sub_dir_str
+        filename = sub_dir_str + '_with_ann.csv'
+        csvfile = open(path + '/' + filename, 'rb')
+        reader = csv.reader( csvfile )
+
+        next(reader)
+        abbrev_year = sub_dir_str[:-11].lstrip('ACS_')
+        year = '20' + abbrev_year
+
+        new_data[year] = process_file(reader, data[year], columns_to_keep, {
+            'abbrev_year': abbrev_year,
+            'title': 'age'
+        })
 
 
-    next(reader)
-    abbrev_year = '15'
-    year = '20' + abbrev_year
+    # csvfile = open('ACS_age/ACS_15_1YR_B08501/ACS_15_1YR_B08501_with_ann.csv', 'rb')
+    # reader = csv.reader( csvfile )
 
-    pprint(data[year])
-    temp = {}
-    temp[year] = process_file(reader, data[year], columns_to_keep, {
-        'abbrev_year': abbrev_year,
-        'title': 'age'
-    })
+
+    # next(reader)
+    # abbrev_year = '15'
+    # year = '20' + abbrev_year
+    #
+    # pprint(data[year])
+    # temp = {}
+    # temp[year] = process_file(reader, data[year], columns_to_keep, {
+    #     'abbrev_year': abbrev_year,
+    #     'title': 'age'
+    # })
     # pprint(temp)
     # pprint(data[year])
     # data[year] = temp
 
-    out = json.dumps( temp, sort_keys=True, indent=4, separators=(',', ': '))
+    out = json.dumps( new_data, sort_keys=True, indent=4, separators=(',', ': '))
 
     return out
 
@@ -100,10 +131,15 @@ def process_file(reader, yeardata, columns_to_keep, info):
 
         print ('YEAR:', abbrev_year)
         print ('KEY:', indices_key)
+        print (title)
+
+        print fieldnames
+        print ('fieldnames length:', len(fieldnames))
 
         subj_total_obj = {}
         worked_at_home_obj = {}
         for i in columns_to_keep[title]['subj_total']:
+            print i
             fieldname = fieldnames[i].lstrip('Estimate; Total: - ')
             subj_total_obj[fieldname] = r[i] # sval(r[i], r[i + 1])
 

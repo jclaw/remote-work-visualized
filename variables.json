@@ -1,0 +1,1812 @@
+[
+  {
+    "code": "B08006_017E",
+    "label": "Worked at home",
+    "desc": "B08006.  Sex of Workers by Means of Transportation to Work"
+  },
+  {
+    "code": "B08006_017M",
+    "label": "Margin of Error for!!Worked at home",
+    "desc": "B08006.  Sex of Workers by Means of Transportation to Work"
+  },
+  {
+    "code": "B08006_034E",
+    "label": "Male:!!Worked at home",
+    "desc": "B08006.  Sex of Workers by Means of Transportation to Work"
+  },
+  {
+    "code": "B08006_034M",
+    "label": "Margin of Error for!!Male:!!Worked at home",
+    "desc": "B08006.  Sex of Workers by Means of Transportation to Work"
+  },
+  {
+    "code": "B08006_051E",
+    "label": "Female:!!Worked at home",
+    "desc": "B08006.  Sex of Workers by Means of Transportation to Work"
+  },
+  {
+    "code": "B08006_051M",
+    "label": "Margin of Error for!!Female:!!Worked at home",
+    "desc": "B08006.  Sex of Workers by Means of Transportation to Work"
+  },
+  {
+    "code": "B08101_049E",
+    "label": "Worked at home:",
+    "desc": "B08101.  MEANS OF TRANSPORTATION TO WORK BY AGE"
+  },
+  {
+    "code": "B08101_049M",
+    "label": "Margin of Error for!!Worked at home:",
+    "desc": "B08101.  MEANS OF TRANSPORTATION TO WORK BY AGE"
+  },
+  {
+    "code": "B08101_050E",
+    "label": "Worked at home:!!16 to 19 years",
+    "desc": "B08101.  MEANS OF TRANSPORTATION TO WORK BY AGE"
+  },
+  {
+    "code": "B08101_050M",
+    "label": "Margin of Error for!!Worked at home:!!16 to 19 years",
+    "desc": "B08101.  MEANS OF TRANSPORTATION TO WORK BY AGE"
+  },
+  {
+    "code": "B08101_051E",
+    "label": "Worked at home:!!20 to 24 years",
+    "desc": "B08101.  MEANS OF TRANSPORTATION TO WORK BY AGE"
+  },
+  {
+    "code": "B08101_051M",
+    "label": "Margin of Error for!!Worked at home:!!20 to 24 years",
+    "desc": "B08101.  MEANS OF TRANSPORTATION TO WORK BY AGE"
+  },
+  {
+    "code": "B08101_052E",
+    "label": "Worked at home:!!25 to 44 years",
+    "desc": "B08101.  MEANS OF TRANSPORTATION TO WORK BY AGE"
+  },
+  {
+    "code": "B08101_052M",
+    "label": "Margin of Error for!!Worked at home:!!25 to 44 years",
+    "desc": "B08101.  MEANS OF TRANSPORTATION TO WORK BY AGE"
+  },
+  {
+    "code": "B08101_053E",
+    "label": "Worked at home:!!45 to 54 years",
+    "desc": "B08101.  MEANS OF TRANSPORTATION TO WORK BY AGE"
+  },
+  {
+    "code": "B08101_053M",
+    "label": "Margin of Error for!!Worked at home:!!45 to 54 years",
+    "desc": "B08101.  MEANS OF TRANSPORTATION TO WORK BY AGE"
+  },
+  {
+    "code": "B08101_054E",
+    "label": "Worked at home:!!55 to 59 years",
+    "desc": "B08101.  MEANS OF TRANSPORTATION TO WORK BY AGE"
+  },
+  {
+    "code": "B08101_054M",
+    "label": "Margin of Error for!!Worked at home:!!55 to 59 years",
+    "desc": "B08101.  MEANS OF TRANSPORTATION TO WORK BY AGE"
+  },
+  {
+    "code": "B08101_055E",
+    "label": "Worked at home:!!60 to 64 years",
+    "desc": "B08101.  MEANS OF TRANSPORTATION TO WORK BY AGE"
+  },
+  {
+    "code": "B08101_055M",
+    "label": "Margin of Error for!!Worked at home:!!60 to 64 years",
+    "desc": "B08101.  MEANS OF TRANSPORTATION TO WORK BY AGE"
+  },
+  {
+    "code": "B08101_056E",
+    "label": "Worked at home:!!65 years and over",
+    "desc": "B08101.  MEANS OF TRANSPORTATION TO WORK BY AGE"
+  },
+  {
+    "code": "B08101_056M",
+    "label": "Margin of Error for!!Worked at home:!!65 years and over",
+    "desc": "B08101.  MEANS OF TRANSPORTATION TO WORK BY AGE"
+  },
+  {
+    "code": "B08103_007E",
+    "label": "Median age --!! Worked at home",
+    "desc": "B08103.  MEDIAN AGE BY MEANS OF TRANSPORTATION TO WORK"
+  },
+  {
+    "code": "B08103_007M",
+    "label": "Margin of Error for!!Median age --!! Worked at home",
+    "desc": "B08103.  MEDIAN AGE BY MEANS OF TRANSPORTATION TO WORK"
+  },
+  {
+    "code": "B08105A_007E",
+    "label": "Worked at home",
+    "desc": "B08105A.  MEANS OF TRANSPORTATION TO WORK (WHITE ALONE)"
+  },
+  {
+    "code": "B08105A_007M",
+    "label": "Margin of Error for!!Worked at home",
+    "desc": "B08105A.  MEANS OF TRANSPORTATION TO WORK (WHITE ALONE)"
+  },
+  {
+    "code": "B08105B_007E",
+    "label": "Worked at home",
+    "desc": "B08105B.  MEANS OF TRANSPORTATION TO WORK (BLACK OR AFRICAN AMERICAN ALONE)"
+  },
+  {
+    "code": "B08105B_007M",
+    "label": "Margin of Error for!!Worked at home",
+    "desc": "B08105B.  MEANS OF TRANSPORTATION TO WORK (BLACK OR AFRICAN AMERICAN ALONE)"
+  },
+  {
+    "code": "B08105C_007E",
+    "label": "Worked at home",
+    "desc": "B08105C.  MEANS OF TRANSPORTATION TO WORK (AMERICAN INDIAN AND ALASKA NATIVE ALONE)"
+  },
+  {
+    "code": "B08105C_007M",
+    "label": "Margin of Error for!!Worked at home",
+    "desc": "B08105C.  MEANS OF TRANSPORTATION TO WORK (AMERICAN INDIAN AND ALASKA NATIVE ALONE)"
+  },
+  {
+    "code": "B08105D_007E",
+    "label": "Worked at home",
+    "desc": "B08105D.  MEANS OF TRANSPORTATION TO WORK (ASIAN ALONE)"
+  },
+  {
+    "code": "B08105D_007M",
+    "label": "Margin of Error for!!Worked at home",
+    "desc": "B08105D.  MEANS OF TRANSPORTATION TO WORK (ASIAN ALONE)"
+  },
+  {
+    "code": "B08105E_007E",
+    "label": "Worked at home",
+    "desc": "B08105E.  Means of Transportation to Work  (Native Hawaiian and Other Pacific Islander Alone)"
+  },
+  {
+    "code": "B08105E_007M",
+    "label": "Margin of Error for!!Worked at home",
+    "desc": "B08105E.  Means of Transportation to Work  (Native Hawaiian and Other Pacific Islander Alone)"
+  },
+  {
+    "code": "B08105F_007E",
+    "label": "Worked at home",
+    "desc": "B08105F.  MEANS OF TRANSPORTATION TO WORK (SOME OTHER RACE ALONE)"
+  },
+  {
+    "code": "B08105F_007M",
+    "label": "Margin of Error for!!Worked at home",
+    "desc": "B08105F.  MEANS OF TRANSPORTATION TO WORK (SOME OTHER RACE ALONE)"
+  },
+  {
+    "code": "B08105G_007E",
+    "label": "Worked at home",
+    "desc": "B08105G.  MEANS OF TRANSPORTATION TO WORK (TWO OR MORE RACES)"
+  },
+  {
+    "code": "B08105G_007M",
+    "label": "Margin of Error for!!Worked at home",
+    "desc": "B08105G.  MEANS OF TRANSPORTATION TO WORK (TWO OR MORE RACES)"
+  },
+  {
+    "code": "B08105H_007E",
+    "label": "Worked at home",
+    "desc": "B08105H.  MEANS OF TRANSPORTATION TO WORK (WHITE ALONE, NOT HISPANIC OR LATINO)"
+  },
+  {
+    "code": "B08105H_007M",
+    "label": "Margin of Error for!!Worked at home",
+    "desc": "B08105H.  MEANS OF TRANSPORTATION TO WORK (WHITE ALONE, NOT HISPANIC OR LATINO)"
+  },
+  {
+    "code": "B08105I_007E",
+    "label": "Worked at home",
+    "desc": "B08105I.  MEANS OF TRANSPORTATION TO WORK (HISPANIC OR LATINO)"
+  },
+  {
+    "code": "B08105I_007M",
+    "label": "Margin of Error for!!Worked at home",
+    "desc": "B08105I.  MEANS OF TRANSPORTATION TO WORK (HISPANIC OR LATINO)"
+  },
+  {
+    "code": "B08111_031E",
+    "label": "Worked at home:",
+    "desc": "B08111.  MEANS OF TRANSPORTATION TO WORK BY CITIZENSHIP STATUS"
+  },
+  {
+    "code": "B08111_031M",
+    "label": "Margin of Error for!!Worked at home:",
+    "desc": "B08111.  MEANS OF TRANSPORTATION TO WORK BY CITIZENSHIP STATUS"
+  },
+  {
+    "code": "B08111_032E",
+    "label": "Worked at home:!!Native",
+    "desc": "B08111.  MEANS OF TRANSPORTATION TO WORK BY CITIZENSHIP STATUS"
+  },
+  {
+    "code": "B08111_032M",
+    "label": "Margin of Error for!!Worked at home:!!Native",
+    "desc": "B08111.  MEANS OF TRANSPORTATION TO WORK BY CITIZENSHIP STATUS"
+  },
+  {
+    "code": "B08111_033E",
+    "label": "Worked at home:!!Foreign born:",
+    "desc": "B08111.  MEANS OF TRANSPORTATION TO WORK BY CITIZENSHIP STATUS"
+  },
+  {
+    "code": "B08111_033M",
+    "label": "Margin of Error for!!Worked at home:!!Foreign born:",
+    "desc": "B08111.  MEANS OF TRANSPORTATION TO WORK BY CITIZENSHIP STATUS"
+  },
+  {
+    "code": "B08111_034E",
+    "label": "Worked at home:!!Foreign born:!!Naturalized U.S. citizen",
+    "desc": "B08111.  MEANS OF TRANSPORTATION TO WORK BY CITIZENSHIP STATUS"
+  },
+  {
+    "code": "B08111_034M",
+    "label": "Margin of Error for!!Worked at home:!!Foreign born:!!Naturalized U.S. citizen",
+    "desc": "B08111.  MEANS OF TRANSPORTATION TO WORK BY CITIZENSHIP STATUS"
+  },
+  {
+    "code": "B08111_035E",
+    "label": "Worked at home:!!Foreign born:!!Not a U.S. citizen",
+    "desc": "B08111.  MEANS OF TRANSPORTATION TO WORK BY CITIZENSHIP STATUS"
+  },
+  {
+    "code": "B08111_035M",
+    "label": "Margin of Error for!!Worked at home:!!Foreign born:!!Not a U.S. citizen",
+    "desc": "B08111.  MEANS OF TRANSPORTATION TO WORK BY CITIZENSHIP STATUS"
+  },
+  {
+    "code": "B08113_049E",
+    "label": "Worked at home:",
+    "desc": "B08113.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH"
+  },
+  {
+    "code": "B08113_049M",
+    "label": "Margin of Error for!!Worked at home:",
+    "desc": "B08113.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH"
+  },
+  {
+    "code": "B08113_050E",
+    "label": "Worked at home:!!Speak only English",
+    "desc": "B08113.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH"
+  },
+  {
+    "code": "B08113_050M",
+    "label": "Margin of Error for!!Worked at home:!!Speak only English",
+    "desc": "B08113.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH"
+  },
+  {
+    "code": "B08113_051E",
+    "label": "Worked at home:!!Speak Spanish:",
+    "desc": "B08113.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH"
+  },
+  {
+    "code": "B08113_051M",
+    "label": "Margin of Error for!!Worked at home:!!Speak Spanish:",
+    "desc": "B08113.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH"
+  },
+  {
+    "code": "B08113_052E",
+    "label": "Worked at home:!!Speak Spanish:!!Speak English \"very well\"",
+    "desc": "B08113.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH"
+  },
+  {
+    "code": "B08113_052M",
+    "label": "Margin of Error for!!Worked at home:!!Speak Spanish:!!Speak English \"very well\"",
+    "desc": "B08113.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH"
+  },
+  {
+    "code": "B08113_053E",
+    "label": "Worked at home:!!Speak Spanish:!!Speak English less than \"very well\"",
+    "desc": "B08113.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH"
+  },
+  {
+    "code": "B08113_053M",
+    "label": "Margin of Error for!!Worked at home:!!Speak Spanish:!!Speak English less than \"very well\"",
+    "desc": "B08113.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH"
+  },
+  {
+    "code": "B08113_054E",
+    "label": "Worked at home:!!Speak other languages:",
+    "desc": "B08113.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH"
+  },
+  {
+    "code": "B08113_054M",
+    "label": "Margin of Error for!!Worked at home:!!Speak other languages:",
+    "desc": "B08113.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH"
+  },
+  {
+    "code": "B08113_055E",
+    "label": "Worked at home:!!Speak other languages:!!Speak English \"very well\"",
+    "desc": "B08113.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH"
+  },
+  {
+    "code": "B08113_055M",
+    "label": "Margin of Error for!!Worked at home:!!Speak other languages:!!Speak English \"very well\"",
+    "desc": "B08113.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH"
+  },
+  {
+    "code": "B08113_056E",
+    "label": "Worked at home:!!Speak other languages:!!Speak English less than \"very well\"",
+    "desc": "B08113.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH"
+  },
+  {
+    "code": "B08113_056M",
+    "label": "Margin of Error for!!Worked at home:!!Speak other languages:!!Speak English less than \"very well\"",
+    "desc": "B08113.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH"
+  },
+  {
+    "code": "B08119_055E",
+    "label": "Worked at home:",
+    "desc": "B08119. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars)"
+  },
+  {
+    "code": "B08119_055M",
+    "label": "Margin of Error for!!Worked at home:",
+    "desc": "B08119. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars)"
+  },
+  {
+    "code": "B08119_056E",
+    "label": "Worked at home:!!$1 to $9,999 or loss",
+    "desc": "B08119. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars)"
+  },
+  {
+    "code": "B08119_056M",
+    "label": "Margin of Error for!!Worked at home:!!$1 to $9,999 or loss",
+    "desc": "B08119. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars)"
+  },
+  {
+    "code": "B08119_057E",
+    "label": "Worked at home:!!$10,000 to $14,999",
+    "desc": "B08119. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars)"
+  },
+  {
+    "code": "B08119_057M",
+    "label": "Margin of Error for!!Worked at home:!!$10,000 to $14,999",
+    "desc": "B08119. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars)"
+  },
+  {
+    "code": "B08119_058E",
+    "label": "Worked at home:!!$15,000 to $24,999",
+    "desc": "B08119. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars)"
+  },
+  {
+    "code": "B08119_058M",
+    "label": "Margin of Error for!!Worked at home:!!$15,000 to $24,999",
+    "desc": "B08119. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars)"
+  },
+  {
+    "code": "B08119_059E",
+    "label": "Worked at home:!!$25,000 to $34,999",
+    "desc": "B08119. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars)"
+  },
+  {
+    "code": "B08119_059M",
+    "label": "Margin of Error for!!Worked at home:!!$25,000 to $34,999",
+    "desc": "B08119. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars)"
+  },
+  {
+    "code": "B08119_060E",
+    "label": "Worked at home:!!$35,000 to $49,999",
+    "desc": "B08119. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars)"
+  },
+  {
+    "code": "B08119_060M",
+    "label": "Margin of Error for!!Worked at home:!!$35,000 to $49,999",
+    "desc": "B08119. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars)"
+  },
+  {
+    "code": "B08119_061E",
+    "label": "Worked at home:!!$50,000 to $64,999",
+    "desc": "B08119. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars)"
+  },
+  {
+    "code": "B08119_061M",
+    "label": "Margin of Error for!!Worked at home:!!$50,000 to $64,999",
+    "desc": "B08119. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars)"
+  },
+  {
+    "code": "B08119_062E",
+    "label": "Worked at home:!!$65,000 to $74,999",
+    "desc": "B08119. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars)"
+  },
+  {
+    "code": "B08119_062M",
+    "label": "Margin of Error for!!Worked at home:!!$65,000 to $74,999",
+    "desc": "B08119. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars)"
+  },
+  {
+    "code": "B08119_063E",
+    "label": "Worked at home:!!$75,000 or more",
+    "desc": "B08119. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars)"
+  },
+  {
+    "code": "B08119_063M",
+    "label": "Margin of Error for!!Worked at home:!!$75,000 or more",
+    "desc": "B08119. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars)"
+  },
+  {
+    "code": "B08121_007E",
+    "label": "Median earnings in the past 12 months --!! Worked at home",
+    "desc": "B08121. Median Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars) by Means of Transportation to Work"
+  },
+  {
+    "code": "B08121_007M",
+    "label": "Margin of Error for!!Median earnings in the past 12 months --!! Worked at home",
+    "desc": "B08121. Median Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars) by Means of Transportation to Work"
+  },
+  {
+    "code": "B08122_025E",
+    "label": "Worked at home:",
+    "desc": "B08122.  MEANS OF TRANSPORTATION TO WORK BY POVERTY STATUS IN THE PAST 12 MONTHS"
+  },
+  {
+    "code": "B08122_025M",
+    "label": "Margin of Error for!!Worked at home:",
+    "desc": "B08122.  MEANS OF TRANSPORTATION TO WORK BY POVERTY STATUS IN THE PAST 12 MONTHS"
+  },
+  {
+    "code": "B08122_026E",
+    "label": "Worked at home:!!Below 100 percent of the poverty level",
+    "desc": "B08122.  MEANS OF TRANSPORTATION TO WORK BY POVERTY STATUS IN THE PAST 12 MONTHS"
+  },
+  {
+    "code": "B08122_026M",
+    "label": "Margin of Error for!!Worked at home:!!Below 100 percent of the poverty level",
+    "desc": "B08122.  MEANS OF TRANSPORTATION TO WORK BY POVERTY STATUS IN THE PAST 12 MONTHS"
+  },
+  {
+    "code": "B08122_027E",
+    "label": "Worked at home:!!100 to 149 percent of the poverty level",
+    "desc": "B08122.  MEANS OF TRANSPORTATION TO WORK BY POVERTY STATUS IN THE PAST 12 MONTHS"
+  },
+  {
+    "code": "B08122_027M",
+    "label": "Margin of Error for!!Worked at home:!!100 to 149 percent of the poverty level",
+    "desc": "B08122.  MEANS OF TRANSPORTATION TO WORK BY POVERTY STATUS IN THE PAST 12 MONTHS"
+  },
+  {
+    "code": "B08122_028E",
+    "label": "Worked at home:!!At or above 150 percent of the poverty level",
+    "desc": "B08122.  MEANS OF TRANSPORTATION TO WORK BY POVERTY STATUS IN THE PAST 12 MONTHS"
+  },
+  {
+    "code": "B08122_028M",
+    "label": "Margin of Error for!!Worked at home:!!At or above 150 percent of the poverty level",
+    "desc": "B08122.  MEANS OF TRANSPORTATION TO WORK BY POVERTY STATUS IN THE PAST 12 MONTHS"
+  },
+  {
+    "code": "B08124_043E",
+    "label": "Worked at home:",
+    "desc": "B08124.  MEANS OF TRANSPORTATION TO WORK BY OCCUPATION"
+  },
+  {
+    "code": "B08124_043M",
+    "label": "Margin of Error for!!Worked at home:",
+    "desc": "B08124.  MEANS OF TRANSPORTATION TO WORK BY OCCUPATION"
+  },
+  {
+    "code": "B08124_044E",
+    "label": "Worked at home:!!Management, business, science, and arts occupations",
+    "desc": "B08124.  MEANS OF TRANSPORTATION TO WORK BY OCCUPATION"
+  },
+  {
+    "code": "B08124_044M",
+    "label": "Margin of Error for!!Worked at home:!!Management, business, science, and arts occupations",
+    "desc": "B08124.  MEANS OF TRANSPORTATION TO WORK BY OCCUPATION"
+  },
+  {
+    "code": "B08124_045E",
+    "label": "Worked at home:!!Service occupations",
+    "desc": "B08124.  MEANS OF TRANSPORTATION TO WORK BY OCCUPATION"
+  },
+  {
+    "code": "B08124_045M",
+    "label": "Margin of Error for!!Worked at home:!!Service occupations",
+    "desc": "B08124.  MEANS OF TRANSPORTATION TO WORK BY OCCUPATION"
+  },
+  {
+    "code": "B08124_046E",
+    "label": "Worked at home:!!Sales and office occupations",
+    "desc": "B08124.  MEANS OF TRANSPORTATION TO WORK BY OCCUPATION"
+  },
+  {
+    "code": "B08124_046M",
+    "label": "Margin of Error for!!Worked at home:!!Sales and office occupations",
+    "desc": "B08124.  MEANS OF TRANSPORTATION TO WORK BY OCCUPATION"
+  },
+  {
+    "code": "B08124_047E",
+    "label": "Worked at home:!!Natural resources, construction, and maintenance occupations",
+    "desc": "B08124.  MEANS OF TRANSPORTATION TO WORK BY OCCUPATION"
+  },
+  {
+    "code": "B08124_047M",
+    "label": "Margin of Error for!!Worked at home:!!Natural resources, construction, and maintenance occupations",
+    "desc": "B08124.  MEANS OF TRANSPORTATION TO WORK BY OCCUPATION"
+  },
+  {
+    "code": "B08124_048E",
+    "label": "Worked at home:!!Production, transportation, and material moving occupations",
+    "desc": "B08124.  MEANS OF TRANSPORTATION TO WORK BY OCCUPATION"
+  },
+  {
+    "code": "B08124_048M",
+    "label": "Margin of Error for!!Worked at home:!!Production, transportation, and material moving occupations",
+    "desc": "B08124.  MEANS OF TRANSPORTATION TO WORK BY OCCUPATION"
+  },
+  {
+    "code": "B08124_049E",
+    "label": "Worked at home:!!Military specific occupations",
+    "desc": "B08124.  MEANS OF TRANSPORTATION TO WORK BY OCCUPATION"
+  },
+  {
+    "code": "B08124_049M",
+    "label": "Margin of Error for!!Worked at home:!!Military specific occupations",
+    "desc": "B08124.  MEANS OF TRANSPORTATION TO WORK BY OCCUPATION"
+  },
+  {
+    "code": "B08126_091E",
+    "label": "Worked at home:",
+    "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY"
+  },
+  {
+    "code": "B08126_091M",
+    "label": "Margin of Error for!!Worked at home:",
+    "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY"
+  },
+  {
+    "code": "B08126_092E",
+    "label": "Worked at home:!!Agriculture, forestry, fishing and hunting, and mining",
+    "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY"
+  },
+  {
+    "code": "B08126_092M",
+    "label": "Margin of Error for!!Worked at home:!!Agriculture, forestry, fishing and hunting, and mining",
+    "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY"
+  },
+  {
+    "code": "B08126_093E",
+    "label": "Worked at home:!!Construction",
+    "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY"
+  },
+  {
+    "code": "B08126_093M",
+    "label": "Margin of Error for!!Worked at home:!!Construction",
+    "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY"
+  },
+  {
+    "code": "B08126_094E",
+    "label": "Worked at home:!!Manufacturing",
+    "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY"
+  },
+  {
+    "code": "B08126_094M",
+    "label": "Margin of Error for!!Worked at home:!!Manufacturing",
+    "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY"
+  },
+  {
+    "code": "B08126_095E",
+    "label": "Worked at home:!!Wholesale trade",
+    "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY"
+  },
+  {
+    "code": "B08126_095M",
+    "label": "Margin of Error for!!Worked at home:!!Wholesale trade",
+    "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY"
+  },
+  {
+    "code": "B08126_096E",
+    "label": "Worked at home:!!Retail trade",
+    "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY"
+  },
+  {
+    "code": "B08126_096M",
+    "label": "Margin of Error for!!Worked at home:!!Retail trade",
+    "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY"
+  },
+  {
+    "code": "B08126_097E",
+    "label": "Worked at home:!!Transportation and warehousing, and utilities",
+    "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY"
+  },
+  {
+    "code": "B08126_097M",
+    "label": "Margin of Error for!!Worked at home:!!Transportation and warehousing, and utilities",
+    "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY"
+  },
+  {
+    "code": "B08126_098E",
+    "label": "Worked at home:!!Information",
+    "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY"
+  },
+  {
+    "code": "B08126_098M",
+    "label": "Margin of Error for!!Worked at home:!!Information",
+    "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY"
+  },
+  {
+    "code": "B08126_099E",
+    "label": "Worked at home:!!Finance and insurance, and real estate and rental and leasing",
+    "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY"
+  },
+  {
+    "code": "B08126_099M",
+    "label": "Margin of Error for!!Worked at home:!!Finance and insurance, and real estate and rental and leasing",
+    "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY"
+  },
+  {
+    "code": "B08126_100E",
+    "label": "Worked at home:!!Professional, scientific, and management, and administrative and waste management services",
+    "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY"
+  },
+  {
+    "code": "B08126_100M",
+    "label": "Margin of Error for!!Worked at home:!!Professional, scientific, and management, and administrative and waste management services",
+    "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY"
+  },
+  {
+    "code": "B08126_101E",
+    "label": "Worked at home:!!Educational services, and health care and social assistance",
+    "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY"
+  },
+  {
+    "code": "B08126_101M",
+    "label": "Margin of Error for!!Worked at home:!!Educational services, and health care and social assistance",
+    "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY"
+  },
+  {
+    "code": "B08126_102E",
+    "label": "Worked at home:!!Arts, entertainment, and recreation, and accommodation and food services",
+    "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY"
+  },
+  {
+    "code": "B08126_102M",
+    "label": "Margin of Error for!!Worked at home:!!Arts, entertainment, and recreation, and accommodation and food services",
+    "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY"
+  },
+  {
+    "code": "B08126_103E",
+    "label": "Worked at home:!!Other services (except public administration)",
+    "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY"
+  },
+  {
+    "code": "B08126_103M",
+    "label": "Margin of Error for!!Worked at home:!!Other services (except public administration)",
+    "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY"
+  },
+  {
+    "code": "B08126_104E",
+    "label": "Worked at home:!!Public administration",
+    "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY"
+  },
+  {
+    "code": "B08126_104M",
+    "label": "Margin of Error for!!Worked at home:!!Public administration",
+    "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY"
+  },
+  {
+    "code": "B08126_105E",
+    "label": "Worked at home:!!Armed forces",
+    "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY"
+  },
+  {
+    "code": "B08126_105M",
+    "label": "Margin of Error for!!Worked at home:!!Armed forces",
+    "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY"
+  },
+  {
+    "code": "B08128_061E",
+    "label": "Worked at home:",
+    "desc": "B08128.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER"
+  },
+  {
+    "code": "B08128_061M",
+    "label": "Margin of Error for!!Worked at home:",
+    "desc": "B08128.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER"
+  },
+  {
+    "code": "B08128_062E",
+    "label": "Worked at home:!!Private for-profit wage and salary workers:",
+    "desc": "B08128.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER"
+  },
+  {
+    "code": "B08128_062M",
+    "label": "Margin of Error for!!Worked at home:!!Private for-profit wage and salary workers:",
+    "desc": "B08128.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER"
+  },
+  {
+    "code": "B08128_063E",
+    "label": "Worked at home:!!Private for-profit wage and salary workers:!!Employee of private company workers",
+    "desc": "B08128.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER"
+  },
+  {
+    "code": "B08128_063M",
+    "label": "Margin of Error for!!Worked at home:!!Private for-profit wage and salary workers:!!Employee of private company workers",
+    "desc": "B08128.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER"
+  },
+  {
+    "code": "B08128_064E",
+    "label": "Worked at home:!!Private for-profit wage and salary workers:!!Self-employed in own incorporated business workers",
+    "desc": "B08128.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER"
+  },
+  {
+    "code": "B08128_064M",
+    "label": "Margin of Error for!!Worked at home:!!Private for-profit wage and salary workers:!!Self-employed in own incorporated business workers",
+    "desc": "B08128.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER"
+  },
+  {
+    "code": "B08128_065E",
+    "label": "Worked at home:!!Private not-for-profit wage and salary workers",
+    "desc": "B08128.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER"
+  },
+  {
+    "code": "B08128_065M",
+    "label": "Margin of Error for!!Worked at home:!!Private not-for-profit wage and salary workers",
+    "desc": "B08128.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER"
+  },
+  {
+    "code": "B08128_066E",
+    "label": "Worked at home:!!Local government workers",
+    "desc": "B08128.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER"
+  },
+  {
+    "code": "B08128_066M",
+    "label": "Margin of Error for!!Worked at home:!!Local government workers",
+    "desc": "B08128.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER"
+  },
+  {
+    "code": "B08128_067E",
+    "label": "Worked at home:!!State government workers",
+    "desc": "B08128.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER"
+  },
+  {
+    "code": "B08128_067M",
+    "label": "Margin of Error for!!Worked at home:!!State government workers",
+    "desc": "B08128.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER"
+  },
+  {
+    "code": "B08128_068E",
+    "label": "Worked at home:!!Federal government workers",
+    "desc": "B08128.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER"
+  },
+  {
+    "code": "B08128_068M",
+    "label": "Margin of Error for!!Worked at home:!!Federal government workers",
+    "desc": "B08128.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER"
+  },
+  {
+    "code": "B08128_069E",
+    "label": "Worked at home:!!Self-employed in own not incorporated business workers",
+    "desc": "B08128.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER"
+  },
+  {
+    "code": "B08128_069M",
+    "label": "Margin of Error for!!Worked at home:!!Self-employed in own not incorporated business workers",
+    "desc": "B08128.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER"
+  },
+  {
+    "code": "B08128_070E",
+    "label": "Worked at home:!!Unpaid family workers",
+    "desc": "B08128.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER"
+  },
+  {
+    "code": "B08128_070M",
+    "label": "Margin of Error for!!Worked at home:!!Unpaid family workers",
+    "desc": "B08128.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER"
+  },
+  {
+    "code": "B08130_031E",
+    "label": "Worked at home",
+    "desc": "B08130.  MEANS OF TRANSPORTATION TO WORK BY PLACE OF WORK--STATE AND COUNTY LEVEL"
+  },
+  {
+    "code": "B08130_031M",
+    "label": "Margin of Error for!!Worked at home",
+    "desc": "B08130.  MEANS OF TRANSPORTATION TO WORK BY PLACE OF WORK--STATE AND COUNTY LEVEL"
+  },
+  {
+    "code": "B08137_019E",
+    "label": "Worked at home:",
+    "desc": "B08137.  MEANS OF TRANSPORTATION TO WORK BY TENURE"
+  },
+  {
+    "code": "B08137_019M",
+    "label": "Margin of Error for!!Worked at home:",
+    "desc": "B08137.  MEANS OF TRANSPORTATION TO WORK BY TENURE"
+  },
+  {
+    "code": "B08137_020E",
+    "label": "Worked at home:!!Householder lived in owner-occupied housing units",
+    "desc": "B08137.  MEANS OF TRANSPORTATION TO WORK BY TENURE"
+  },
+  {
+    "code": "B08137_020M",
+    "label": "Margin of Error for!!Worked at home:!!Householder lived in owner-occupied housing units",
+    "desc": "B08137.  MEANS OF TRANSPORTATION TO WORK BY TENURE"
+  },
+  {
+    "code": "B08137_021E",
+    "label": "Worked at home:!!Householder lived in renter-occupied housing units",
+    "desc": "B08137.  MEANS OF TRANSPORTATION TO WORK BY TENURE"
+  },
+  {
+    "code": "B08137_021M",
+    "label": "Margin of Error for!!Worked at home:!!Householder lived in renter-occupied housing units",
+    "desc": "B08137.  MEANS OF TRANSPORTATION TO WORK BY TENURE"
+  },
+  {
+    "code": "B08141_031E",
+    "label": "Worked at home:",
+    "desc": "B08141.  MEANS OF TRANSPORTATION TO WORK BY VEHICLES AVAILABLE"
+  },
+  {
+    "code": "B08141_031M",
+    "label": "Margin of Error for!!Worked at home:",
+    "desc": "B08141.  MEANS OF TRANSPORTATION TO WORK BY VEHICLES AVAILABLE"
+  },
+  {
+    "code": "B08141_032E",
+    "label": "Worked at home:!!No vehicle available",
+    "desc": "B08141.  MEANS OF TRANSPORTATION TO WORK BY VEHICLES AVAILABLE"
+  },
+  {
+    "code": "B08141_032M",
+    "label": "Margin of Error for!!Worked at home:!!No vehicle available",
+    "desc": "B08141.  MEANS OF TRANSPORTATION TO WORK BY VEHICLES AVAILABLE"
+  },
+  {
+    "code": "B08141_033E",
+    "label": "Worked at home:!!1 vehicle available",
+    "desc": "B08141.  MEANS OF TRANSPORTATION TO WORK BY VEHICLES AVAILABLE"
+  },
+  {
+    "code": "B08141_033M",
+    "label": "Margin of Error for!!Worked at home:!!1 vehicle available",
+    "desc": "B08141.  MEANS OF TRANSPORTATION TO WORK BY VEHICLES AVAILABLE"
+  },
+  {
+    "code": "B08141_034E",
+    "label": "Worked at home:!!2 vehicles available",
+    "desc": "B08141.  MEANS OF TRANSPORTATION TO WORK BY VEHICLES AVAILABLE"
+  },
+  {
+    "code": "B08141_034M",
+    "label": "Margin of Error for!!Worked at home:!!2 vehicles available",
+    "desc": "B08141.  MEANS OF TRANSPORTATION TO WORK BY VEHICLES AVAILABLE"
+  },
+  {
+    "code": "B08141_035E",
+    "label": "Worked at home:!!3 or more vehicles available",
+    "desc": "B08141.  MEANS OF TRANSPORTATION TO WORK BY VEHICLES AVAILABLE"
+  },
+  {
+    "code": "B08141_035M",
+    "label": "Margin of Error for!!Worked at home:!!3 or more vehicles available",
+    "desc": "B08141.  MEANS OF TRANSPORTATION TO WORK BY VEHICLES AVAILABLE"
+  },
+  {
+    "code": "B08301_021E",
+    "label": "Worked at home",
+    "desc": "B08301.  Means of Transportation to Work"
+  },
+  {
+    "code": "B08301_021M",
+    "label": "Margin of Error for!!Worked at home",
+    "desc": "B08301.  Means of Transportation to Work"
+  },
+  {
+    "code": "B08406_017E",
+    "label": "Worked at home",
+    "desc": "B08406.  Sex of Workers by Means of Transportation to Work for Workplace Geography"
+  },
+  {
+    "code": "B08406_017M",
+    "label": "Margin of Error for!!Worked at home",
+    "desc": "B08406.  Sex of Workers by Means of Transportation to Work for Workplace Geography"
+  },
+  {
+    "code": "B08406_034E",
+    "label": "Male:!!Worked at home",
+    "desc": "B08406.  Sex of Workers by Means of Transportation to Work for Workplace Geography"
+  },
+  {
+    "code": "B08406_034M",
+    "label": "Margin of Error for!!Male:!!Worked at home",
+    "desc": "B08406.  Sex of Workers by Means of Transportation to Work for Workplace Geography"
+  },
+  {
+    "code": "B08406_051E",
+    "label": "Female:!!Worked at home",
+    "desc": "B08406.  Sex of Workers by Means of Transportation to Work for Workplace Geography"
+  },
+  {
+    "code": "B08406_051M",
+    "label": "Margin of Error for!!Female:!!Worked at home",
+    "desc": "B08406.  Sex of Workers by Means of Transportation to Work for Workplace Geography"
+  },
+  {
+    "code": "B08501_049E",
+    "label": "Worked at home:",
+    "desc": "B08501.  MEANS OF TRANSPORTATION TO WORK BY AGE FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08501_049M",
+    "label": "Margin of Error for!!Worked at home:",
+    "desc": "B08501.  MEANS OF TRANSPORTATION TO WORK BY AGE FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08501_050E",
+    "label": "Worked at home:!!16 to 19 years",
+    "desc": "B08501.  MEANS OF TRANSPORTATION TO WORK BY AGE FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08501_050M",
+    "label": "Margin of Error for!!Worked at home:!!16 to 19 years",
+    "desc": "B08501.  MEANS OF TRANSPORTATION TO WORK BY AGE FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08501_051E",
+    "label": "Worked at home:!!20 to 24 years",
+    "desc": "B08501.  MEANS OF TRANSPORTATION TO WORK BY AGE FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08501_051M",
+    "label": "Margin of Error for!!Worked at home:!!20 to 24 years",
+    "desc": "B08501.  MEANS OF TRANSPORTATION TO WORK BY AGE FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08501_052E",
+    "label": "Worked at home:!!25 to 44 years",
+    "desc": "B08501.  MEANS OF TRANSPORTATION TO WORK BY AGE FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08501_052M",
+    "label": "Margin of Error for!!Worked at home:!!25 to 44 years",
+    "desc": "B08501.  MEANS OF TRANSPORTATION TO WORK BY AGE FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08501_053E",
+    "label": "Worked at home:!!45 to 54 years",
+    "desc": "B08501.  MEANS OF TRANSPORTATION TO WORK BY AGE FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08501_053M",
+    "label": "Margin of Error for!!Worked at home:!!45 to 54 years",
+    "desc": "B08501.  MEANS OF TRANSPORTATION TO WORK BY AGE FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08501_054E",
+    "label": "Worked at home:!!55 to 59 years",
+    "desc": "B08501.  MEANS OF TRANSPORTATION TO WORK BY AGE FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08501_054M",
+    "label": "Margin of Error for!!Worked at home:!!55 to 59 years",
+    "desc": "B08501.  MEANS OF TRANSPORTATION TO WORK BY AGE FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08501_055E",
+    "label": "Worked at home:!!60 to 64 years",
+    "desc": "B08501.  MEANS OF TRANSPORTATION TO WORK BY AGE FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08501_055M",
+    "label": "Margin of Error for!!Worked at home:!!60 to 64 years",
+    "desc": "B08501.  MEANS OF TRANSPORTATION TO WORK BY AGE FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08501_056E",
+    "label": "Worked at home:!!65 years and over",
+    "desc": "B08501.  MEANS OF TRANSPORTATION TO WORK BY AGE FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08501_056M",
+    "label": "Margin of Error for!!Worked at home:!!65 years and over",
+    "desc": "B08501.  MEANS OF TRANSPORTATION TO WORK BY AGE FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08503_007E",
+    "label": "Median age --!! Worked at home",
+    "desc": "B08503.  MEDIAN AGE BY MEANS OF TRANSPORTATION TO WORK FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08503_007M",
+    "label": "Margin of Error for!!Median age --!! Worked at home",
+    "desc": "B08503.  MEDIAN AGE BY MEANS OF TRANSPORTATION TO WORK FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08505A_007E",
+    "label": "Worked at home",
+    "desc": "B08505A.  MEANS OF TRANSPORTATION TO WORK FOR WORKPLACE GEOGRAPHY (WHITE ALONE)"
+  },
+  {
+    "code": "B08505A_007M",
+    "label": "Margin of Error for!!Worked at home",
+    "desc": "B08505A.  MEANS OF TRANSPORTATION TO WORK FOR WORKPLACE GEOGRAPHY (WHITE ALONE)"
+  },
+  {
+    "code": "B08505B_007E",
+    "label": "Worked at home",
+    "desc": "B08505B.  MEANS OF TRANSPORTATION TO WORK FOR WORKPLACE GEOGRAPHY (BLACK OR AFRICAN AMERICAN ALONE)"
+  },
+  {
+    "code": "B08505B_007M",
+    "label": "Margin of Error for!!Worked at home",
+    "desc": "B08505B.  MEANS OF TRANSPORTATION TO WORK FOR WORKPLACE GEOGRAPHY (BLACK OR AFRICAN AMERICAN ALONE)"
+  },
+  {
+    "code": "B08505C_007E",
+    "label": "Worked at home",
+    "desc": "B08505C.  MEANS OF TRANSPORTATION TO WORK FOR WORKPLACE GEOGRAPHY (AMERICAN INDIAN AND ALASKA NATIVE ALONE)"
+  },
+  {
+    "code": "B08505C_007M",
+    "label": "Margin of Error for!!Worked at home",
+    "desc": "B08505C.  MEANS OF TRANSPORTATION TO WORK FOR WORKPLACE GEOGRAPHY (AMERICAN INDIAN AND ALASKA NATIVE ALONE)"
+  },
+  {
+    "code": "B08505D_007E",
+    "label": "Worked at home",
+    "desc": "B08505D.  MEANS OF TRANSPORTATION TO WORK FOR WORKPLACE GEOGRAPHY (ASIAN ALONE)"
+  },
+  {
+    "code": "B08505D_007M",
+    "label": "Margin of Error for!!Worked at home",
+    "desc": "B08505D.  MEANS OF TRANSPORTATION TO WORK FOR WORKPLACE GEOGRAPHY (ASIAN ALONE)"
+  },
+  {
+    "code": "B08505E_007E",
+    "label": "Worked at home",
+    "desc": "B08505E.  MEANS OF TRANSPORTATION TO WORK FOR WORKPLACE GEOGRAPHY (NATIVE HAWAIIAN AND OTHER PACIFIC ISLANDER ALONE)"
+  },
+  {
+    "code": "B08505E_007M",
+    "label": "Margin of Error for!!Worked at home",
+    "desc": "B08505E.  MEANS OF TRANSPORTATION TO WORK FOR WORKPLACE GEOGRAPHY (NATIVE HAWAIIAN AND OTHER PACIFIC ISLANDER ALONE)"
+  },
+  {
+    "code": "B08505F_007E",
+    "label": "Worked at home",
+    "desc": "B08505F.  MEANS OF TRANSPORTATION TO WORK FOR WORKPLACE GEOGRAPHY (SOME OTHER RACE ALONE)"
+  },
+  {
+    "code": "B08505F_007M",
+    "label": "Margin of Error for!!Worked at home",
+    "desc": "B08505F.  MEANS OF TRANSPORTATION TO WORK FOR WORKPLACE GEOGRAPHY (SOME OTHER RACE ALONE)"
+  },
+  {
+    "code": "B08505G_007E",
+    "label": "Worked at home",
+    "desc": "B08505G.  MEANS OF TRANSPORTATION TO WORK FOR WORKPLACE GEOGRAPHY (TWO OR MORE RACES)"
+  },
+  {
+    "code": "B08505G_007M",
+    "label": "Margin of Error for!!Worked at home",
+    "desc": "B08505G.  MEANS OF TRANSPORTATION TO WORK FOR WORKPLACE GEOGRAPHY (TWO OR MORE RACES)"
+  },
+  {
+    "code": "B08505H_007E",
+    "label": "Worked at home",
+    "desc": "B08505H.  MEANS OF TRANSPORTATION TO WORK FOR WORKPLACE GEOGRAPHY (WHITE ALONE, NOT HISPANIC OR LATINO)"
+  },
+  {
+    "code": "B08505H_007M",
+    "label": "Margin of Error for!!Worked at home",
+    "desc": "B08505H.  MEANS OF TRANSPORTATION TO WORK FOR WORKPLACE GEOGRAPHY (WHITE ALONE, NOT HISPANIC OR LATINO)"
+  },
+  {
+    "code": "B08505I_007E",
+    "label": "Worked at home",
+    "desc": "B08505I.  MEANS OF TRANSPORTATION TO WORK FOR WORKPLACE GEOGRAPHY (HISPANIC OR LATINO)"
+  },
+  {
+    "code": "B08505I_007M",
+    "label": "Margin of Error for!!Worked at home",
+    "desc": "B08505I.  MEANS OF TRANSPORTATION TO WORK FOR WORKPLACE GEOGRAPHY (HISPANIC OR LATINO)"
+  },
+  {
+    "code": "B08511_031E",
+    "label": "Worked at home:",
+    "desc": "B08511.  MEANS OF TRANSPORTATION TO WORK BY CITIZENSHIP STATUS FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08511_031M",
+    "label": "Margin of Error for!!Worked at home:",
+    "desc": "B08511.  MEANS OF TRANSPORTATION TO WORK BY CITIZENSHIP STATUS FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08511_032E",
+    "label": "Worked at home:!!Native",
+    "desc": "B08511.  MEANS OF TRANSPORTATION TO WORK BY CITIZENSHIP STATUS FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08511_032M",
+    "label": "Margin of Error for!!Worked at home:!!Native",
+    "desc": "B08511.  MEANS OF TRANSPORTATION TO WORK BY CITIZENSHIP STATUS FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08511_033E",
+    "label": "Worked at home:!!Foreign born:",
+    "desc": "B08511.  MEANS OF TRANSPORTATION TO WORK BY CITIZENSHIP STATUS FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08511_033M",
+    "label": "Margin of Error for!!Worked at home:!!Foreign born:",
+    "desc": "B08511.  MEANS OF TRANSPORTATION TO WORK BY CITIZENSHIP STATUS FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08511_034E",
+    "label": "Worked at home:!!Foreign born:!!Naturalized U.S. citizen",
+    "desc": "B08511.  MEANS OF TRANSPORTATION TO WORK BY CITIZENSHIP STATUS FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08511_034M",
+    "label": "Margin of Error for!!Worked at home:!!Foreign born:!!Naturalized U.S. citizen",
+    "desc": "B08511.  MEANS OF TRANSPORTATION TO WORK BY CITIZENSHIP STATUS FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08511_035E",
+    "label": "Worked at home:!!Foreign born:!!Not a U.S. citizen",
+    "desc": "B08511.  MEANS OF TRANSPORTATION TO WORK BY CITIZENSHIP STATUS FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08511_035M",
+    "label": "Margin of Error for!!Worked at home:!!Foreign born:!!Not a U.S. citizen",
+    "desc": "B08511.  MEANS OF TRANSPORTATION TO WORK BY CITIZENSHIP STATUS FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08513_049E",
+    "label": "Worked at home:",
+    "desc": "B08513.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08513_049M",
+    "label": "Margin of Error for!!Worked at home:",
+    "desc": "B08513.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08513_050E",
+    "label": "Worked at home:!!Speak only English",
+    "desc": "B08513.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08513_050M",
+    "label": "Margin of Error for!!Worked at home:!!Speak only English",
+    "desc": "B08513.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08513_051E",
+    "label": "Worked at home:!!Speak Spanish:",
+    "desc": "B08513.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08513_051M",
+    "label": "Margin of Error for!!Worked at home:!!Speak Spanish:",
+    "desc": "B08513.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08513_052E",
+    "label": "Worked at home:!!Speak Spanish:!!Speak English \"very well\"",
+    "desc": "B08513.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08513_052M",
+    "label": "Margin of Error for!!Worked at home:!!Speak Spanish:!!Speak English \"very well\"",
+    "desc": "B08513.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08513_053E",
+    "label": "Worked at home:!!Speak Spanish:!!Speak English less than \"very well\"",
+    "desc": "B08513.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08513_053M",
+    "label": "Margin of Error for!!Worked at home:!!Speak Spanish:!!Speak English less than \"very well\"",
+    "desc": "B08513.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08513_054E",
+    "label": "Worked at home:!!Speak other languages:",
+    "desc": "B08513.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08513_054M",
+    "label": "Margin of Error for!!Worked at home:!!Speak other languages:",
+    "desc": "B08513.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08513_055E",
+    "label": "Worked at home:!!Speak other languages:!!Speak English \"very well\"",
+    "desc": "B08513.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08513_055M",
+    "label": "Margin of Error for!!Worked at home:!!Speak other languages:!!Speak English \"very well\"",
+    "desc": "B08513.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08513_056E",
+    "label": "Worked at home:!!Speak other languages:!!Speak English less than \"very well\"",
+    "desc": "B08513.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08513_056M",
+    "label": "Margin of Error for!!Worked at home:!!Speak other languages:!!Speak English less than \"very well\"",
+    "desc": "B08513.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08519_055E",
+    "label": "Worked at home:",
+    "desc": "B08519. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars) for Workplace Geography"
+  },
+  {
+    "code": "B08519_055M",
+    "label": "Margin of Error for!!Worked at home:",
+    "desc": "B08519. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars) for Workplace Geography"
+  },
+  {
+    "code": "B08519_056E",
+    "label": "Worked at home:!!$1 to $9,999 or loss",
+    "desc": "B08519. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars) for Workplace Geography"
+  },
+  {
+    "code": "B08519_056M",
+    "label": "Margin of Error for!!Worked at home:!!$1 to $9,999 or loss",
+    "desc": "B08519. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars) for Workplace Geography"
+  },
+  {
+    "code": "B08519_057E",
+    "label": "Worked at home:!!$10,000 to $14,999",
+    "desc": "B08519. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars) for Workplace Geography"
+  },
+  {
+    "code": "B08519_057M",
+    "label": "Margin of Error for!!Worked at home:!!$10,000 to $14,999",
+    "desc": "B08519. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars) for Workplace Geography"
+  },
+  {
+    "code": "B08519_058E",
+    "label": "Worked at home:!!$15,000 to $24,999",
+    "desc": "B08519. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars) for Workplace Geography"
+  },
+  {
+    "code": "B08519_058M",
+    "label": "Margin of Error for!!Worked at home:!!$15,000 to $24,999",
+    "desc": "B08519. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars) for Workplace Geography"
+  },
+  {
+    "code": "B08519_059E",
+    "label": "Worked at home:!!$25,000 to $34,999",
+    "desc": "B08519. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars) for Workplace Geography"
+  },
+  {
+    "code": "B08519_059M",
+    "label": "Margin of Error for!!Worked at home:!!$25,000 to $34,999",
+    "desc": "B08519. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars) for Workplace Geography"
+  },
+  {
+    "code": "B08519_060E",
+    "label": "Worked at home:!!$35,000 to $49,999",
+    "desc": "B08519. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars) for Workplace Geography"
+  },
+  {
+    "code": "B08519_060M",
+    "label": "Margin of Error for!!Worked at home:!!$35,000 to $49,999",
+    "desc": "B08519. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars) for Workplace Geography"
+  },
+  {
+    "code": "B08519_061E",
+    "label": "Worked at home:!!$50,000 to $64,999",
+    "desc": "B08519. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars) for Workplace Geography"
+  },
+  {
+    "code": "B08519_061M",
+    "label": "Margin of Error for!!Worked at home:!!$50,000 to $64,999",
+    "desc": "B08519. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars) for Workplace Geography"
+  },
+  {
+    "code": "B08519_062E",
+    "label": "Worked at home:!!$65,000 to $74,999",
+    "desc": "B08519. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars) for Workplace Geography"
+  },
+  {
+    "code": "B08519_062M",
+    "label": "Margin of Error for!!Worked at home:!!$65,000 to $74,999",
+    "desc": "B08519. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars) for Workplace Geography"
+  },
+  {
+    "code": "B08519_063E",
+    "label": "Worked at home:!!$75,000 or more",
+    "desc": "B08519. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars) for Workplace Geography"
+  },
+  {
+    "code": "B08519_063M",
+    "label": "Margin of Error for!!Worked at home:!!$75,000 or more",
+    "desc": "B08519. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars) for Workplace Geography"
+  },
+  {
+    "code": "B08521_007E",
+    "label": "Median earnings in the past 12 months --!! Worked at home",
+    "desc": "B08521. Median Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars) by Means of Transportation to Work for Workplace Geography"
+  },
+  {
+    "code": "B08521_007M",
+    "label": "Margin of Error for!!Median earnings in the past 12 months --!! Worked at home",
+    "desc": "B08521. Median Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars) by Means of Transportation to Work for Workplace Geography"
+  },
+  {
+    "code": "B08522_025E",
+    "label": "Worked at home:",
+    "desc": "B08522.  MEANS OF TRANSPORTATION TO WORK BY POVERTY STATUS IN THE PAST 12 MONTHS FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08522_025M",
+    "label": "Margin of Error for!!Worked at home:",
+    "desc": "B08522.  MEANS OF TRANSPORTATION TO WORK BY POVERTY STATUS IN THE PAST 12 MONTHS FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08522_026E",
+    "label": "Worked at home:!!Below 100 percent of the poverty level",
+    "desc": "B08522.  MEANS OF TRANSPORTATION TO WORK BY POVERTY STATUS IN THE PAST 12 MONTHS FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08522_026M",
+    "label": "Margin of Error for!!Worked at home:!!Below 100 percent of the poverty level",
+    "desc": "B08522.  MEANS OF TRANSPORTATION TO WORK BY POVERTY STATUS IN THE PAST 12 MONTHS FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08522_027E",
+    "label": "Worked at home:!!100 to 149 percent of the poverty level",
+    "desc": "B08522.  MEANS OF TRANSPORTATION TO WORK BY POVERTY STATUS IN THE PAST 12 MONTHS FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08522_027M",
+    "label": "Margin of Error for!!Worked at home:!!100 to 149 percent of the poverty level",
+    "desc": "B08522.  MEANS OF TRANSPORTATION TO WORK BY POVERTY STATUS IN THE PAST 12 MONTHS FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08522_028E",
+    "label": "Worked at home:!!At or above 150 percent of the poverty level",
+    "desc": "B08522.  MEANS OF TRANSPORTATION TO WORK BY POVERTY STATUS IN THE PAST 12 MONTHS FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08522_028M",
+    "label": "Margin of Error for!!Worked at home:!!At or above 150 percent of the poverty level",
+    "desc": "B08522.  MEANS OF TRANSPORTATION TO WORK BY POVERTY STATUS IN THE PAST 12 MONTHS FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08524_043E",
+    "label": "Worked at home:",
+    "desc": "B08524.  MEANS OF TRANSPORTATION TO WORK BY OCCUPATION FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08524_043M",
+    "label": "Margin of Error for!!Worked at home:",
+    "desc": "B08524.  MEANS OF TRANSPORTATION TO WORK BY OCCUPATION FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08524_044E",
+    "label": "Worked at home:!!Management, business, science, and arts occupations",
+    "desc": "B08524.  MEANS OF TRANSPORTATION TO WORK BY OCCUPATION FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08524_044M",
+    "label": "Margin of Error for!!Worked at home:!!Management, business, science, and arts occupations",
+    "desc": "B08524.  MEANS OF TRANSPORTATION TO WORK BY OCCUPATION FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08524_045E",
+    "label": "Worked at home:!!Service occupations",
+    "desc": "B08524.  MEANS OF TRANSPORTATION TO WORK BY OCCUPATION FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08524_045M",
+    "label": "Margin of Error for!!Worked at home:!!Service occupations",
+    "desc": "B08524.  MEANS OF TRANSPORTATION TO WORK BY OCCUPATION FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08524_046E",
+    "label": "Worked at home:!!Sales and office occupations",
+    "desc": "B08524.  MEANS OF TRANSPORTATION TO WORK BY OCCUPATION FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08524_046M",
+    "label": "Margin of Error for!!Worked at home:!!Sales and office occupations",
+    "desc": "B08524.  MEANS OF TRANSPORTATION TO WORK BY OCCUPATION FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08524_047E",
+    "label": "Worked at home:!!Natural resources, construction, and maintenance occupations",
+    "desc": "B08524.  MEANS OF TRANSPORTATION TO WORK BY OCCUPATION FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08524_047M",
+    "label": "Margin of Error for!!Worked at home:!!Natural resources, construction, and maintenance occupations",
+    "desc": "B08524.  MEANS OF TRANSPORTATION TO WORK BY OCCUPATION FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08524_048E",
+    "label": "Worked at home:!!Production, transportation, and material moving occupations",
+    "desc": "B08524.  MEANS OF TRANSPORTATION TO WORK BY OCCUPATION FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08524_048M",
+    "label": "Margin of Error for!!Worked at home:!!Production, transportation, and material moving occupations",
+    "desc": "B08524.  MEANS OF TRANSPORTATION TO WORK BY OCCUPATION FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08524_049E",
+    "label": "Worked at home:!!Military specific occupations",
+    "desc": "B08524.  MEANS OF TRANSPORTATION TO WORK BY OCCUPATION FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08524_049M",
+    "label": "Margin of Error for!!Worked at home:!!Military specific occupations",
+    "desc": "B08524.  MEANS OF TRANSPORTATION TO WORK BY OCCUPATION FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08526_091E",
+    "label": "Worked at home:",
+    "desc": "B08526.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08526_091M",
+    "label": "Margin of Error for!!Worked at home:",
+    "desc": "B08526.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08526_092E",
+    "label": "Worked at home:!!Agriculture, forestry, fishing and hunting, and mining",
+    "desc": "B08526.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08526_092M",
+    "label": "Margin of Error for!!Worked at home:!!Agriculture, forestry, fishing and hunting, and mining",
+    "desc": "B08526.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08526_093E",
+    "label": "Worked at home:!!Construction",
+    "desc": "B08526.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08526_093M",
+    "label": "Margin of Error for!!Worked at home:!!Construction",
+    "desc": "B08526.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08526_094E",
+    "label": "Worked at home:!!Manufacturing",
+    "desc": "B08526.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08526_094M",
+    "label": "Margin of Error for!!Worked at home:!!Manufacturing",
+    "desc": "B08526.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08526_095E",
+    "label": "Worked at home:!!Wholesale trade",
+    "desc": "B08526.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08526_095M",
+    "label": "Margin of Error for!!Worked at home:!!Wholesale trade",
+    "desc": "B08526.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08526_096E",
+    "label": "Worked at home:!!Retail trade",
+    "desc": "B08526.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08526_096M",
+    "label": "Margin of Error for!!Worked at home:!!Retail trade",
+    "desc": "B08526.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08526_097E",
+    "label": "Worked at home:!!Transportation and warehousing, and utilities",
+    "desc": "B08526.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08526_097M",
+    "label": "Margin of Error for!!Worked at home:!!Transportation and warehousing, and utilities",
+    "desc": "B08526.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08526_098E",
+    "label": "Worked at home:!!Information",
+    "desc": "B08526.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08526_098M",
+    "label": "Margin of Error for!!Worked at home:!!Information",
+    "desc": "B08526.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08526_099E",
+    "label": "Worked at home:!!Finance and insurance, and real estate and rental and leasing",
+    "desc": "B08526.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08526_099M",
+    "label": "Margin of Error for!!Worked at home:!!Finance and insurance, and real estate and rental and leasing",
+    "desc": "B08526.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08526_100E",
+    "label": "Worked at home:!!Professional, scientific, and management, and administrative and waste management services",
+    "desc": "B08526.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08526_100M",
+    "label": "Margin of Error for!!Worked at home:!!Professional, scientific, and management, and administrative and waste management services",
+    "desc": "B08526.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08526_101E",
+    "label": "Worked at home:!!Educational services, and health care and social assistance",
+    "desc": "B08526.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08526_101M",
+    "label": "Margin of Error for!!Worked at home:!!Educational services, and health care and social assistance",
+    "desc": "B08526.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08526_102E",
+    "label": "Worked at home:!!Arts, entertainment, and recreation, and accommodation and food services",
+    "desc": "B08526.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08526_102M",
+    "label": "Margin of Error for!!Worked at home:!!Arts, entertainment, and recreation, and accommodation and food services",
+    "desc": "B08526.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08526_103E",
+    "label": "Worked at home:!!Other services (except public administration)",
+    "desc": "B08526.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08526_103M",
+    "label": "Margin of Error for!!Worked at home:!!Other services (except public administration)",
+    "desc": "B08526.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08526_104E",
+    "label": "Worked at home:!!Public administration",
+    "desc": "B08526.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08526_104M",
+    "label": "Margin of Error for!!Worked at home:!!Public administration",
+    "desc": "B08526.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08526_105E",
+    "label": "Worked at home:!!Armed forces",
+    "desc": "B08526.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08526_105M",
+    "label": "Margin of Error for!!Worked at home:!!Armed forces",
+    "desc": "B08526.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08528_061E",
+    "label": "Worked at home:",
+    "desc": "B08528.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08528_061M",
+    "label": "Margin of Error for!!Worked at home:",
+    "desc": "B08528.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08528_062E",
+    "label": "Worked at home:!!Private for-profit wage and salary workers:",
+    "desc": "B08528.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08528_062M",
+    "label": "Margin of Error for!!Worked at home:!!Private for-profit wage and salary workers:",
+    "desc": "B08528.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08528_063E",
+    "label": "Worked at home:!!Private for-profit wage and salary workers:!!Employee of private company workers",
+    "desc": "B08528.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08528_063M",
+    "label": "Margin of Error for!!Worked at home:!!Private for-profit wage and salary workers:!!Employee of private company workers",
+    "desc": "B08528.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08528_064E",
+    "label": "Worked at home:!!Private for-profit wage and salary workers:!!Self-employed in own incorporated business workers",
+    "desc": "B08528.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08528_064M",
+    "label": "Margin of Error for!!Worked at home:!!Private for-profit wage and salary workers:!!Self-employed in own incorporated business workers",
+    "desc": "B08528.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08528_065E",
+    "label": "Worked at home:!!Private not-for-profit wage and salary workers",
+    "desc": "B08528.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08528_065M",
+    "label": "Margin of Error for!!Worked at home:!!Private not-for-profit wage and salary workers",
+    "desc": "B08528.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08528_066E",
+    "label": "Worked at home:!!Local government workers",
+    "desc": "B08528.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08528_066M",
+    "label": "Margin of Error for!!Worked at home:!!Local government workers",
+    "desc": "B08528.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08528_067E",
+    "label": "Worked at home:!!State government workers",
+    "desc": "B08528.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08528_067M",
+    "label": "Margin of Error for!!Worked at home:!!State government workers",
+    "desc": "B08528.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08528_068E",
+    "label": "Worked at home:!!Federal government workers",
+    "desc": "B08528.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08528_068M",
+    "label": "Margin of Error for!!Worked at home:!!Federal government workers",
+    "desc": "B08528.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08528_069E",
+    "label": "Worked at home:!!Self-employed in own not incorporated business workers",
+    "desc": "B08528.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08528_069M",
+    "label": "Margin of Error for!!Worked at home:!!Self-employed in own not incorporated business workers",
+    "desc": "B08528.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08528_070E",
+    "label": "Worked at home:!!Unpaid family workers",
+    "desc": "B08528.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08528_070M",
+    "label": "Margin of Error for!!Worked at home:!!Unpaid family workers",
+    "desc": "B08528.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08537_019E",
+    "label": "Worked at home:",
+    "desc": "B08537.  MEANS OF TRANSPORTATION TO WORK BY TENURE FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08537_019M",
+    "label": "Margin of Error for!!Worked at home:",
+    "desc": "B08537.  MEANS OF TRANSPORTATION TO WORK BY TENURE FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08537_020E",
+    "label": "Worked at home:!!Householder lived in owner-occupied housing units",
+    "desc": "B08537.  MEANS OF TRANSPORTATION TO WORK BY TENURE FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08537_020M",
+    "label": "Margin of Error for!!Worked at home:!!Householder lived in owner-occupied housing units",
+    "desc": "B08537.  MEANS OF TRANSPORTATION TO WORK BY TENURE FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08537_021E",
+    "label": "Worked at home:!!Householder lived in renter-occupied housing units",
+    "desc": "B08537.  MEANS OF TRANSPORTATION TO WORK BY TENURE FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08537_021M",
+    "label": "Margin of Error for!!Worked at home:!!Householder lived in renter-occupied housing units",
+    "desc": "B08537.  MEANS OF TRANSPORTATION TO WORK BY TENURE FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08541_031E",
+    "label": "Worked at home:",
+    "desc": "B08541.  MEANS OF TRANSPORTATION TO WORK BY VEHICLES AVAILABLE FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08541_031M",
+    "label": "Margin of Error for!!Worked at home:",
+    "desc": "B08541.  MEANS OF TRANSPORTATION TO WORK BY VEHICLES AVAILABLE FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08541_032E",
+    "label": "Worked at home:!!No vehicle available",
+    "desc": "B08541.  MEANS OF TRANSPORTATION TO WORK BY VEHICLES AVAILABLE FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08541_032M",
+    "label": "Margin of Error for!!Worked at home:!!No vehicle available",
+    "desc": "B08541.  MEANS OF TRANSPORTATION TO WORK BY VEHICLES AVAILABLE FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08541_033E",
+    "label": "Worked at home:!!1 vehicle available",
+    "desc": "B08541.  MEANS OF TRANSPORTATION TO WORK BY VEHICLES AVAILABLE FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08541_033M",
+    "label": "Margin of Error for!!Worked at home:!!1 vehicle available",
+    "desc": "B08541.  MEANS OF TRANSPORTATION TO WORK BY VEHICLES AVAILABLE FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08541_034E",
+    "label": "Worked at home:!!2 vehicles available",
+    "desc": "B08541.  MEANS OF TRANSPORTATION TO WORK BY VEHICLES AVAILABLE FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08541_034M",
+    "label": "Margin of Error for!!Worked at home:!!2 vehicles available",
+    "desc": "B08541.  MEANS OF TRANSPORTATION TO WORK BY VEHICLES AVAILABLE FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08541_035E",
+    "label": "Worked at home:!!3 or more vehicles available",
+    "desc": "B08541.  MEANS OF TRANSPORTATION TO WORK BY VEHICLES AVAILABLE FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08541_035M",
+    "label": "Margin of Error for!!Worked at home:!!3 or more vehicles available",
+    "desc": "B08541.  MEANS OF TRANSPORTATION TO WORK BY VEHICLES AVAILABLE FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B08601_021E",
+    "label": "Worked at home",
+    "desc": "B08601.  Means of Transportation to Work for Workplace Geography"
+  },
+  {
+    "code": "B08601_021M",
+    "label": "Margin of Error for!!Worked at home",
+    "desc": "B08601.  Means of Transportation to Work for Workplace Geography"
+  },
+  {
+    "code": "B99083_005E",
+    "label": "Worked at home",
+    "desc": "B99083.  IMPUTATION OF TIME LEAVING HOME TO GO TO WORK"
+  },
+  {
+    "code": "B99084_005E",
+    "label": "Worked at home",
+    "desc": "B99084.  IMPUTATION OF TRAVEL TIME TO WORK"
+  },
+  {
+    "code": "B99087_005E",
+    "label": "Worked at home",
+    "desc": "B99087.  IMPUTATION OF TIME ARRIVING AT WORK FROM HOME FOR WORKPLACE GEOGRAPHY"
+  },
+  {
+    "code": "B99088_005E",
+    "label": "Worked at home",
+    "desc": "B99088.  IMPUTATION OF TRAVEL TIME TO WORK FOR WORKPLACE GEOGRAPHY"
+  }
+]
