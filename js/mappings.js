@@ -510,3 +510,462 @@ var map = {
 }
 return map[v];
 }
+var partition = {
+    "age": {
+        "categories": [
+            {
+                "code": "B08101_050E",
+                "label": "Worked at home:!!16 to 19 years",
+                "normalized_label": "16 to 19 years"
+            },
+            {
+                "code": "B08101_051E",
+                "label": "Worked at home:!!20 to 24 years",
+                "normalized_label": "20 to 24 years"
+            },
+            {
+                "code": "B08101_052E",
+                "label": "Worked at home:!!25 to 44 years",
+                "normalized_label": "25 to 44 years"
+            },
+            {
+                "code": "B08101_053E",
+                "label": "Worked at home:!!45 to 54 years",
+                "normalized_label": "45 to 54 years"
+            },
+            {
+                "code": "B08101_054E",
+                "label": "Worked at home:!!55 to 59 years",
+                "normalized_label": "55 to 59 years"
+            },
+            {
+                "code": "B08101_055E",
+                "label": "Worked at home:!!60 to 64 years",
+                "normalized_label": "60 to 64 years"
+            },
+            {
+                "code": "B08101_056E",
+                "label": "Worked at home:!!65 years and over",
+                "normalized_label": "65 years and over"
+            }
+        ],
+        "info": {
+            "code": "B08101",
+            "desc": "B08101.  MEANS OF TRANSPORTATION TO WORK BY AGE",
+            "normalized_desc": "Means of transportation to work by age"
+        }
+    },
+    "citizenship status": {
+        "categories": [
+            {
+                "code": "B08111_032E",
+                "label": "Worked at home:!!Native",
+                "normalized_label": "Native"
+            },
+            {
+                "code": "B08111_033E",
+                "label": "Worked at home:!!Foreign born:",
+                "normalized_label": "Foreign born"
+            },
+            {
+                "code": "B08111_034E",
+                "label": "Worked at home:!!Foreign born:!!Naturalized U.S. citizen",
+                "normalized_label": "Foreign born"
+            },
+            {
+                "code": "B08111_035E",
+                "label": "Worked at home:!!Foreign born:!!Not a U.S. citizen",
+                "normalized_label": "Foreign born"
+            }
+        ],
+        "info": {
+            "code": "B08111",
+            "desc": "B08111.  MEANS OF TRANSPORTATION TO WORK BY CITIZENSHIP STATUS",
+            "normalized_desc": "Means of transportation to work by citizenship status"
+        }
+    },
+    "class of worker": {
+        "categories": [
+            {
+                "code": "B08128_062E",
+                "label": "Worked at home:!!Private for-profit wage and salary workers:",
+                "normalized_label": "Private for-profit wage and salary workers"
+            },
+            {
+                "code": "B08128_063E",
+                "label": "Worked at home:!!Private for-profit wage and salary workers:!!Employee of private company workers",
+                "normalized_label": "Private for-profit wage and salary workers"
+            },
+            {
+                "code": "B08128_064E",
+                "label": "Worked at home:!!Private for-profit wage and salary workers:!!Self-employed in own incorporated business workers",
+                "normalized_label": "Private for-profit wage and salary workers"
+            },
+            {
+                "code": "B08128_065E",
+                "label": "Worked at home:!!Private not-for-profit wage and salary workers",
+                "normalized_label": "Private not-for-profit wage and salary workers"
+            },
+            {
+                "code": "B08128_066E",
+                "label": "Worked at home:!!Local government workers",
+                "normalized_label": "Local government workers"
+            },
+            {
+                "code": "B08128_067E",
+                "label": "Worked at home:!!State government workers",
+                "normalized_label": "State government workers"
+            },
+            {
+                "code": "B08128_068E",
+                "label": "Worked at home:!!Federal government workers",
+                "normalized_label": "Federal government workers"
+            },
+            {
+                "code": "B08128_069E",
+                "label": "Worked at home:!!Self-employed in own not incorporated business workers",
+                "normalized_label": "Self-employed in own not incorporated business workers"
+            },
+            {
+                "code": "B08128_070E",
+                "label": "Worked at home:!!Unpaid family workers",
+                "normalized_label": "Unpaid family workers"
+            }
+        ],
+        "info": {
+            "code": "B08128",
+            "desc": "B08128.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER",
+            "normalized_desc": "Means of transportation to work by class of worker"
+        }
+    },
+    "industry": {
+        "categories": [
+            {
+                "code": "B08126_092E",
+                "label": "Worked at home:!!Agriculture, forestry, fishing and hunting, and mining",
+                "normalized_label": "Agriculture, forestry, fishing and hunting, and mining"
+            },
+            {
+                "code": "B08126_093E",
+                "label": "Worked at home:!!Construction",
+                "normalized_label": "Construction"
+            },
+            {
+                "code": "B08126_094E",
+                "label": "Worked at home:!!Manufacturing",
+                "normalized_label": "Manufacturing"
+            },
+            {
+                "code": "B08126_095E",
+                "label": "Worked at home:!!Wholesale trade",
+                "normalized_label": "Wholesale trade"
+            },
+            {
+                "code": "B08126_096E",
+                "label": "Worked at home:!!Retail trade",
+                "normalized_label": "Retail trade"
+            },
+            {
+                "code": "B08126_097E",
+                "label": "Worked at home:!!Transportation and warehousing, and utilities",
+                "normalized_label": "Transportation and warehousing, and utilities"
+            },
+            {
+                "code": "B08126_098E",
+                "label": "Worked at home:!!Information",
+                "normalized_label": "Information"
+            },
+            {
+                "code": "B08126_099E",
+                "label": "Worked at home:!!Finance and insurance, and real estate and rental and leasing",
+                "normalized_label": "Finance and insurance, and real estate and rental and leasing"
+            },
+            {
+                "code": "B08126_100E",
+                "label": "Worked at home:!!Professional, scientific, and management, and administrative and waste management services",
+                "normalized_label": "Professional, scientific, and management, and administrative and waste management services"
+            },
+            {
+                "code": "B08126_101E",
+                "label": "Worked at home:!!Educational services, and health care and social assistance",
+                "normalized_label": "Educational services, and health care and social assistance"
+            },
+            {
+                "code": "B08126_102E",
+                "label": "Worked at home:!!Arts, entertainment, and recreation, and accommodation and food services",
+                "normalized_label": "Arts, entertainment, and recreation, and accommodation and food services"
+            },
+            {
+                "code": "B08126_103E",
+                "label": "Worked at home:!!Other services (except public administration)",
+                "normalized_label": "Other services (except public administration)"
+            },
+            {
+                "code": "B08126_104E",
+                "label": "Worked at home:!!Public administration",
+                "normalized_label": "Public administration"
+            },
+            {
+                "code": "B08126_105E",
+                "label": "Worked at home:!!Armed forces",
+                "normalized_label": "Armed forces"
+            }
+        ],
+        "info": {
+            "code": "B08126",
+            "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY",
+            "normalized_desc": "Means of transportation to work by industry"
+        }
+    },
+    "language spoken at home and ability to speak english": {
+        "categories": [
+            {
+                "code": "B08113_050E",
+                "label": "Worked at home:!!Speak only English",
+                "normalized_label": "Speak only english"
+            },
+            {
+                "code": "B08113_051E",
+                "label": "Worked at home:!!Speak Spanish:",
+                "normalized_label": "Speak spanish"
+            },
+            {
+                "code": "B08113_052E",
+                "label": "Worked at home:!!Speak Spanish:!!Speak English \"very well\"",
+                "normalized_label": "Speak spanish"
+            },
+            {
+                "code": "B08113_053E",
+                "label": "Worked at home:!!Speak Spanish:!!Speak English less than \"very well\"",
+                "normalized_label": "Speak spanish"
+            },
+            {
+                "code": "B08113_054E",
+                "label": "Worked at home:!!Speak other languages:",
+                "normalized_label": "Speak other languages"
+            },
+            {
+                "code": "B08113_055E",
+                "label": "Worked at home:!!Speak other languages:!!Speak English \"very well\"",
+                "normalized_label": "Speak other languages"
+            },
+            {
+                "code": "B08113_056E",
+                "label": "Worked at home:!!Speak other languages:!!Speak English less than \"very well\"",
+                "normalized_label": "Speak other languages"
+            }
+        ],
+        "info": {
+            "code": "B08113",
+            "desc": "B08113.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH",
+            "normalized_desc": "Means of transportation to work by language spoken at home and ability to speak english"
+        }
+    },
+    "median age": {
+        "categories": [
+            {
+                "code": "B08103_007E",
+                "label": "Median age --!! Worked at home",
+                "normalized_label": "Median age"
+            }
+        ],
+        "info": {
+            "code": "B08103",
+            "desc": "B08103.  MEDIAN AGE BY MEANS OF TRANSPORTATION TO WORK",
+            "normalized_desc": "Median age by means of transportation to work"
+        }
+    },
+    "median earnings in the past 12 months (in 2015 inflation-adjusted dollars)": {
+        "categories": [
+            {
+                "code": "B08121_007E",
+                "label": "Median earnings in the past 12 months --!! Worked at home",
+                "normalized_label": "Median earnings in the past 12 months"
+            }
+        ],
+        "info": {
+            "code": "B08121",
+            "desc": "B08121. Median Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars) by Means of Transportation to Work",
+            "normalized_desc": "Median earnings in the past 12 months (in 2015 inflation-adjusted dollars) by means of transportation to work"
+        }
+    },
+    "occupation": {
+        "categories": [
+            {
+                "code": "B08124_044E",
+                "label": "Worked at home:!!Management, business, science, and arts occupations",
+                "normalized_label": "Management, business, science, and arts occupations"
+            },
+            {
+                "code": "B08124_045E",
+                "label": "Worked at home:!!Service occupations",
+                "normalized_label": "Service occupations"
+            },
+            {
+                "code": "B08124_046E",
+                "label": "Worked at home:!!Sales and office occupations",
+                "normalized_label": "Sales and office occupations"
+            },
+            {
+                "code": "B08124_047E",
+                "label": "Worked at home:!!Natural resources, construction, and maintenance occupations",
+                "normalized_label": "Natural resources, construction, and maintenance occupations"
+            },
+            {
+                "code": "B08124_048E",
+                "label": "Worked at home:!!Production, transportation, and material moving occupations",
+                "normalized_label": "Production, transportation, and material moving occupations"
+            },
+            {
+                "code": "B08124_049E",
+                "label": "Worked at home:!!Military specific occupations",
+                "normalized_label": "Military specific occupations"
+            }
+        ],
+        "info": {
+            "code": "B08124",
+            "desc": "B08124.  MEANS OF TRANSPORTATION TO WORK BY OCCUPATION",
+            "normalized_desc": "Means of transportation to work by occupation"
+        }
+    },
+    "poverty status in the past 12 months": {
+        "categories": [
+            {
+                "code": "B08122_026E",
+                "label": "Worked at home:!!Below 100 percent of the poverty level",
+                "normalized_label": "Below 100 percent of the poverty level"
+            },
+            {
+                "code": "B08122_027E",
+                "label": "Worked at home:!!100 to 149 percent of the poverty level",
+                "normalized_label": "100 to 149 percent of the poverty level"
+            },
+            {
+                "code": "B08122_028E",
+                "label": "Worked at home:!!At or above 150 percent of the poverty level",
+                "normalized_label": "At or above 150 percent of the poverty level"
+            }
+        ],
+        "info": {
+            "code": "B08122",
+            "desc": "B08122.  MEANS OF TRANSPORTATION TO WORK BY POVERTY STATUS IN THE PAST 12 MONTHS",
+            "normalized_desc": "Means of transportation to work by poverty status in the past 12 months"
+        }
+    },
+    "sex of workers": {
+        "categories": [
+            {
+                "code": "B08006_034E",
+                "label": "Male:!!Worked at home",
+                "normalized_label": "Male"
+            },
+            {
+                "code": "B08006_051E",
+                "label": "Female:!!Worked at home",
+                "normalized_label": "Female"
+            }
+        ],
+        "info": {
+            "code": "B08006",
+            "desc": "B08006.  Sex of Workers by Means of Transportation to Work",
+            "normalized_desc": "Sex of workers by means of transportation to work"
+        }
+    },
+    "tenure": {
+        "categories": [
+            {
+                "code": "B08137_020E",
+                "label": "Worked at home:!!Householder lived in owner-occupied housing units",
+                "normalized_label": "Householder lived in owner-occupied housing units"
+            },
+            {
+                "code": "B08137_021E",
+                "label": "Worked at home:!!Householder lived in renter-occupied housing units",
+                "normalized_label": "Householder lived in renter-occupied housing units"
+            }
+        ],
+        "info": {
+            "code": "B08137",
+            "desc": "B08137.  MEANS OF TRANSPORTATION TO WORK BY TENURE",
+            "normalized_desc": "Means of transportation to work by tenure"
+        }
+    },
+    "vehicles available": {
+        "categories": [
+            {
+                "code": "B08141_032E",
+                "label": "Worked at home:!!No vehicle available",
+                "normalized_label": "No vehicle available"
+            },
+            {
+                "code": "B08141_033E",
+                "label": "Worked at home:!!1 vehicle available",
+                "normalized_label": "1 vehicle available"
+            },
+            {
+                "code": "B08141_034E",
+                "label": "Worked at home:!!2 vehicles available",
+                "normalized_label": "2 vehicles available"
+            },
+            {
+                "code": "B08141_035E",
+                "label": "Worked at home:!!3 or more vehicles available",
+                "normalized_label": "3 or more vehicles available"
+            }
+        ],
+        "info": {
+            "code": "B08141",
+            "desc": "B08141.  MEANS OF TRANSPORTATION TO WORK BY VEHICLES AVAILABLE",
+            "normalized_desc": "Means of transportation to work by vehicles available"
+        }
+    },
+    "workers' earnings in the past 12 months (in 2015 inflation-adjusted dollars)": {
+        "categories": [
+            {
+                "code": "B08119_056E",
+                "label": "Worked at home:!!$1 to $9,999 or loss",
+                "normalized_label": "$1 to $9,999 or loss"
+            },
+            {
+                "code": "B08119_057E",
+                "label": "Worked at home:!!$10,000 to $14,999",
+                "normalized_label": "$10,000 to $14,999"
+            },
+            {
+                "code": "B08119_058E",
+                "label": "Worked at home:!!$15,000 to $24,999",
+                "normalized_label": "$15,000 to $24,999"
+            },
+            {
+                "code": "B08119_059E",
+                "label": "Worked at home:!!$25,000 to $34,999",
+                "normalized_label": "$25,000 to $34,999"
+            },
+            {
+                "code": "B08119_060E",
+                "label": "Worked at home:!!$35,000 to $49,999",
+                "normalized_label": "$35,000 to $49,999"
+            },
+            {
+                "code": "B08119_061E",
+                "label": "Worked at home:!!$50,000 to $64,999",
+                "normalized_label": "$50,000 to $64,999"
+            },
+            {
+                "code": "B08119_062E",
+                "label": "Worked at home:!!$65,000 to $74,999",
+                "normalized_label": "$65,000 to $74,999"
+            },
+            {
+                "code": "B08119_063E",
+                "label": "Worked at home:!!$75,000 or more",
+                "normalized_label": "$75,000 or more"
+            }
+        ],
+        "info": {
+            "code": "B08119",
+            "desc": "B08119. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars)",
+            "normalized_desc": "Means of transportation to work by workers' earnings in the past 12 months (in 2015 inflation-adjusted dollars)"
+        }
+    }
+}
