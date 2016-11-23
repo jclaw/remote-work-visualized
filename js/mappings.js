@@ -1,11 +1,15 @@
 function c_to_v (c) {
 var map = {
+    "B08006_001E": "Total:",
+    "B08006_001M": "Margin of Error for!!Total:",
     "B08006_017E": "Worked at home",
     "B08006_017M": "Margin of Error for!!Worked at home",
     "B08006_034E": "Male:!!Worked at home",
     "B08006_034M": "Margin of Error for!!Male:!!Worked at home",
     "B08006_051E": "Female:!!Worked at home",
     "B08006_051M": "Margin of Error for!!Female:!!Worked at home",
+    "B08101_001E": "Total:",
+    "B08101_001M": "Margin of Error for!!Total:",
     "B08101_049E": "Worked at home:",
     "B08101_049M": "Margin of Error for!!Worked at home:",
     "B08101_050E": "Worked at home:!!16 to 19 years",
@@ -22,26 +26,48 @@ var map = {
     "B08101_055M": "Margin of Error for!!Worked at home:!!60 to 64 years",
     "B08101_056E": "Worked at home:!!65 years and over",
     "B08101_056M": "Margin of Error for!!Worked at home:!!65 years and over",
+    "B08103_001E": "Median age --!!Total:",
+    "B08103_001M": "Margin of Error for!!Median age --!!Total:",
     "B08103_007E": "Median age --!! Worked at home",
     "B08103_007M": "Margin of Error for!!Median age --!! Worked at home",
+    "B08105A_001E": "Total:",
+    "B08105A_001M": "Margin of Error for!!Total:",
     "B08105A_007E": "Worked at home",
     "B08105A_007M": "Margin of Error for!!Worked at home",
+    "B08105B_001E": "Total:",
+    "B08105B_001M": "Margin of Error for!!Total:",
     "B08105B_007E": "Worked at home",
     "B08105B_007M": "Margin of Error for!!Worked at home",
+    "B08105C_001E": "Total:",
+    "B08105C_001M": "Margin of Error for!!Total:",
     "B08105C_007E": "Worked at home",
     "B08105C_007M": "Margin of Error for!!Worked at home",
+    "B08105D_001E": "Total:",
+    "B08105D_001M": "Margin of Error for!!Total:",
     "B08105D_007E": "Worked at home",
     "B08105D_007M": "Margin of Error for!!Worked at home",
+    "B08105E_001E": "Total:",
+    "B08105E_001M": "Margin of Error for!!Total:",
     "B08105E_007E": "Worked at home",
     "B08105E_007M": "Margin of Error for!!Worked at home",
+    "B08105F_001E": "Total:",
+    "B08105F_001M": "Margin of Error for!!Total:",
     "B08105F_007E": "Worked at home",
     "B08105F_007M": "Margin of Error for!!Worked at home",
+    "B08105G_001E": "Total:",
+    "B08105G_001M": "Margin of Error for!!Total:",
     "B08105G_007E": "Worked at home",
     "B08105G_007M": "Margin of Error for!!Worked at home",
+    "B08105H_001E": "Total:",
+    "B08105H_001M": "Margin of Error for!!Total:",
     "B08105H_007E": "Worked at home",
     "B08105H_007M": "Margin of Error for!!Worked at home",
+    "B08105I_001E": "Total:",
+    "B08105I_001M": "Margin of Error for!!Total:",
     "B08105I_007E": "Worked at home",
     "B08105I_007M": "Margin of Error for!!Worked at home",
+    "B08111_001E": "Total:",
+    "B08111_001M": "Margin of Error for!!Total:",
     "B08111_031E": "Worked at home:",
     "B08111_031M": "Margin of Error for!!Worked at home:",
     "B08111_032E": "Worked at home:!!Native",
@@ -52,6 +78,8 @@ var map = {
     "B08111_034M": "Margin of Error for!!Worked at home:!!Foreign born:!!Naturalized U.S. citizen",
     "B08111_035E": "Worked at home:!!Foreign born:!!Not a U.S. citizen",
     "B08111_035M": "Margin of Error for!!Worked at home:!!Foreign born:!!Not a U.S. citizen",
+    "B08113_001E": "Total:",
+    "B08113_001M": "Margin of Error for!!Total:",
     "B08113_049E": "Worked at home:",
     "B08113_049M": "Margin of Error for!!Worked at home:",
     "B08113_050E": "Worked at home:!!Speak only English",
@@ -68,6 +96,8 @@ var map = {
     "B08113_055M": "Margin of Error for!!Worked at home:!!Speak other languages:!!Speak English \"very well\"",
     "B08113_056E": "Worked at home:!!Speak other languages:!!Speak English less than \"very well\"",
     "B08113_056M": "Margin of Error for!!Worked at home:!!Speak other languages:!!Speak English less than \"very well\"",
+    "B08119_001E": "Total:",
+    "B08119_001M": "Margin of Error for!!Total:",
     "B08119_055E": "Worked at home:",
     "B08119_055M": "Margin of Error for!!Worked at home:",
     "B08119_056E": "Worked at home:!!$1 to $9,999 or loss",
@@ -86,8 +116,12 @@ var map = {
     "B08119_062M": "Margin of Error for!!Worked at home:!!$65,000 to $74,999",
     "B08119_063E": "Worked at home:!!$75,000 or more",
     "B08119_063M": "Margin of Error for!!Worked at home:!!$75,000 or more",
+    "B08121_001E": "Median earnings in the past 12 months --!!Total:",
+    "B08121_001M": "Margin of Error for!!Median earnings in the past 12 months --!!Total:",
     "B08121_007E": "Median earnings in the past 12 months --!! Worked at home",
     "B08121_007M": "Margin of Error for!!Median earnings in the past 12 months --!! Worked at home",
+    "B08122_001E": "Total:",
+    "B08122_001M": "Margin of Error for!!Total:",
     "B08122_025E": "Worked at home:",
     "B08122_025M": "Margin of Error for!!Worked at home:",
     "B08122_026E": "Worked at home:!!Below 100 percent of the poverty level",
@@ -96,6 +130,8 @@ var map = {
     "B08122_027M": "Margin of Error for!!Worked at home:!!100 to 149 percent of the poverty level",
     "B08122_028E": "Worked at home:!!At or above 150 percent of the poverty level",
     "B08122_028M": "Margin of Error for!!Worked at home:!!At or above 150 percent of the poverty level",
+    "B08124_001E": "Total:",
+    "B08124_001M": "Margin of Error for!!Total:",
     "B08124_043E": "Worked at home:",
     "B08124_043M": "Margin of Error for!!Worked at home:",
     "B08124_044E": "Worked at home:!!Management, business, science, and arts occupations",
@@ -110,6 +146,8 @@ var map = {
     "B08124_048M": "Margin of Error for!!Worked at home:!!Production, transportation, and material moving occupations",
     "B08124_049E": "Worked at home:!!Military specific occupations",
     "B08124_049M": "Margin of Error for!!Worked at home:!!Military specific occupations",
+    "B08126_001E": "Total:",
+    "B08126_001M": "Margin of Error for!!Total:",
     "B08126_091E": "Worked at home:",
     "B08126_091M": "Margin of Error for!!Worked at home:",
     "B08126_092E": "Worked at home:!!Agriculture, forestry, fishing and hunting, and mining",
@@ -140,6 +178,8 @@ var map = {
     "B08126_104M": "Margin of Error for!!Worked at home:!!Public administration",
     "B08126_105E": "Worked at home:!!Armed forces",
     "B08126_105M": "Margin of Error for!!Worked at home:!!Armed forces",
+    "B08128_001E": "Total:",
+    "B08128_001M": "Margin of Error for!!Total:",
     "B08128_061E": "Worked at home:",
     "B08128_061M": "Margin of Error for!!Worked at home:",
     "B08128_062E": "Worked at home:!!Private for-profit wage and salary workers:",
@@ -160,14 +200,20 @@ var map = {
     "B08128_069M": "Margin of Error for!!Worked at home:!!Self-employed in own not incorporated business workers",
     "B08128_070E": "Worked at home:!!Unpaid family workers",
     "B08128_070M": "Margin of Error for!!Worked at home:!!Unpaid family workers",
+    "B08130_001E": "Total:",
+    "B08130_001M": "Margin of Error for!!Total:",
     "B08130_031E": "Worked at home",
     "B08130_031M": "Margin of Error for!!Worked at home",
+    "B08137_001E": "Total:",
+    "B08137_001M": "Margin of Error for!!Total:",
     "B08137_019E": "Worked at home:",
     "B08137_019M": "Margin of Error for!!Worked at home:",
     "B08137_020E": "Worked at home:!!Householder lived in owner-occupied housing units",
     "B08137_020M": "Margin of Error for!!Worked at home:!!Householder lived in owner-occupied housing units",
     "B08137_021E": "Worked at home:!!Householder lived in renter-occupied housing units",
     "B08137_021M": "Margin of Error for!!Worked at home:!!Householder lived in renter-occupied housing units",
+    "B08141_001E": "Total:",
+    "B08141_001M": "Margin of Error for!!Total:",
     "B08141_031E": "Worked at home:",
     "B08141_031M": "Margin of Error for!!Worked at home:",
     "B08141_032E": "Worked at home:!!No vehicle available",
@@ -178,14 +224,20 @@ var map = {
     "B08141_034M": "Margin of Error for!!Worked at home:!!2 vehicles available",
     "B08141_035E": "Worked at home:!!3 or more vehicles available",
     "B08141_035M": "Margin of Error for!!Worked at home:!!3 or more vehicles available",
+    "B08301_001E": "Total:",
+    "B08301_001M": "Margin of Error for!!Total:",
     "B08301_021E": "Worked at home",
     "B08301_021M": "Margin of Error for!!Worked at home",
+    "B08406_001E": "Total:",
+    "B08406_001M": "Margin of Error for!!Total:",
     "B08406_017E": "Worked at home",
     "B08406_017M": "Margin of Error for!!Worked at home",
     "B08406_034E": "Male:!!Worked at home",
     "B08406_034M": "Margin of Error for!!Male:!!Worked at home",
     "B08406_051E": "Female:!!Worked at home",
     "B08406_051M": "Margin of Error for!!Female:!!Worked at home",
+    "B08501_001E": "Total:",
+    "B08501_001M": "Margin of Error for!!Total:",
     "B08501_049E": "Worked at home:",
     "B08501_049M": "Margin of Error for!!Worked at home:",
     "B08501_050E": "Worked at home:!!16 to 19 years",
@@ -202,26 +254,48 @@ var map = {
     "B08501_055M": "Margin of Error for!!Worked at home:!!60 to 64 years",
     "B08501_056E": "Worked at home:!!65 years and over",
     "B08501_056M": "Margin of Error for!!Worked at home:!!65 years and over",
+    "B08503_001E": "Median age --!!Total:",
+    "B08503_001M": "Margin of Error for!!Median age --!!Total:",
     "B08503_007E": "Median age --!! Worked at home",
     "B08503_007M": "Margin of Error for!!Median age --!! Worked at home",
+    "B08505A_001E": "Total:",
+    "B08505A_001M": "Margin of Error for!!Total:",
     "B08505A_007E": "Worked at home",
     "B08505A_007M": "Margin of Error for!!Worked at home",
+    "B08505B_001E": "Total:",
+    "B08505B_001M": "Margin of Error for!!Total:",
     "B08505B_007E": "Worked at home",
     "B08505B_007M": "Margin of Error for!!Worked at home",
+    "B08505C_001E": "Total:",
+    "B08505C_001M": "Margin of Error for!!Total:",
     "B08505C_007E": "Worked at home",
     "B08505C_007M": "Margin of Error for!!Worked at home",
+    "B08505D_001E": "Total:",
+    "B08505D_001M": "Margin of Error for!!Total:",
     "B08505D_007E": "Worked at home",
     "B08505D_007M": "Margin of Error for!!Worked at home",
+    "B08505E_001E": "Total:",
+    "B08505E_001M": "Margin of Error for!!Total:",
     "B08505E_007E": "Worked at home",
     "B08505E_007M": "Margin of Error for!!Worked at home",
+    "B08505F_001E": "Total:",
+    "B08505F_001M": "Margin of Error for!!Total:",
     "B08505F_007E": "Worked at home",
     "B08505F_007M": "Margin of Error for!!Worked at home",
+    "B08505G_001E": "Total:",
+    "B08505G_001M": "Margin of Error for!!Total:",
     "B08505G_007E": "Worked at home",
     "B08505G_007M": "Margin of Error for!!Worked at home",
+    "B08505H_001E": "Total:",
+    "B08505H_001M": "Margin of Error for!!Total:",
     "B08505H_007E": "Worked at home",
     "B08505H_007M": "Margin of Error for!!Worked at home",
+    "B08505I_001E": "Total:",
+    "B08505I_001M": "Margin of Error for!!Total:",
     "B08505I_007E": "Worked at home",
     "B08505I_007M": "Margin of Error for!!Worked at home",
+    "B08511_001E": "Total:",
+    "B08511_001M": "Margin of Error for!!Total:",
     "B08511_031E": "Worked at home:",
     "B08511_031M": "Margin of Error for!!Worked at home:",
     "B08511_032E": "Worked at home:!!Native",
@@ -232,6 +306,8 @@ var map = {
     "B08511_034M": "Margin of Error for!!Worked at home:!!Foreign born:!!Naturalized U.S. citizen",
     "B08511_035E": "Worked at home:!!Foreign born:!!Not a U.S. citizen",
     "B08511_035M": "Margin of Error for!!Worked at home:!!Foreign born:!!Not a U.S. citizen",
+    "B08513_001E": "Total:",
+    "B08513_001M": "Margin of Error for!!Total:",
     "B08513_049E": "Worked at home:",
     "B08513_049M": "Margin of Error for!!Worked at home:",
     "B08513_050E": "Worked at home:!!Speak only English",
@@ -248,6 +324,8 @@ var map = {
     "B08513_055M": "Margin of Error for!!Worked at home:!!Speak other languages:!!Speak English \"very well\"",
     "B08513_056E": "Worked at home:!!Speak other languages:!!Speak English less than \"very well\"",
     "B08513_056M": "Margin of Error for!!Worked at home:!!Speak other languages:!!Speak English less than \"very well\"",
+    "B08519_001E": "Total:",
+    "B08519_001M": "Margin of Error for!!Total:",
     "B08519_055E": "Worked at home:",
     "B08519_055M": "Margin of Error for!!Worked at home:",
     "B08519_056E": "Worked at home:!!$1 to $9,999 or loss",
@@ -266,8 +344,12 @@ var map = {
     "B08519_062M": "Margin of Error for!!Worked at home:!!$65,000 to $74,999",
     "B08519_063E": "Worked at home:!!$75,000 or more",
     "B08519_063M": "Margin of Error for!!Worked at home:!!$75,000 or more",
+    "B08521_001E": "Median earnings in the past 12 months --!!Total:",
+    "B08521_001M": "Margin of Error for!!Median earnings in the past 12 months --!!Total:",
     "B08521_007E": "Median earnings in the past 12 months --!! Worked at home",
     "B08521_007M": "Margin of Error for!!Median earnings in the past 12 months --!! Worked at home",
+    "B08522_001E": "Total:",
+    "B08522_001M": "Margin of Error for!!Total:",
     "B08522_025E": "Worked at home:",
     "B08522_025M": "Margin of Error for!!Worked at home:",
     "B08522_026E": "Worked at home:!!Below 100 percent of the poverty level",
@@ -276,6 +358,8 @@ var map = {
     "B08522_027M": "Margin of Error for!!Worked at home:!!100 to 149 percent of the poverty level",
     "B08522_028E": "Worked at home:!!At or above 150 percent of the poverty level",
     "B08522_028M": "Margin of Error for!!Worked at home:!!At or above 150 percent of the poverty level",
+    "B08524_001E": "Total:",
+    "B08524_001M": "Margin of Error for!!Total:",
     "B08524_043E": "Worked at home:",
     "B08524_043M": "Margin of Error for!!Worked at home:",
     "B08524_044E": "Worked at home:!!Management, business, science, and arts occupations",
@@ -290,6 +374,8 @@ var map = {
     "B08524_048M": "Margin of Error for!!Worked at home:!!Production, transportation, and material moving occupations",
     "B08524_049E": "Worked at home:!!Military specific occupations",
     "B08524_049M": "Margin of Error for!!Worked at home:!!Military specific occupations",
+    "B08526_001E": "Total:",
+    "B08526_001M": "Margin of Error for!!Total:",
     "B08526_091E": "Worked at home:",
     "B08526_091M": "Margin of Error for!!Worked at home:",
     "B08526_092E": "Worked at home:!!Agriculture, forestry, fishing and hunting, and mining",
@@ -320,6 +406,8 @@ var map = {
     "B08526_104M": "Margin of Error for!!Worked at home:!!Public administration",
     "B08526_105E": "Worked at home:!!Armed forces",
     "B08526_105M": "Margin of Error for!!Worked at home:!!Armed forces",
+    "B08528_001E": "Total:",
+    "B08528_001M": "Margin of Error for!!Total:",
     "B08528_061E": "Worked at home:",
     "B08528_061M": "Margin of Error for!!Worked at home:",
     "B08528_062E": "Worked at home:!!Private for-profit wage and salary workers:",
@@ -340,12 +428,16 @@ var map = {
     "B08528_069M": "Margin of Error for!!Worked at home:!!Self-employed in own not incorporated business workers",
     "B08528_070E": "Worked at home:!!Unpaid family workers",
     "B08528_070M": "Margin of Error for!!Worked at home:!!Unpaid family workers",
+    "B08537_001E": "Total:",
+    "B08537_001M": "Margin of Error for!!Total:",
     "B08537_019E": "Worked at home:",
     "B08537_019M": "Margin of Error for!!Worked at home:",
     "B08537_020E": "Worked at home:!!Householder lived in owner-occupied housing units",
     "B08537_020M": "Margin of Error for!!Worked at home:!!Householder lived in owner-occupied housing units",
     "B08537_021E": "Worked at home:!!Householder lived in renter-occupied housing units",
     "B08537_021M": "Margin of Error for!!Worked at home:!!Householder lived in renter-occupied housing units",
+    "B08541_001E": "Total:",
+    "B08541_001M": "Margin of Error for!!Total:",
     "B08541_031E": "Worked at home:",
     "B08541_031M": "Margin of Error for!!Worked at home:",
     "B08541_032E": "Worked at home:!!No vehicle available",
@@ -356,11 +448,17 @@ var map = {
     "B08541_034M": "Margin of Error for!!Worked at home:!!2 vehicles available",
     "B08541_035E": "Worked at home:!!3 or more vehicles available",
     "B08541_035M": "Margin of Error for!!Worked at home:!!3 or more vehicles available",
+    "B08601_001E": "Total:",
+    "B08601_001M": "Margin of Error for!!Total:",
     "B08601_021E": "Worked at home",
     "B08601_021M": "Margin of Error for!!Worked at home",
+    "B99083_001E": "Total:",
     "B99083_005E": "Worked at home",
+    "B99084_001E": "Total:",
     "B99084_005E": "Worked at home",
+    "B99087_001E": "Total:",
     "B99087_005E": "Worked at home",
+    "B99088_001E": "Total:",
     "B99088_005E": "Worked at home"
 }
 return map[c];
@@ -372,7 +470,10 @@ var map = {
     "Margin of Error for!!Female:!!Worked at home": "B08006_051M",
     "Margin of Error for!!Male:!!Worked at home": "B08006_034M",
     "Margin of Error for!!Median age --!! Worked at home": "B08103_007M",
+    "Margin of Error for!!Median age --!!Total:": "B08503_001M",
     "Margin of Error for!!Median earnings in the past 12 months --!! Worked at home": "B08121_007M",
+    "Margin of Error for!!Median earnings in the past 12 months --!!Total:": "B08521_001M",
+    "Margin of Error for!!Total:": "B08601_001M",
     "Margin of Error for!!Worked at home": "B08006_017M",
     "Margin of Error for!!Worked at home:": "B08101_049M",
     "Margin of Error for!!Worked at home:!!$1 to $9,999 or loss": "B08119_056M",
@@ -440,9 +541,12 @@ var map = {
     "Margin of Error for!!Worked at home:!!Unpaid family workers": "B08128_070M",
     "Margin of Error for!!Worked at home:!!Wholesale trade": "B08126_095M",
     "Median age --!! Worked at home": "B08103_007E",
+    "Median age --!!Total:": "B08503_001E",
     "Median earnings in the past 12 months --!! Worked at home": "B08121_007E",
-    "Worked at home": "B08006_017E",
-    "Worked at home:": "B08101_049E",
+    "Median earnings in the past 12 months --!!Total:": "B08521_001E",
+    "Total:": "B99088_001E",
+    "Worked at home": "B99088_005E",
+    "Worked at home:": "B08541_031E",
     "Worked at home:!!$1 to $9,999 or loss": "B08119_056E",
     "Worked at home:!!$10,000 to $14,999": "B08119_057E",
     "Worked at home:!!$15,000 to $24,999": "B08119_058E",
@@ -511,8 +615,37 @@ var map = {
 return map[v];
 }
 var partition = {
+    "": {
+        "info": {
+            "code": "B08301",
+            "desc": "B08301.  Means of Transportation to Work",
+            "normalized_desc": "Means of transportation to work"
+        },
+        "variables": [
+            {
+                "code": "B08301_021E",
+                "label": "Worked at home",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B08301_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
+    },
     "age": {
-        "categories": [
+        "info": {
+            "code": "B08101",
+            "desc": "B08101.  MEANS OF TRANSPORTATION TO WORK BY AGE",
+            "normalized_desc": "Means of transportation to work by age"
+        },
+        "variables": [
+            {
+                "code": "B08101_049E",
+                "label": "Worked at home:",
+                "normalized_label": "Worked at home"
+            },
             {
                 "code": "B08101_050E",
                 "label": "Worked at home:!!16 to 19 years",
@@ -547,16 +680,45 @@ var partition = {
                 "code": "B08101_056E",
                 "label": "Worked at home:!!65 years and over",
                 "normalized_label": "65 years and over"
+            },
+            {
+                "code": "B08101_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
             }
-        ],
+        ]
+    },
+    "age: workplace geography": {
         "info": {
-            "code": "B08101",
-            "desc": "B08101.  MEANS OF TRANSPORTATION TO WORK BY AGE",
-            "normalized_desc": "Means of transportation to work by age"
-        }
+            "code": "B08501",
+            "desc": "B08501.  MEANS OF TRANSPORTATION TO WORK BY AGE FOR WORKPLACE GEOGRAPHY",
+            "normalized_desc": "Means of transportation to work by age for workplace geography"
+        },
+        "variables": [
+            {
+                "code": "B08501_049E",
+                "label": "Worked at home:",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B08501_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
     },
     "citizenship status": {
-        "categories": [
+        "info": {
+            "code": "B08111",
+            "desc": "B08111.  MEANS OF TRANSPORTATION TO WORK BY CITIZENSHIP STATUS",
+            "normalized_desc": "Means of transportation to work by citizenship status"
+        },
+        "variables": [
+            {
+                "code": "B08111_031E",
+                "label": "Worked at home:",
+                "normalized_label": "Worked at home"
+            },
             {
                 "code": "B08111_032E",
                 "label": "Worked at home:!!Native",
@@ -570,22 +732,51 @@ var partition = {
             {
                 "code": "B08111_034E",
                 "label": "Worked at home:!!Foreign born:!!Naturalized U.S. citizen",
-                "normalized_label": "Foreign born"
+                "normalized_label": "Foreign born: naturalized u.s. citizen"
             },
             {
                 "code": "B08111_035E",
                 "label": "Worked at home:!!Foreign born:!!Not a U.S. citizen",
-                "normalized_label": "Foreign born"
+                "normalized_label": "Foreign born: not a u.s. citizen"
+            },
+            {
+                "code": "B08111_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
             }
-        ],
+        ]
+    },
+    "citizenship status: workplace geography": {
         "info": {
-            "code": "B08111",
-            "desc": "B08111.  MEANS OF TRANSPORTATION TO WORK BY CITIZENSHIP STATUS",
-            "normalized_desc": "Means of transportation to work by citizenship status"
-        }
+            "code": "B08511",
+            "desc": "B08511.  MEANS OF TRANSPORTATION TO WORK BY CITIZENSHIP STATUS FOR WORKPLACE GEOGRAPHY",
+            "normalized_desc": "Means of transportation to work by citizenship status for workplace geography"
+        },
+        "variables": [
+            {
+                "code": "B08511_031E",
+                "label": "Worked at home:",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B08511_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
     },
     "class of worker": {
-        "categories": [
+        "info": {
+            "code": "B08128",
+            "desc": "B08128.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER",
+            "normalized_desc": "Means of transportation to work by class of worker"
+        },
+        "variables": [
+            {
+                "code": "B08128_061E",
+                "label": "Worked at home:",
+                "normalized_label": "Worked at home"
+            },
             {
                 "code": "B08128_062E",
                 "label": "Worked at home:!!Private for-profit wage and salary workers:",
@@ -594,12 +785,12 @@ var partition = {
             {
                 "code": "B08128_063E",
                 "label": "Worked at home:!!Private for-profit wage and salary workers:!!Employee of private company workers",
-                "normalized_label": "Private for-profit wage and salary workers"
+                "normalized_label": "Private for-profit wage and salary workers: employee of private company workers"
             },
             {
                 "code": "B08128_064E",
                 "label": "Worked at home:!!Private for-profit wage and salary workers:!!Self-employed in own incorporated business workers",
-                "normalized_label": "Private for-profit wage and salary workers"
+                "normalized_label": "Private for-profit wage and salary workers: self-employed in own incorporated business workers"
             },
             {
                 "code": "B08128_065E",
@@ -630,16 +821,121 @@ var partition = {
                 "code": "B08128_070E",
                 "label": "Worked at home:!!Unpaid family workers",
                 "normalized_label": "Unpaid family workers"
+            },
+            {
+                "code": "B08128_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
             }
-        ],
+        ]
+    },
+    "class of worker: workplace geography": {
         "info": {
-            "code": "B08128",
-            "desc": "B08128.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER",
-            "normalized_desc": "Means of transportation to work by class of worker"
-        }
+            "code": "B08528",
+            "desc": "B08528.  MEANS OF TRANSPORTATION TO WORK BY CLASS OF WORKER FOR WORKPLACE GEOGRAPHY",
+            "normalized_desc": "Means of transportation to work by class of worker for workplace geography"
+        },
+        "variables": [
+            {
+                "code": "B08528_061E",
+                "label": "Worked at home:",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B08528_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
+    },
+    "imputation of time arriving at work from home: workplace geography": {
+        "info": {
+            "code": "B99087",
+            "desc": "B99087.  IMPUTATION OF TIME ARRIVING AT WORK FROM HOME FOR WORKPLACE GEOGRAPHY",
+            "normalized_desc": "Imputation of time arriving at work from home for workplace geography"
+        },
+        "variables": [
+            {
+                "code": "B99087_005E",
+                "label": "Worked at home",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B99087_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
+    },
+    "imputation of time leaving home to go to work": {
+        "info": {
+            "code": "B99083",
+            "desc": "B99083.  IMPUTATION OF TIME LEAVING HOME TO GO TO WORK",
+            "normalized_desc": "Imputation of time leaving home to go to work"
+        },
+        "variables": [
+            {
+                "code": "B99083_005E",
+                "label": "Worked at home",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B99083_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
+    },
+    "imputation of travel time to work": {
+        "info": {
+            "code": "B99084",
+            "desc": "B99084.  IMPUTATION OF TRAVEL TIME TO WORK",
+            "normalized_desc": "Imputation of travel time to work"
+        },
+        "variables": [
+            {
+                "code": "B99084_005E",
+                "label": "Worked at home",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B99084_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
+    },
+    "imputation of travel time to work: workplace geography": {
+        "info": {
+            "code": "B99088",
+            "desc": "B99088.  IMPUTATION OF TRAVEL TIME TO WORK FOR WORKPLACE GEOGRAPHY",
+            "normalized_desc": "Imputation of travel time to work for workplace geography"
+        },
+        "variables": [
+            {
+                "code": "B99088_005E",
+                "label": "Worked at home",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B99088_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
     },
     "industry": {
-        "categories": [
+        "info": {
+            "code": "B08126",
+            "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY",
+            "normalized_desc": "Means of transportation to work by industry"
+        },
+        "variables": [
+            {
+                "code": "B08126_091E",
+                "label": "Worked at home:",
+                "normalized_label": "Worked at home"
+            },
             {
                 "code": "B08126_092E",
                 "label": "Worked at home:!!Agriculture, forestry, fishing and hunting, and mining",
@@ -709,16 +1005,45 @@ var partition = {
                 "code": "B08126_105E",
                 "label": "Worked at home:!!Armed forces",
                 "normalized_label": "Armed forces"
+            },
+            {
+                "code": "B08126_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
             }
-        ],
+        ]
+    },
+    "industry: workplace geography": {
         "info": {
-            "code": "B08126",
-            "desc": "B08126.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY",
-            "normalized_desc": "Means of transportation to work by industry"
-        }
+            "code": "B08526",
+            "desc": "B08526.  MEANS OF TRANSPORTATION TO WORK BY INDUSTRY FOR WORKPLACE GEOGRAPHY",
+            "normalized_desc": "Means of transportation to work by industry for workplace geography"
+        },
+        "variables": [
+            {
+                "code": "B08526_091E",
+                "label": "Worked at home:",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B08526_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
     },
     "language spoken at home and ability to speak english": {
-        "categories": [
+        "info": {
+            "code": "B08113",
+            "desc": "B08113.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH",
+            "normalized_desc": "Means of transportation to work by language spoken at home and ability to speak english"
+        },
+        "variables": [
+            {
+                "code": "B08113_049E",
+                "label": "Worked at home:",
+                "normalized_label": "Worked at home"
+            },
             {
                 "code": "B08113_050E",
                 "label": "Worked at home:!!Speak only English",
@@ -732,12 +1057,12 @@ var partition = {
             {
                 "code": "B08113_052E",
                 "label": "Worked at home:!!Speak Spanish:!!Speak English \"very well\"",
-                "normalized_label": "Speak spanish"
+                "normalized_label": "Speak spanish: speak english \"very well\""
             },
             {
                 "code": "B08113_053E",
                 "label": "Worked at home:!!Speak Spanish:!!Speak English less than \"very well\"",
-                "normalized_label": "Speak spanish"
+                "normalized_label": "Speak spanish: speak english less than \"very well\""
             },
             {
                 "code": "B08113_054E",
@@ -747,50 +1072,288 @@ var partition = {
             {
                 "code": "B08113_055E",
                 "label": "Worked at home:!!Speak other languages:!!Speak English \"very well\"",
-                "normalized_label": "Speak other languages"
+                "normalized_label": "Speak other languages: speak english \"very well\""
             },
             {
                 "code": "B08113_056E",
                 "label": "Worked at home:!!Speak other languages:!!Speak English less than \"very well\"",
-                "normalized_label": "Speak other languages"
+                "normalized_label": "Speak other languages: speak english less than \"very well\""
+            },
+            {
+                "code": "B08113_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
             }
-        ],
+        ]
+    },
+    "language spoken at home and ability to speak english: workplace geography": {
         "info": {
-            "code": "B08113",
-            "desc": "B08113.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH",
-            "normalized_desc": "Means of transportation to work by language spoken at home and ability to speak english"
-        }
+            "code": "B08513",
+            "desc": "B08513.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH FOR WORKPLACE GEOGRAPHY",
+            "normalized_desc": "Means of transportation to work by language spoken at home and ability to speak english for workplace geography"
+        },
+        "variables": [
+            {
+                "code": "B08513_049E",
+                "label": "Worked at home:",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B08513_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
+    },
+    "means of transportation to work  (native hawaiian and other pacific islander alone)": {
+        "info": {
+            "code": "B08105E",
+            "desc": "B08105E.  Means of Transportation to Work  (Native Hawaiian and Other Pacific Islander Alone)",
+            "normalized_desc": "Means of transportation to work  (native hawaiian and other pacific islander alone)"
+        },
+        "variables": [
+            {
+                "code": "B08105E_007E",
+                "label": "Worked at home",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B08105E_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
+    },
+    "means of transportation to work (american indian and alaska native alone)": {
+        "info": {
+            "code": "B08105C",
+            "desc": "B08105C.  MEANS OF TRANSPORTATION TO WORK (AMERICAN INDIAN AND ALASKA NATIVE ALONE)",
+            "normalized_desc": "Means of transportation to work (american indian and alaska native alone)"
+        },
+        "variables": [
+            {
+                "code": "B08105C_007E",
+                "label": "Worked at home",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B08105C_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
+    },
+    "means of transportation to work (asian alone)": {
+        "info": {
+            "code": "B08105D",
+            "desc": "B08105D.  MEANS OF TRANSPORTATION TO WORK (ASIAN ALONE)",
+            "normalized_desc": "Means of transportation to work (asian alone)"
+        },
+        "variables": [
+            {
+                "code": "B08105D_007E",
+                "label": "Worked at home",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B08105D_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
+    },
+    "means of transportation to work (black or african american alone)": {
+        "info": {
+            "code": "B08105B",
+            "desc": "B08105B.  MEANS OF TRANSPORTATION TO WORK (BLACK OR AFRICAN AMERICAN ALONE)",
+            "normalized_desc": "Means of transportation to work (black or african american alone)"
+        },
+        "variables": [
+            {
+                "code": "B08105B_007E",
+                "label": "Worked at home",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B08105B_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
+    },
+    "means of transportation to work (hispanic or latino)": {
+        "info": {
+            "code": "B08105I",
+            "desc": "B08105I.  MEANS OF TRANSPORTATION TO WORK (HISPANIC OR LATINO)",
+            "normalized_desc": "Means of transportation to work (hispanic or latino)"
+        },
+        "variables": [
+            {
+                "code": "B08105I_007E",
+                "label": "Worked at home",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B08105I_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
+    },
+    "means of transportation to work (some other race alone)": {
+        "info": {
+            "code": "B08105F",
+            "desc": "B08105F.  MEANS OF TRANSPORTATION TO WORK (SOME OTHER RACE ALONE)",
+            "normalized_desc": "Means of transportation to work (some other race alone)"
+        },
+        "variables": [
+            {
+                "code": "B08105F_007E",
+                "label": "Worked at home",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B08105F_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
+    },
+    "means of transportation to work (two or more races)": {
+        "info": {
+            "code": "B08105G",
+            "desc": "B08105G.  MEANS OF TRANSPORTATION TO WORK (TWO OR MORE RACES)",
+            "normalized_desc": "Means of transportation to work (two or more races)"
+        },
+        "variables": [
+            {
+                "code": "B08105G_007E",
+                "label": "Worked at home",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B08105G_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
+    },
+    "means of transportation to work (white alone)": {
+        "info": {
+            "code": "B08105A",
+            "desc": "B08105A.  MEANS OF TRANSPORTATION TO WORK (WHITE ALONE)",
+            "normalized_desc": "Means of transportation to work (white alone)"
+        },
+        "variables": [
+            {
+                "code": "B08105A_007E",
+                "label": "Worked at home",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B08105A_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
+    },
+    "means of transportation to work (white alone, not hispanic or latino)": {
+        "info": {
+            "code": "B08105H",
+            "desc": "B08105H.  MEANS OF TRANSPORTATION TO WORK (WHITE ALONE, NOT HISPANIC OR LATINO)",
+            "normalized_desc": "Means of transportation to work (white alone, not hispanic or latino)"
+        },
+        "variables": [
+            {
+                "code": "B08105H_007E",
+                "label": "Worked at home",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B08105H_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
     },
     "median age": {
-        "categories": [
-            {
-                "code": "B08103_007E",
-                "label": "Median age --!! Worked at home",
-                "normalized_label": "Median age"
-            }
-        ],
         "info": {
             "code": "B08103",
             "desc": "B08103.  MEDIAN AGE BY MEANS OF TRANSPORTATION TO WORK",
             "normalized_desc": "Median age by means of transportation to work"
-        }
+        },
+        "variables": [
+            {
+                "code": "B08103_007E",
+                "label": "Median age --!! Worked at home",
+                "normalized_label": "Median age"
+            },
+            {
+                "code": "B08103_001E",
+                "label": "Median age --!!Total:",
+                "normalized_label": "Median age"
+            }
+        ]
+    },
+    "median age: workplace geography": {
+        "info": {
+            "code": "B08503",
+            "desc": "B08503.  MEDIAN AGE BY MEANS OF TRANSPORTATION TO WORK FOR WORKPLACE GEOGRAPHY",
+            "normalized_desc": "Median age by means of transportation to work for workplace geography"
+        },
+        "variables": [
+            {
+                "code": "B08503_001E",
+                "label": "Median age --!!Total:",
+                "normalized_label": "Median age"
+            }
+        ]
     },
     "median earnings in the past 12 months (in 2015 inflation-adjusted dollars)": {
-        "categories": [
-            {
-                "code": "B08121_007E",
-                "label": "Median earnings in the past 12 months --!! Worked at home",
-                "normalized_label": "Median earnings in the past 12 months"
-            }
-        ],
         "info": {
             "code": "B08121",
             "desc": "B08121. Median Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars) by Means of Transportation to Work",
             "normalized_desc": "Median earnings in the past 12 months (in 2015 inflation-adjusted dollars) by means of transportation to work"
-        }
+        },
+        "variables": [
+            {
+                "code": "B08121_007E",
+                "label": "Median earnings in the past 12 months --!! Worked at home",
+                "normalized_label": "Median earnings in the past 12 months"
+            },
+            {
+                "code": "B08121_001E",
+                "label": "Median earnings in the past 12 months --!!Total:",
+                "normalized_label": "Median earnings in the past 12 months"
+            }
+        ]
+    },
+    "median earnings in the past 12 months (in 2015 inflation-adjusted dollars): workplace geography": {
+        "info": {
+            "code": "B08521",
+            "desc": "B08521. Median Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars) by Means of Transportation to Work for Workplace Geography",
+            "normalized_desc": "Median earnings in the past 12 months (in 2015 inflation-adjusted dollars) by means of transportation to work for workplace geography"
+        },
+        "variables": [
+            {
+                "code": "B08521_001E",
+                "label": "Median earnings in the past 12 months --!!Total:",
+                "normalized_label": "Median earnings in the past 12 months"
+            }
+        ]
     },
     "occupation": {
-        "categories": [
+        "info": {
+            "code": "B08124",
+            "desc": "B08124.  MEANS OF TRANSPORTATION TO WORK BY OCCUPATION",
+            "normalized_desc": "Means of transportation to work by occupation"
+        },
+        "variables": [
+            {
+                "code": "B08124_043E",
+                "label": "Worked at home:",
+                "normalized_label": "Worked at home"
+            },
             {
                 "code": "B08124_044E",
                 "label": "Worked at home:!!Management, business, science, and arts occupations",
@@ -820,16 +1383,64 @@ var partition = {
                 "code": "B08124_049E",
                 "label": "Worked at home:!!Military specific occupations",
                 "normalized_label": "Military specific occupations"
+            },
+            {
+                "code": "B08124_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
             }
-        ],
+        ]
+    },
+    "occupation: workplace geography": {
         "info": {
-            "code": "B08124",
-            "desc": "B08124.  MEANS OF TRANSPORTATION TO WORK BY OCCUPATION",
-            "normalized_desc": "Means of transportation to work by occupation"
-        }
+            "code": "B08524",
+            "desc": "B08524.  MEANS OF TRANSPORTATION TO WORK BY OCCUPATION FOR WORKPLACE GEOGRAPHY",
+            "normalized_desc": "Means of transportation to work by occupation for workplace geography"
+        },
+        "variables": [
+            {
+                "code": "B08524_043E",
+                "label": "Worked at home:",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B08524_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
+    },
+    "place of workstate and county level": {
+        "info": {
+            "code": "B08130",
+            "desc": "B08130.  MEANS OF TRANSPORTATION TO WORK BY PLACE OF WORK--STATE AND COUNTY LEVEL",
+            "normalized_desc": "Means of transportation to work by place of work--state and county level"
+        },
+        "variables": [
+            {
+                "code": "B08130_031E",
+                "label": "Worked at home",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B08130_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
     },
     "poverty status in the past 12 months": {
-        "categories": [
+        "info": {
+            "code": "B08122",
+            "desc": "B08122.  MEANS OF TRANSPORTATION TO WORK BY POVERTY STATUS IN THE PAST 12 MONTHS",
+            "normalized_desc": "Means of transportation to work by poverty status in the past 12 months"
+        },
+        "variables": [
+            {
+                "code": "B08122_025E",
+                "label": "Worked at home:",
+                "normalized_label": "Worked at home"
+            },
             {
                 "code": "B08122_026E",
                 "label": "Worked at home:!!Below 100 percent of the poverty level",
@@ -844,16 +1455,45 @@ var partition = {
                 "code": "B08122_028E",
                 "label": "Worked at home:!!At or above 150 percent of the poverty level",
                 "normalized_label": "At or above 150 percent of the poverty level"
+            },
+            {
+                "code": "B08122_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
             }
-        ],
+        ]
+    },
+    "poverty status in the past 12 months: workplace geography": {
         "info": {
-            "code": "B08122",
-            "desc": "B08122.  MEANS OF TRANSPORTATION TO WORK BY POVERTY STATUS IN THE PAST 12 MONTHS",
-            "normalized_desc": "Means of transportation to work by poverty status in the past 12 months"
-        }
+            "code": "B08522",
+            "desc": "B08522.  MEANS OF TRANSPORTATION TO WORK BY POVERTY STATUS IN THE PAST 12 MONTHS FOR WORKPLACE GEOGRAPHY",
+            "normalized_desc": "Means of transportation to work by poverty status in the past 12 months for workplace geography"
+        },
+        "variables": [
+            {
+                "code": "B08522_025E",
+                "label": "Worked at home:",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B08522_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
     },
     "sex of workers": {
-        "categories": [
+        "info": {
+            "code": "B08006",
+            "desc": "B08006.  Sex of Workers by Means of Transportation to Work",
+            "normalized_desc": "Sex of workers by means of transportation to work"
+        },
+        "variables": [
+            {
+                "code": "B08006_017E",
+                "label": "Worked at home",
+                "normalized_label": "Worked at home"
+            },
             {
                 "code": "B08006_034E",
                 "label": "Male:!!Worked at home",
@@ -863,16 +1503,45 @@ var partition = {
                 "code": "B08006_051E",
                 "label": "Female:!!Worked at home",
                 "normalized_label": "Female"
+            },
+            {
+                "code": "B08006_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
             }
-        ],
+        ]
+    },
+    "sex of workers: workplace geography": {
         "info": {
-            "code": "B08006",
-            "desc": "B08006.  Sex of Workers by Means of Transportation to Work",
-            "normalized_desc": "Sex of workers by means of transportation to work"
-        }
+            "code": "B08406",
+            "desc": "B08406.  Sex of Workers by Means of Transportation to Work for Workplace Geography",
+            "normalized_desc": "Sex of workers by means of transportation to work for workplace geography"
+        },
+        "variables": [
+            {
+                "code": "B08406_017E",
+                "label": "Worked at home",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B08406_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
     },
     "tenure": {
-        "categories": [
+        "info": {
+            "code": "B08137",
+            "desc": "B08137.  MEANS OF TRANSPORTATION TO WORK BY TENURE",
+            "normalized_desc": "Means of transportation to work by tenure"
+        },
+        "variables": [
+            {
+                "code": "B08137_019E",
+                "label": "Worked at home:",
+                "normalized_label": "Worked at home"
+            },
             {
                 "code": "B08137_020E",
                 "label": "Worked at home:!!Householder lived in owner-occupied housing units",
@@ -882,16 +1551,45 @@ var partition = {
                 "code": "B08137_021E",
                 "label": "Worked at home:!!Householder lived in renter-occupied housing units",
                 "normalized_label": "Householder lived in renter-occupied housing units"
+            },
+            {
+                "code": "B08137_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
             }
-        ],
+        ]
+    },
+    "tenure: workplace geography": {
         "info": {
-            "code": "B08137",
-            "desc": "B08137.  MEANS OF TRANSPORTATION TO WORK BY TENURE",
-            "normalized_desc": "Means of transportation to work by tenure"
-        }
+            "code": "B08537",
+            "desc": "B08537.  MEANS OF TRANSPORTATION TO WORK BY TENURE FOR WORKPLACE GEOGRAPHY",
+            "normalized_desc": "Means of transportation to work by tenure for workplace geography"
+        },
+        "variables": [
+            {
+                "code": "B08537_019E",
+                "label": "Worked at home:",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B08537_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
     },
     "vehicles available": {
-        "categories": [
+        "info": {
+            "code": "B08141",
+            "desc": "B08141.  MEANS OF TRANSPORTATION TO WORK BY VEHICLES AVAILABLE",
+            "normalized_desc": "Means of transportation to work by vehicles available"
+        },
+        "variables": [
+            {
+                "code": "B08141_031E",
+                "label": "Worked at home:",
+                "normalized_label": "Worked at home"
+            },
             {
                 "code": "B08141_032E",
                 "label": "Worked at home:!!No vehicle available",
@@ -911,16 +1609,45 @@ var partition = {
                 "code": "B08141_035E",
                 "label": "Worked at home:!!3 or more vehicles available",
                 "normalized_label": "3 or more vehicles available"
+            },
+            {
+                "code": "B08141_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
             }
-        ],
+        ]
+    },
+    "vehicles available: workplace geography": {
         "info": {
-            "code": "B08141",
-            "desc": "B08141.  MEANS OF TRANSPORTATION TO WORK BY VEHICLES AVAILABLE",
-            "normalized_desc": "Means of transportation to work by vehicles available"
-        }
+            "code": "B08541",
+            "desc": "B08541.  MEANS OF TRANSPORTATION TO WORK BY VEHICLES AVAILABLE FOR WORKPLACE GEOGRAPHY",
+            "normalized_desc": "Means of transportation to work by vehicles available for workplace geography"
+        },
+        "variables": [
+            {
+                "code": "B08541_031E",
+                "label": "Worked at home:",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B08541_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
     },
     "workers' earnings in the past 12 months (in 2015 inflation-adjusted dollars)": {
-        "categories": [
+        "info": {
+            "code": "B08119",
+            "desc": "B08119. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars)",
+            "normalized_desc": "Means of transportation to work by workers' earnings in the past 12 months (in 2015 inflation-adjusted dollars)"
+        },
+        "variables": [
+            {
+                "code": "B08119_055E",
+                "label": "Worked at home:",
+                "normalized_label": "Worked at home"
+            },
             {
                 "code": "B08119_056E",
                 "label": "Worked at home:!!$1 to $9,999 or loss",
@@ -960,12 +1687,221 @@ var partition = {
                 "code": "B08119_063E",
                 "label": "Worked at home:!!$75,000 or more",
                 "normalized_label": "$75,000 or more"
+            },
+            {
+                "code": "B08119_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
             }
-        ],
+        ]
+    },
+    "workers' earnings in the past 12 months (in 2015 inflation-adjusted dollars): workplace geography": {
         "info": {
-            "code": "B08119",
-            "desc": "B08119. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars)",
-            "normalized_desc": "Means of transportation to work by workers' earnings in the past 12 months (in 2015 inflation-adjusted dollars)"
-        }
+            "code": "B08519",
+            "desc": "B08519. Means of Transportation to Work by Workers' Earnings in the Past 12 Months (in 2015 Inflation-Adjusted Dollars) for Workplace Geography",
+            "normalized_desc": "Means of transportation to work by workers' earnings in the past 12 months (in 2015 inflation-adjusted dollars) for workplace geography"
+        },
+        "variables": [
+            {
+                "code": "B08519_055E",
+                "label": "Worked at home:",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B08519_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
+    },
+    "workplace geography": {
+        "info": {
+            "code": "B08601",
+            "desc": "B08601.  Means of Transportation to Work for Workplace Geography",
+            "normalized_desc": "Means of transportation to work for workplace geography"
+        },
+        "variables": [
+            {
+                "code": "B08601_021E",
+                "label": "Worked at home",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B08601_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
+    },
+    "workplace geography (american indian and alaska native alone)": {
+        "info": {
+            "code": "B08505C",
+            "desc": "B08505C.  MEANS OF TRANSPORTATION TO WORK FOR WORKPLACE GEOGRAPHY (AMERICAN INDIAN AND ALASKA NATIVE ALONE)",
+            "normalized_desc": "Means of transportation to work for workplace geography (american indian and alaska native alone)"
+        },
+        "variables": [
+            {
+                "code": "B08505C_007E",
+                "label": "Worked at home",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B08505C_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
+    },
+    "workplace geography (asian alone)": {
+        "info": {
+            "code": "B08505D",
+            "desc": "B08505D.  MEANS OF TRANSPORTATION TO WORK FOR WORKPLACE GEOGRAPHY (ASIAN ALONE)",
+            "normalized_desc": "Means of transportation to work for workplace geography (asian alone)"
+        },
+        "variables": [
+            {
+                "code": "B08505D_007E",
+                "label": "Worked at home",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B08505D_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
+    },
+    "workplace geography (black or african american alone)": {
+        "info": {
+            "code": "B08505B",
+            "desc": "B08505B.  MEANS OF TRANSPORTATION TO WORK FOR WORKPLACE GEOGRAPHY (BLACK OR AFRICAN AMERICAN ALONE)",
+            "normalized_desc": "Means of transportation to work for workplace geography (black or african american alone)"
+        },
+        "variables": [
+            {
+                "code": "B08505B_007E",
+                "label": "Worked at home",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B08505B_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
+    },
+    "workplace geography (hispanic or latino)": {
+        "info": {
+            "code": "B08505I",
+            "desc": "B08505I.  MEANS OF TRANSPORTATION TO WORK FOR WORKPLACE GEOGRAPHY (HISPANIC OR LATINO)",
+            "normalized_desc": "Means of transportation to work for workplace geography (hispanic or latino)"
+        },
+        "variables": [
+            {
+                "code": "B08505I_007E",
+                "label": "Worked at home",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B08505I_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
+    },
+    "workplace geography (native hawaiian and other pacific islander alone)": {
+        "info": {
+            "code": "B08505E",
+            "desc": "B08505E.  MEANS OF TRANSPORTATION TO WORK FOR WORKPLACE GEOGRAPHY (NATIVE HAWAIIAN AND OTHER PACIFIC ISLANDER ALONE)",
+            "normalized_desc": "Means of transportation to work for workplace geography (native hawaiian and other pacific islander alone)"
+        },
+        "variables": [
+            {
+                "code": "B08505E_007E",
+                "label": "Worked at home",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B08505E_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
+    },
+    "workplace geography (some other race alone)": {
+        "info": {
+            "code": "B08505F",
+            "desc": "B08505F.  MEANS OF TRANSPORTATION TO WORK FOR WORKPLACE GEOGRAPHY (SOME OTHER RACE ALONE)",
+            "normalized_desc": "Means of transportation to work for workplace geography (some other race alone)"
+        },
+        "variables": [
+            {
+                "code": "B08505F_007E",
+                "label": "Worked at home",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B08505F_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
+    },
+    "workplace geography (two or more races)": {
+        "info": {
+            "code": "B08505G",
+            "desc": "B08505G.  MEANS OF TRANSPORTATION TO WORK FOR WORKPLACE GEOGRAPHY (TWO OR MORE RACES)",
+            "normalized_desc": "Means of transportation to work for workplace geography (two or more races)"
+        },
+        "variables": [
+            {
+                "code": "B08505G_007E",
+                "label": "Worked at home",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B08505G_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
+    },
+    "workplace geography (white alone)": {
+        "info": {
+            "code": "B08505A",
+            "desc": "B08505A.  MEANS OF TRANSPORTATION TO WORK FOR WORKPLACE GEOGRAPHY (WHITE ALONE)",
+            "normalized_desc": "Means of transportation to work for workplace geography (white alone)"
+        },
+        "variables": [
+            {
+                "code": "B08505A_007E",
+                "label": "Worked at home",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B08505A_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
+    },
+    "workplace geography (white alone, not hispanic or latino)": {
+        "info": {
+            "code": "B08505H",
+            "desc": "B08505H.  MEANS OF TRANSPORTATION TO WORK FOR WORKPLACE GEOGRAPHY (WHITE ALONE, NOT HISPANIC OR LATINO)",
+            "normalized_desc": "Means of transportation to work for workplace geography (white alone, not hispanic or latino)"
+        },
+        "variables": [
+            {
+                "code": "B08505H_007E",
+                "label": "Worked at home",
+                "normalized_label": "Worked at home"
+            },
+            {
+                "code": "B08505H_001E",
+                "label": "Total:",
+                "normalized_label": "Total"
+            }
+        ]
     }
 }

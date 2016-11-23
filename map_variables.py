@@ -12,29 +12,37 @@ def main():
 
     for obj in data:
         code_to_var[obj['code']] = obj['label']
-        if not obj['label'] in var_to_code:
+        if not obj['label'] in var_to_code or is_worked_at_home_field(obj['label']) or is_total_field(obj['code']):
             var_to_code[obj['label']] = obj['code']
             unique_data.append(obj)
 
-            # only use estimate values, and ignore worked at home totals
-            if obj['code'].endswith('E') and '!!' in obj['label']:
+            # only use estimate values
+            if obj['code'].endswith('E'):
                 key = desc_to_category(obj['desc'])
                 obj_to_push = {
                     'code': obj['code'],
-                    'label':  obj['label'],
+                    'label': obj['label'],
                     'normalized_label': normalize_label(obj['label'])
                 }
+                # add variables
                 if key in partitioned_data:
-                    partitioned_data[key]['categories'].append(obj_to_push)
+                    partitioned_data[key]['variables'].append(obj_to_push)
                 else:
+                    # create variables array and info section
                     partitioned_data[key] = {}
-                    partitioned_data[key]['categories'] = [obj_to_push]
+                    partitioned_data[key]['variables'] = [obj_to_push]
                     partitioned_data[key]['info'] = {
                         'desc': obj['desc'],
                         'normalized_desc': normalize_desc(obj['desc']),
                         'code': desc_to_code(obj['desc'])
                     }
-            # desc_to_category(obj['desc'])
+
+    # for key in partitioned_data:
+    #     base_code = key['info']['code']
+    #     key['variables'].insert(0, {
+    #         'code': base_code + '_001E',
+    #         'label': 'Total:'
+    #     })
 
     jsonfile = open('variables_unique.json', 'wb')
     out = json.dumps( unique_data, sort_keys=True, indent=4, separators=(',', ': '))
@@ -56,27 +64,55 @@ def main():
     maps.write(mapstring)
 
 def desc_to_code(str):
-    return str[:6]
+    return str.split('.', 1)[0]
 
 def desc_to_category(str):
     str = normalize_desc(str).lower()
     srch_str = 'means of transportation to work'
 
-    split = str.split(srch_str + ' by ')
-    category = split[1] if len(split) > 1 else str.split(' by ' + srch_str)[0]
+    split = re.split(' by | for ', str) 
+    # category = split[1] if len(split) > 1 else str.split(' by ' + srch_str)[0]
+    split_strip = []
+    for s in split: split_strip.append(re.sub('-{2}', '', s.strip()))
+
+    if str == 'sex of workers by means of transportation to work for workplace geography':
+        print split_strip
+    if srch_str in split_strip: split_strip.remove(srch_str)
+
+    if str == 'sex of workers by means of transportation to work for workplace geography':
+        print split_strip
+
+    category = ': '.join(split_strip)
 
     return category
 
 def normalize_desc(str):
-    return ((str[7:]).lstrip()).capitalize()
+    return str.split('.', 1)[1].lstrip().capitalize()
 
 def normalize_label(str):
     srch_str = 'Worked at home'
 
     split = str.split('!!')
-    category = split[1] if split[0].startswith(srch_str) else split[0]
+    if split[0].startswith(srch_str):
+        if len(split) > 2:
+            label = re.sub('-{2}', '', split[1]) + ' ' + ': '.join(split[2:])
+        elif len(split) == 2:
+            label = re.sub('-{2}|:', '', split[1])
+        else:
+            label = re.sub('-{2}|:', '', split[0])
+    else:
+        label = re.sub('-{2}|:', '', split[0])
 
-    return re.sub('-{2}|:', '', category).strip().capitalize()
+    return label.strip().capitalize()
+
+def total_field_code(code):
+    return code.split('_')[0] + '_001E'
+
+def is_worked_at_home_field(str):
+    return str == 'Worked at home' or str == 'Worked at home:'
+
+def is_total_field(code):
+    return code.split('_')[1].startswith('001')
 
 
 if __name__ == '__main__':
