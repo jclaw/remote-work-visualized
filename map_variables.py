@@ -11,7 +11,10 @@ def main():
     partitioned_data = {}
 
     for obj in data:
-        code_to_var[obj['code']] = obj['label']
+        code_to_var[obj['code']] = {
+            'label': obj['label'],
+            'normalized_label': normalize_label(obj['label'])
+        }
         if not obj['label'] in var_to_code or is_worked_at_home_field(obj['label']) or is_total_field(obj['code']):
             var_to_code[obj['label']] = obj['code']
             unique_data.append(obj)
@@ -70,17 +73,12 @@ def desc_to_category(str):
     str = normalize_desc(str).lower()
     srch_str = 'means of transportation to work'
 
-    split = re.split(' by | for ', str) 
+    split = re.split(' by | for ', str)
     # category = split[1] if len(split) > 1 else str.split(' by ' + srch_str)[0]
     split_strip = []
     for s in split: split_strip.append(re.sub('-{2}', '', s.strip()))
 
-    if str == 'sex of workers by means of transportation to work for workplace geography':
-        print split_strip
     if srch_str in split_strip: split_strip.remove(srch_str)
-
-    if str == 'sex of workers by means of transportation to work for workplace geography':
-        print split_strip
 
     category = ': '.join(split_strip)
 
@@ -93,6 +91,9 @@ def normalize_label(str):
     srch_str = 'Worked at home'
 
     split = str.split('!!')
+    if split[0].startswith('Margin of Error'):
+        split.pop(0)
+
     if split[0].startswith(srch_str):
         if len(split) > 2:
             label = re.sub('-{2}', '', split[1]) + ' ' + ': '.join(split[2:])
