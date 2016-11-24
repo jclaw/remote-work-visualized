@@ -67,6 +67,7 @@
 			d3.select("#tooltip").transition().duration(500).style("opacity", 0);
 		}
 
+        $(id).empty();
 		d3.select(id).selectAll(".state")
 			.data(uStatePaths).enter().append("path").attr("class","state").attr("d",function(d){ return d.d;})
 			.style("fill",function(d){ console.log(data);return data[d.id].color; })
