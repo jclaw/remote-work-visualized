@@ -3,15 +3,21 @@
 	var barStates = {};
 
 	barStates.draw = function(id, data) {
-        $(id).empty();
 
-        var svg = d3.select(id),
-        margin = {top: 20, right: 20, bottom: 30, left: 40},
-        width = +svg.attr("width") - margin.left - margin.right,
-        height = +svg.attr("height") - margin.top - margin.bottom,
-        g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+        var container = d3.select(id);
+        var svg = container.select("svg");
 
-        var divTooltip = d3.select("body").append("div").attr("class", "toolTip");
+        $(svg._groups[0][0]).empty();
+
+
+        var margin = {top: 20, right: 20, bottom: 30, left: 40},
+            width = +svg.attr("width") - margin.left - margin.right,
+            height = +svg.attr("height") - margin.top - margin.bottom,
+            g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        $(container._groups[0][0]).width(svg.attr('width'));
+
+        var divTooltip = d3.select(id).append("div").attr("class", "toolTip");
 
         var x = d3.scaleBand()
         .rangeRound([0, width])
@@ -39,7 +45,7 @@
             .attr("fill", function(d) { return z(d.key); })
 
             .on("mouseover", function(d) {
-                var $el = $(id).find('rect:hover'),
+                var $el = $(id + " svg").find('rect:hover'),
                     el = d3.select($el[0]);
 
                 var originalFill = el.style('fill');
@@ -53,8 +59,8 @@
                     tipDOM = divTooltip._groups[0][0],
                     tipHeight = $(tipDOM).outerHeight();
 
-                divTooltip.style("left", (x + width + 54) + 'px');
-                divTooltip.style("top", (y + 48 + ((rectHeight - tipHeight) / 2)) + 'px');
+                divTooltip.style("left", (x + width + 47) + 'px');
+                divTooltip.style("top", (y + 21 + ((rectHeight - tipHeight) / 2)) + 'px');
 
                 divTooltip.style("display", "inline-block");
                 var sdata = data.rows[$el.index()];
@@ -123,11 +129,11 @@
 
     barStates.update = function(id, data) {
 
-        var svg = d3.select(id),
+        var svg = d3.select(id + "> svg"),
         margin = {top: 20, right: 20, bottom: 30, left: 40},
         width = +svg.attr("width") - margin.left - margin.right,
         height = +svg.attr("height") - margin.top - margin.bottom,
-        g = d3.select($(id + ' > g')[0]);
+        g = d3.select($(id + 'svg > g')[0]);
 
         var x = d3.scaleBand()
         .rangeRound([0, width])

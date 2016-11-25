@@ -164,10 +164,10 @@
                 delete obj_to_push['Worked at home'];
 
                 for (key in obj_to_push) {
-                    if (self.selectedMode() == 'per capita') {
-                        obj_to_push[key] = (obj_to_push[key] / population_total) * 100;
-                    } else {
+                    if (self.selectedMode() == 'total') {
                         obj_to_push[key] = obj_to_push[key] * 100;
+                    } else {
+                        obj_to_push[key] = (obj_to_push[key] / population_total) * 100;
                     }
                 }
 

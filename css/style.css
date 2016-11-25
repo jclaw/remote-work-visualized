@@ -39,8 +39,9 @@ body {
     text-align: center;
 }
 
-svg.chart {
-    display: block;
+
+.chart {
+    position: relative;
     margin: 0 auto;
 }
 

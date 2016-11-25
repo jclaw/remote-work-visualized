@@ -27,9 +27,11 @@
             <div class="select-style"><select data-bind="options: categories, value: selectedCategory"></select></div>
             in each US state,
             <div class="select-style"><select data-bind="options: modes, value: selectedMode"></select></div>
-            <!-- <button data-bind="click: drawBars">update</button> -->
+            <button data-bind="click: drawBars">update</button>
         </div>
-        <svg id="statebar" class="chart" width="960" height="500"></svg>
+        <div id="statebar" class="chart">
+            <svg width="960" height="500"></svg>
+        </div>
     </div>
 
 
