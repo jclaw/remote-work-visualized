@@ -5,7 +5,7 @@ def main():
     json_data = open('variables.json')
     data = json.load(json_data)
 
-    state_json_data = open('id_to_state.json')
+    state_json_data = open('state_data.json')
     state_data = json.load(state_json_data)
 
     code_to_var = {}

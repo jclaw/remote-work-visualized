@@ -37,19 +37,35 @@
         .enter().append("g")
         .attr("class", "serie")
         .attr("fill", function(d) { return z(d.key); })
-        .on("mousemove", function(d) {
-            divTooltip.style("left", d3.event.pageX+10+"px");
-            divTooltip.style("top", d3.event.pageY-25+"px");
+        .on("mouseover", function(d) {
+            var $el = $(id).find('rect:hover'),
+                el = d3.select($el[0]);
+
+            var originalFill = el.style('fill');
+            el.style('fill', d3.rgb(originalFill).darker(1));
+            // console.log();
+
+            var x = parseInt($el.attr('x')),
+                y = parseInt($el.attr('y')),
+                height = parseInt($el.attr('height')),
+                width = parseInt($el.attr('width')),
+                tipDOM = divTooltip._groups[0][0],
+                tipHeight = $(tipDOM).outerHeight();
+
+            divTooltip.style("left", (x + width + 54) + 'px');
+            divTooltip.style("top", (y + 48 + ((height - tipHeight) / 2)) + 'px');
+
             divTooltip.style("display", "inline-block");
-            var el = $(id).find('rect:hover');
-            var sdata = data.rows[el.index()];
+            var sdata = data.rows[$el.index()];
             var state = id_to_state(sdata.state);
             var value = sdata[d.key].toFixed(2);
 
-            divTooltip.html((state)+"<br>"+d.key+"<br>"+value+"%");
-        })
-        .on("mouseout", function(d) {
-            divTooltip.style("display", "none");
+            divTooltip.html((state)+" - "+d.key+": "+value+"%");
+
+            el.on('mouseout', function(d) {
+                d3.select(this).style('fill', originalFill);
+                divTooltip.style("display", "none");
+            })
         })
         .selectAll("rect")
         .data(function(d) { return d; })

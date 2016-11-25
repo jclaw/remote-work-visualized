@@ -58,17 +58,40 @@ body {
 }
 
 .toolTip {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     position: absolute;
     display: none;
     width: auto;
     height: auto;
-    background: none repeat scroll 0 0 white;
-    border: 0 none;
-    border-radius: 8px 8px 8px 8px;
-    box-shadow: -3px 3px 15px #888888;
-    color: black;
-    font: 12px sans-serif;
-    padding: 5px;
-    text-align: center;
+    text-align: left;
+
+    line-height: 1;
+    font-weight: bold;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 2px;
+    font-size: 10px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.toolTip:after {
+    box-sizing: border-box;
+    display: inline-block;
+    left: -8px;
+
+
+    font-size: 10px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);
+    content: "\25C0";
+    position: absolute;
+    text-align: left;
+}
+
+/* Style northward tooltips differently */
+.toolTip.n:after {
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
 }
