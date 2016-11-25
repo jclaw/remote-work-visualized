@@ -135,6 +135,8 @@
         height = +svg.attr("height") - margin.top - margin.bottom,
         g = d3.select($(id + 'svg > g')[0]);
 
+        console.log(svg);
+
         var x = d3.scaleBand()
         .rangeRound([0, width])
         .padding(0.1)
