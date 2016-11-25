@@ -50,26 +50,17 @@
 
                 var originalFill = el.style('fill');
                 el.style('fill', d3.rgb(originalFill).darker(1));
-                // console.log();
-
-                var x = parseInt($el.attr('x')),
-                    y = parseInt($el.attr('y')),
-                    rectHeight = parseInt($el.attr('height')),
-                    width = parseInt($el.attr('width')),
-                    tipDOM = divTooltip._groups[0][0],
-                    tipHeight = $(tipDOM).outerHeight();
-
-                divTooltip.style("left", (x + width + 47) + 'px');
-                divTooltip.style("top", (y + 21 + ((rectHeight - tipHeight) / 2)) + 'px');
 
                 divTooltip.style("display", "inline-block");
-                var sdata = data.rows[$el.index()];
-                var state = id_to_state(sdata.state);
-                var value = sdata[d.key].toFixed(2);
 
-                divTooltip.html((state)+" - "+d.key+": "+value+"%");
+                buildToolTip(divTooltip, data.rows[$el.index()], d.key, {
+                    x: parseInt($el.attr('x')),
+                    y: parseInt($el.attr('y')),
+                    height: parseInt($el.attr('height')),
+                    width: parseInt($el.attr('width'))
+                }, data);
 
-                el.on('mouseout', function(d) {
+                el.on('mouseout', function() {
                     d3.select(this).style('fill', originalFill);
                     divTooltip.style("display", "none");
                 })
@@ -98,12 +89,13 @@
         .attr("class", "axis axis--y")
         .call(d3.axisLeft(y).ticks(10, "s"))
         .append("text")
-        .attr("x", 2)
-        .attr("y", y(y.ticks(10).pop()))
-        .attr("dy", "0.35em")
-        .attr("text-anchor", "start")
-        .attr("fill", "#000")
-        .text("% working at home");
+            .attr("class", "axis-label")
+            .attr("x", 2)
+            .attr("y", y(y.ticks(10).pop()))
+            .attr("dy", "0.35em")
+            .attr("text-anchor", "start")
+            .attr("fill", "#000")
+            .text("% working at home");
 
         var legend = g.selectAll(".legend")
         .data(data.columns.slice(1, data.columns.length - 1).reverse())
@@ -129,13 +121,15 @@
 
     barStates.update = function(id, data) {
 
-        var svg = d3.select(id + "> svg"),
-        margin = {top: 20, right: 20, bottom: 30, left: 40},
-        width = +svg.attr("width") - margin.left - margin.right,
-        height = +svg.attr("height") - margin.top - margin.bottom,
-        g = d3.select($(id + 'svg > g')[0]);
+        var svg = d3.select(id + " > svg"),
+            margin = {top: 20, right: 20, bottom: 30, left: 40},
+            width = +svg.attr("width") - margin.left - margin.right,
+            height = +svg.attr("height") - margin.top - margin.bottom,
+            g = d3.select($(id + ' svg > g')[0]),
+            divTooltip = d3.select(id + ' .toolTip');
 
         console.log(svg);
+        console.log(g);
 
         var x = d3.scaleBand()
         .rangeRound([0, width])
@@ -162,7 +156,28 @@
 
         serie.enter().append("g")
             .attr("class", "serie")
-            .merge(serie);
+            .merge(serie)
+            .on("mouseover", function(d) {
+                var $el = $(id + " svg").find('rect:hover'),
+                    el = d3.select($el[0]);
+
+                var originalFill = el.style('fill');
+                el.style('fill', d3.rgb(originalFill).darker(1));
+
+                divTooltip.style("display", "inline-block");
+
+                buildToolTip(divTooltip, data.rows[$el.index()], d.key, {
+                    x: parseInt($el.attr('x')),
+                    y: parseInt($el.attr('y')),
+                    height: parseInt($el.attr('height')),
+                    width: parseInt($el.attr('width'))
+                }, data);
+
+                el.on('mouseout', function(d) {
+                    d3.select(this).style('fill', originalFill);
+                    divTooltip.style("display", "none");
+                })
+            })
         serie.exit().remove();
 
         var rect = serie.selectAll("rect")
@@ -178,6 +193,47 @@
 
         rect.exit().remove();
 
+        var xAxis = g.select('.axis--x')
+            .attr("transform", "translate(0," + height + ")")
+            .call(d3.axisBottom(x));
+
+        var yAxis = g.select('.axis--y')
+        .call(d3.axisLeft(y).ticks(10, "s"))
+        .select("text.axis-label")
+            .text("total working at home");
+
+        console.log(yAxis);
+
 	}
+
+    function buildToolTip(divTooltip, sdata, category, eldata, data) {
+        var tipDOM = divTooltip._groups[0][0],
+            tipHeight = $(tipDOM).outerHeight();
+
+        var state = id_to_state(sdata.state);
+        var value = sdata[category];
+        var valuestr = ''
+        // TODO: check this some other way
+        if (!(isInt(value))) {
+            valuestr = value.toFixed(2) + '%';
+        } else {
+            valuestr = numberWithCommas(value);
+        }
+
+        divTooltip.style("left", (eldata.x + eldata.width + 47) + 'px');
+        divTooltip.style("top", (eldata.y + 21 + ((eldata.height - tipHeight) / 2)) + 'px');
+
+        divTooltip.html((state)+" - "+category+": "+valuestr);
+
+    }
+
+    function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function isInt(n) {
+        return n % 1 === 0;
+    }
+
 	this.barStates=barStates;
 })();

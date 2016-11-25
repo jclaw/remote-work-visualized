@@ -134,13 +134,13 @@
 
         var previousCategory = '';
 
-
-        self.selectedCategory.subscribe(function() {
-            self.drawBars();
-        });
-        self.selectedMode.subscribe(function() {
-            self.drawBars();
-        });
+        //
+        // self.selectedCategory.subscribe(function() {
+        //     self.drawBars();
+        // });
+        // self.selectedMode.subscribe(function() {
+        //     self.drawBars();
+        // });
 
 
 
@@ -163,12 +163,11 @@
                 obj_to_push.total = obj_to_push['Worked at home'];
                 delete obj_to_push['Worked at home'];
 
-                console.log(self.selectedMode());
                 for (key in obj_to_push) {
                     if (self.selectedMode() == 'per capita') {
                         obj_to_push[key] = (obj_to_push[key] / population_total) * 100;
                     } else {
-                        obj_to_push[key] = obj_to_push[key] * 100;
+                        // obj_to_push[key] = obj_to_push[key];
                     }
                 }
 
@@ -179,6 +178,8 @@
                 var variable = PARTITION[category].variables[i];
                 data.columns.push(variable.normalized_label);
             }
+
+            console.log(data);
 
             if (category == previousCategory && category != '') {
                 console.log('updating');
