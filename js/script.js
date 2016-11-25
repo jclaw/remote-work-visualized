@@ -127,15 +127,24 @@
     function StackedBarVM(StateData, categories, variableData, states) {
         var self = this;
         self.categories = categories;
+        self.modes = ['per capita', 'total'];
         self.variableData = variableData;
         self.selectedCategory = ko.observable();
+        self.selectedMode = ko.observable();
 
-        self.selectedCategory.subscribe(function(category) {
-            self.updateBar();
+        var previousCategory = '';
 
-        })
 
-        self.updateBar = function() {
+        self.selectedCategory.subscribe(function() {
+            self.drawBars();
+        });
+        self.selectedMode.subscribe(function() {
+            self.drawBars();
+        });
+
+
+
+        self.drawBars = function() {
             var category = self.selectedCategory();
             console.log(category);
 
@@ -155,7 +164,11 @@
                 delete obj_to_push['Worked at home'];
 
                 for (key in obj_to_push) {
-                    obj_to_push[key] = (obj_to_push[key] / population_total) * 100;
+                    if (self.selectedMode() == 'per capita') {
+                        obj_to_push[key] = (obj_to_push[key] / population_total) * 100;
+                    } else {
+                        obj_to_push[key] = obj_to_push[key] * 100;
+                    }
                 }
 
                 data.rows.push($.extend(obj_to_push, {state: state}));
@@ -167,8 +180,18 @@
             }
             console.log(data);
 
-            barStates.draw("#statebar", data);
+            if (category == previousCategory && category != '') {
+                console.log('updating');
+                barStates.update("#statebar", data);
+            } else {
+                previousCategory = category;
+                barStates.draw("#statebar", data);
+            }
         }
+    }
+
+    self.updateBars = function() {
+
     }
 
     function wrap(text, width) {

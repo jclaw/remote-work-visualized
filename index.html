@@ -22,9 +22,13 @@
 
 
     <div id="stackedBar">
-        % working from home by
-        <select data-bind="options: categories, value: selectedCategory"></select>
-        <button data-bind="click: updateBar">update</button>
+        <div>
+            Percent working at home by
+            <div class="select-style"><select data-bind="options: categories, value: selectedCategory"></select></div>
+            in each US state,
+            <div class="select-style"><select data-bind="options: modes, value: selectedMode"></select></div>
+            <!-- <button data-bind="click: drawBars">update</button> -->
+        </div>
         <svg id="statebar" width="960" height="500"></svg>
     </div>
 
