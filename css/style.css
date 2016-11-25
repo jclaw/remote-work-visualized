@@ -35,6 +35,15 @@ body {
     font: inherit;
 }
 
+.chartTitle {
+    text-align: center;
+}
+
+svg.chart {
+    display: block;
+    margin: 0 auto;
+}
+
 .state{
     fill: none;
     stroke: #a9a9a9;
