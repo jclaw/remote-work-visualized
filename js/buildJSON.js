@@ -80,9 +80,9 @@ $(document).ready(function() {
             } else {
                 var category = categories[0]
                 var variables = []
-                var length = partition[category].variables.length
+                var length = PARTITION[category].variables.length
                 for (var i = 0; i < length; i++) {
-                    variables.push(partition[category].variables[i].code);
+                    variables.push(PARTITION[category].variables[i].code);
                 }
                 var request = {
                     "state": state,

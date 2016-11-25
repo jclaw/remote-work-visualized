@@ -5,6 +5,9 @@ def main():
     json_data = open('variables.json')
     data = json.load(json_data)
 
+    state_json_data = open('id_to_state.json')
+    state_data = json.load(state_json_data)
+
     code_to_var = {}
     var_to_code = {}
     unique_data = []
@@ -25,7 +28,8 @@ def main():
                 obj_to_push = {
                     'code': obj['code'],
                     'label': obj['label'],
-                    'normalized_label': normalize_label(obj['label'])
+                    'normalized_label': normalize_label(obj['label']),
+                    'category': key
                 }
                 # add variables
                 if key in partitioned_data:
@@ -52,17 +56,15 @@ def main():
     jsonfile.write(out)
 
     maps = open('js/mappings.js', 'wb')
-    mapstring = ("function c_to_v (c) {\n"
-                "var map = " + json.dumps( code_to_var, sort_keys=True, indent=4, separators=(',', ': ')) + "\n"
-                "return map[c];\n"
-                "}\n")
 
-    mapstring += ("function v_to_c (v) {\n"
-                "var map = " + json.dumps( var_to_code, sort_keys=True, indent=4, separators=(',', ': ')) + "\n"
-                "return map[v];\n"
-                "}\n")
+    mapstring = ''
 
-    mapstring += ("var partition = " + json.dumps( partitioned_data, sort_keys=True, indent=4, separators=(',', ': ')) + "\n")
+    mapstring += ("var STATES = " + json.dumps( state_data['array'], sort_keys=True) + "\n")
+    mapstring += js_map_function('id_to_state', 'id', state_data['map'])
+    mapstring += js_map_function('c_to_v', 'c', code_to_var)
+    mapstring += js_map_function('v_to_c', 'v', var_to_code)
+
+    mapstring += ("var PARTITION = " + json.dumps( partitioned_data, sort_keys=True, indent=4, separators=(',', ': ')) + "\n")
 
     maps.write(mapstring)
 
@@ -114,6 +116,12 @@ def is_worked_at_home_field(str):
 
 def is_total_field(code):
     return code.split('_')[1].startswith('001')
+
+def js_map_function(fname, varname, data):
+    return ("function " + fname + "(" + varname + ") {\n"
+            "    var map = " + json.dumps( data, sort_keys=True, indent=4, separators=(',', ': ')) + "\n"
+            "    return map[" + varname + "];\n"
+            "}\n")
 
 
 if __name__ == '__main__':
