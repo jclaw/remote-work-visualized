@@ -99,9 +99,17 @@ body {
 .axis {
     font-family: inherit;
     font-size: 12px;
+    fill: black;
 }
 
-.axis path {
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.axis--x path {
   display: none;
 }
 

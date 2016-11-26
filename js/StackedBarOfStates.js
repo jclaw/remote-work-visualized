@@ -23,6 +23,11 @@ function StackedBarOfStates(id) {
 
     var stack = d3.stack();
 
+    var xOffset = 36;
+
+    var formatComma = d3.format(","),
+        formatPercent = d3.format(".1%");
+
     var serie, rect, divTooltip, legend, xAxis, yAxis;
 
     this.draw = function(data) {
@@ -30,7 +35,12 @@ function StackedBarOfStates(id) {
 
         $(container._groups[0][0]).width(svg.attr('width'));
 
-        divTooltip = d3.select(id).append("div").attr("class", "toolTip");
+        divTooltip = d3.select(id).append('div').attr('class', 'toolTip');
+        divTooltip.append('span').attr('class', 'state-name');
+        divTooltip.append('span').text(' - ');
+        divTooltip.append('span').attr('class', 'category');
+        divTooltip.append('span').text(': ');
+        divTooltip.append('span').attr('class', 'value');
 
         data.rows.sort(function(a, b) { return b.total - a.total; });
         prevData = data;
@@ -55,7 +65,7 @@ function StackedBarOfStates(id) {
                 .attr("y", height)
                 .attr("height", 1)
                 .attr("width", x.bandwidth())
-                .attr("x", function(d) { return x(d.data.state); })
+                .attr("x", function(d) { return x(d.data.state) + xOffset; })
                 .transition()
                     .duration(1000)
                     // .delay(100)
@@ -65,20 +75,24 @@ function StackedBarOfStates(id) {
 
         g.append("g")
             .attr("class", "axis axis--x")
-            .attr("transform", "translate(0," + height + ")")
+            .attr("transform", "translate(" + xOffset + "," + height + ")")
             .call(d3.axisBottom(x));
 
         g.append("g")
             .attr("class", "axis axis--y")
-            .call(d3.axisLeft(y).ticks(10, "s"))
+            .call(d3.axisLeft(y).ticks(10).tickFormat(formatPercent))
             .append("text")
+                .attr("transform", "rotate(-90)")
                 .attr("class", "axis-label")
                 .attr("x", 2)
-                .attr("y", y(y.ticks(10).pop()))
-                .attr("dy", "0.35em")
-                .attr("text-anchor", "start")
-                .attr("fill", "#000")
+                .attr("y", 6)
+                .attr("dy", ".71em")
+                .style("text-anchor", "end")
+                // .text("Frequency")
+                // .attr("fill", "#000")
                 .text("% working at home");
+
+
 
         legend = g.selectAll(".legend")
             .data(data.columns.slice(1, data.columns.length - 1).reverse())
@@ -104,8 +118,8 @@ function StackedBarOfStates(id) {
     this.update = function(data) {
         // data.rows.sort(function(a, b) { return b.total - a.total; });
 
-        var sorting = stateOrder(prevData.rows);
-
+        // sort based on previous sorting order so that states stay in same order
+        var sorting = prevData.rows.map(function(s) { return s.state });
         data.rows = data.rows.map(function(stateData) {
             var n = sorting.indexOf(stateData.state);
             return [n, stateData];
@@ -131,7 +145,7 @@ function StackedBarOfStates(id) {
             .data(function(d) { return d; });
         rect.enter().append("rect")
             .merge(rect)
-            .attr("x", function(d) { return x(d.data.state); })
+            .attr("x", function(d) { return x(d.data.state) + xOffset; })
             .transition()
                 .duration(1000)
                 // .delay(100)
@@ -141,7 +155,7 @@ function StackedBarOfStates(id) {
         rect.exit().remove();
 
         xAxis = g.select('.axis--x')
-            .attr("transform", "translate(0," + height + ")")
+            .attr("transform", "translate(" + xOffset + "," + height + ")")
             .call(d3.axisBottom(x));
 
         yAxis = g.select('.axis--y')
@@ -159,7 +173,7 @@ function StackedBarOfStates(id) {
 
         divTooltip.style("display", "inline-block");
 
-        buildToolTip(data.rows[$el.index()], d.key, {
+        setToolTip(data.rows[$el.index()], d.key, {
             x: parseInt($el.attr('x')),
             y: parseInt($el.attr('y')),
             height: parseInt($el.attr('height')),
@@ -172,34 +186,26 @@ function StackedBarOfStates(id) {
         })
     }
 
-    function buildToolTip(sdata, category, eldata, data) {
+    function setToolTip(sdata, category, eldata, data) {
         var tipDOM = divTooltip._groups[0][0],
             tipHeight = $(tipDOM).outerHeight();
 
         var state = id_to_state(sdata.state);
         var value = sdata[category];
-        var valuestr = ''
-        // TODO: check this some other way
-        if (!(isInt(value))) {
-            valuestr = value.toFixed(2) + '%';
+
+        divTooltip.select('.state-name').text(state);
+        divTooltip.select('.category').text(category);
+        var valueEl = divTooltip.select('.value');
+
+        if (data.format == 'percent') {
+            valueEl.text(function() { return formatPercent(value); })
         } else {
-            valuestr = numberWithCommas(value);
+            valueEl.text(function() { return formatComma(value); })
         }
 
         divTooltip.style("left", (eldata.x + eldata.width + 47) + 'px');
         divTooltip.style("top", (eldata.y + 21 + ((eldata.height - tipHeight) / 2)) + 'px');
 
-        divTooltip.html((state)+" - "+category+": "+valuestr);
-
-    }
-
-    function stateOrder(data) {
-        console.log(data);
-        return data.map(function(s) { return s.state })
-    }
-
-    function numberWithCommas(x) {
-        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
     function isInt(n) {

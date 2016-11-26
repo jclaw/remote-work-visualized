@@ -168,7 +168,7 @@
 
                 for (key in obj_to_push) {
                     if (self.selectedMode() == 'per capita') {
-                        obj_to_push[key] = (obj_to_push[key] / population_total) * 100;
+                        obj_to_push[key] = (obj_to_push[key] / population_total);
                     } else {
                         // obj_to_push[key] = obj_to_push[key];
                     }
@@ -183,6 +183,13 @@
             }
 
             console.log(data);
+
+            var formatMap = {
+                'per capita': 'percent',
+                'total': 'numeral'
+            }
+
+            data.format = formatMap[self.selectedMode()]
 
             if (category == previousCategory && category != '') {
                 console.log('updating');
