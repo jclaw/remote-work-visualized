@@ -132,6 +132,8 @@
         self.selectedCategory = ko.observable();
         self.selectedMode = ko.observable();
 
+        var SB = new StackedBarOfStates('#statebar');
+
         var previousCategory = '';
 
         //
@@ -147,6 +149,7 @@
         self.drawBars = function() {
             var category = self.selectedCategory();
             console.log(category);
+
 
             var data = {
                 'rows': [],
@@ -183,10 +186,12 @@
 
             if (category == previousCategory && category != '') {
                 console.log('updating');
-                barStates.update("#statebar", data);
+                // StackedBarOfStates.update("#statebar", data);
+                SB.update(data);
             } else {
                 previousCategory = category;
-                barStates.draw("#statebar", data);
+                // StackedBarOfStates.draw("#statebar", data);
+                SB.draw(data);
             }
         }
     }
