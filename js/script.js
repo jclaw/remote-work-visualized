@@ -1,6 +1,5 @@
 (function() {
     $(function() {
-        cleanStateData(StateData);
         console.log(StateData);
 
         var categories = ['age', 'sex of workers', 'class of worker', 'industry', 'occupation'];
@@ -38,13 +37,6 @@
 
         // ko.applyBindings(viewModel, $container[0]);
 
-        function cleanStateData(data) {
-            for (var state in data) {
-                for (var category in data[state]) {
-                    data[state][category] = data[state][category].map(function (x) { return parseInt(x) })
-                }
-            }
-        }
     })
 
 
@@ -110,24 +102,29 @@
         self.categories = categories;
         self.modes = ['per capita', 'total'];
         self.variableData = variableData;
+        self.years = [2010, 2011, 2012, 2013, 2014, 2015]
         self.selectedCategory = ko.observable();
         self.selectedMode = ko.observable();
+        self.selectedYear = ko.observable();
 
         var SB = new StackedBarOfStates('#statebar');
 
         var previousCategory = '';
 
-        //
-        // self.selectedCategory.subscribe(function() {
-        //     self.drawBars();
-        // });
-        // self.selectedMode.subscribe(function() {
-        //     self.drawBars();
-        // });
+        self.dropdownChanged = function() {
+            self.drawBars();
+        }
+
+
+        var subscription = self.selectedYear.subscribe(function() {
+            self.drawBars();
+            subscription.dispose();
+        });
 
 
 
         self.drawBars = function() {
+            var yearData = StateData[self.selectedYear()]
             var category = self.selectedCategory();
             console.log(category);
 
@@ -139,9 +136,9 @@
 
             for (var i = 0; i < states.length; i++) {
                 var state = states[i];
-                // console.log(StateData[state][category]);
+                // console.log(yearData[state][category]);
 
-                var obj_to_push = $.extend({}, StateData[state][category]);
+                var obj_to_push = $.extend({}, yearData[state][category]);
                 var population_total = obj_to_push.total;
 
                 obj_to_push.total = obj_to_push['Worked at home'];
@@ -170,7 +167,7 @@
                 'total': 'numeral'
             }
 
-            data.format = formatMap[self.selectedMode()]
+            data.format = formatMap[self.selectedMode()];
 
             if (category == previousCategory && category != '') {
                 console.log('updating');

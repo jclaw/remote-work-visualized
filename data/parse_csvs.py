@@ -12,12 +12,17 @@ def main():
     years = range(2010, 2015 + 1)
     categories = ['age', 'sex of workers', 'class of worker', 'industry', 'occupation']
 
+    yearsfile = open('../js/StateData.js', 'wb')
+
+    data = {}
 
     for year in years:
-        parse_and_write(year, categories)
+        data[year] = parse_and_write(year, categories)
+
+    yearsfile.write('var StateData = ' + json.dumps( data, sort_keys=True, indent=4, separators=(',', ': ')))
+
 
 def parse_and_write(year, categories):
-    yearfile = open('yearfiles/' + str(year) + '.json', 'wb')
 
     data = initialize_with_states(categories)
 
@@ -43,34 +48,34 @@ def parse_and_write(year, categories):
 
         for r in reader:
             state = r[2]
-            if state != "District of Columbia":
-                state_abr = state_data['rev_map'][state]
-                data[state_abr][category]['state'] = state_abr
+            state = "Washington DC" if state == "District of Columbia" else state
+            state_abr = state_data['rev_map'][state]
+            data[state_abr][category]['state'] = state_abr
 
 
 
-                for variable in partition[category]['variables']:
-                    corrected_label = variable['label'].replace('!!', ' - ')
-                    print (year, state, category, corrected_label)
-                    code = variable['code']
+            for variable in partition[category]['variables']:
+                corrected_label = variable['label'].replace('!!', ' - ')
+                print (year, state, category, corrected_label)
+                code = variable['code']
 
-                    fieldname1 = 'Estimate; Total: - ' + corrected_label
-                    fieldname2 = 'Estimate; ' + corrected_label
+                fieldname1 = 'Estimate; Total: - ' + corrected_label
+                fieldname2 = 'Estimate; ' + corrected_label
 
-                    # index = fieldnames.index(fieldname)
+                # index = fieldnames.index(fieldname)
 
-                    result = [i for i,x in enumerate(fieldnames) if x == fieldname1 or x == fieldname2]
-                    assert (len(result) == 1), ("length of fieldname search is not 1", result)
+                result = [i for i,x in enumerate(fieldnames) if x == fieldname1 or x == fieldname2]
+                assert (len(result) == 1), ("length of fieldname search is not 1", result)
 
-                    index = result[0]
-                    value = r[index]
+                index = result[0]
+                value = r[index]
 
-                    key = 'total' if code.endswith('_001E') else c_to_v[code]['normalized_label']
-                    data[state_abr][category][key] = value
+                key = 'total' if code.endswith('_001E') else c_to_v[code]['normalized_label']
+                data[state_abr][category][key] = int(value)
 
 
-    yearfile.write(json.dumps( data, sort_keys=True, indent=4, separators=(',', ': ')))
-
+    # yearfile.write('var StateData' + str(year) + ' = ' + json.dumps( data, sort_keys=True, indent=4, separators=(',', ': ')) + '\n')
+    return data
 
 
 

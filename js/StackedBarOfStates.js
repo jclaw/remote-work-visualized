@@ -78,20 +78,30 @@ function StackedBarOfStates(id) {
             .attr("transform", "translate(" + xOffset + "," + height + ")")
             .call(d3.axisBottom(x));
 
-        g.append("g")
-            .attr("class", "axis axis--y")
-            .call(d3.axisLeft(y).ticks(10).tickFormat(formatPercent))
-            .append("text")
-                .attr("transform", "rotate(-90)")
-                .attr("class", "axis-label")
-                .attr("x", 2)
-                .attr("y", 6)
-                .attr("dy", ".71em")
-                .style("text-anchor", "end")
-                // .text("Frequency")
-                // .attr("fill", "#000")
-                .text("% working at home");
+        yAxis = g.append("g")
+            .attr("class", "axis axis--y");
 
+
+        yAxis.append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("class", "axis-label")
+            .attr("x", 2)
+            .attr("y", 6)
+            .attr("dy", ".71em")
+            .style("text-anchor", "end")
+            // .text("Frequency")
+            // .attr("fill", "#000")
+
+
+        if (data.format == 'percent') {
+            yAxis.call(d3.axisLeft(y).ticks(10).tickFormat(formatPercent))
+            .select('text.axis-label')
+                .text("% working at home");
+        } else {
+            yAxis.call(d3.axisLeft(y).ticks(10, 's'))
+            .select('text.axis-label')
+                .text("total working at home");
+        }
 
 
         legend = g.selectAll(".legend")
@@ -158,10 +168,17 @@ function StackedBarOfStates(id) {
             .attr("transform", "translate(" + xOffset + "," + height + ")")
             .call(d3.axisBottom(x));
 
-        yAxis = g.select('.axis--y')
-            .call(d3.axisLeft(y).ticks(10, "s"))
-            .select("text.axis-label")
+        yAxis = g.select('.axis--y');
+
+        if (data.format == 'percent') {
+            yAxis.call(d3.axisLeft(y).ticks(10).tickFormat(formatPercent))
+            .select('text.axis-label')
+                .text("% working at home");
+        } else {
+            yAxis.call(d3.axisLeft(y).ticks(10, 's'))
+            .select('text.axis-label')
                 .text("total working at home");
+        }
     }
 
     function toolTipMouseover(d, data) {
@@ -197,6 +214,7 @@ function StackedBarOfStates(id) {
         divTooltip.select('.category').text(category);
         var valueEl = divTooltip.select('.value');
 
+        console.log(data.format);
         if (data.format == 'percent') {
             valueEl.text(function() { return formatPercent(value); })
         } else {
