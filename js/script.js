@@ -105,7 +105,20 @@
         self.years = [2010, 2011, 2012, 2013, 2014, 2015]
         self.selectedCategory = ko.observable();
         self.selectedMode = ko.observable();
-        self.selectedYear = ko.observable();
+        self.selectedYear = ko.observable(2015);
+
+        self.lowestYear = ko.computed(function() {
+            return self.selectedYear() == self.years[0];
+        }, self);
+
+        self.highestYear = ko.computed(function() {
+            return self.selectedYear() == self.years[self.years.length - 1];
+        }, self);
+
+        self.yearChange = function(n) {
+            var i = self.years.indexOf(self.selectedYear());
+            self.selectedYear(self.years[i + n]);
+        }
 
         var SB = new StackedBarOfStates('#statebar');
 
@@ -116,9 +129,13 @@
         }
 
 
-        var subscription = self.selectedYear.subscribe(function() {
+        var subscription = self.selectedMode.subscribe(function() {
             self.drawBars();
             subscription.dispose();
+        });
+
+        self.selectedYear.subscribe(function() {
+            self.drawBars();
         });
 
 

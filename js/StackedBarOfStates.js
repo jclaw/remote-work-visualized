@@ -23,7 +23,7 @@ function StackedBarOfStates(id) {
 
     var stack = d3.stack();
 
-    var xOffset = 36;
+    var xOffset = 24;
 
     var formatComma = d3.format(","),
         formatPercent = d3.format(".1%");
