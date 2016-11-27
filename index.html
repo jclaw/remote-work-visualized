@@ -23,7 +23,7 @@
 
     <div id="stackedBar">
         <div class="chartTitle">
-            Percent working at home by
+            People working at home by
             <div class="select-style"><select data-bind="options: categories, value: selectedCategory, event: {change: dropdownChanged}"></select></div>
             in each US state,
             <div class="select-style"><select data-bind="options: modes, value: selectedMode, event: {change: dropdownChanged}"></select></div>
@@ -33,9 +33,9 @@
             <!-- <button data-bind="click: drawBars">update</button> -->
         </div>
         <div class="year">
-            <button data-bind="click: yearChange(-1), disable: lowestYear">&#x25C0;</button>
+            <button class="navButton" data-bind="click: yearChange(-1), disable: lowestYear"> < </button>
             <span data-bind="text: selectedYear"></span>
-            <button data-bind="click: yearChange(1), disable: highestYear">&#x25b6;</button>
+            <button class="navButton" data-bind="click: yearChange(1), disable: highestYear"> > </button>
         </div>
         <div id="statebar" class="chart">
             <svg width="960" height="500"></svg>

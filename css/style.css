@@ -37,6 +37,31 @@ body {
 
 .chartTitle {
     text-align: center;
+    margin-bottom: 20px;
+}
+
+.year {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.navButton {
+    font-family: inherit;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    background: transparent;
+    padding: 0 .2em;
+}
+
+.navButton:disabled {
+    color: #c7c7c7;
+    font-weight: normal;
+}
+
+.navButton:focus {
+    outline: none;
 }
 
 
@@ -91,6 +116,8 @@ body {
 #tooltip tr td:nth-child(2){
     text-align:center;
 }
+
+
 
 .bar {
   fill: steelblue;

@@ -2,7 +2,7 @@
     $(function() {
         console.log(StateData);
 
-        var categories = ['age', 'sex of workers', 'class of worker', 'industry', 'occupation'];
+        var categories = ['age', 'sex of workers', 'industry', 'occupation'];
         var states =
             ['AL','AK','AZ','AR','CA','CO','CT','DE','DC','FL','GA','HI','ID',
              'IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO',
