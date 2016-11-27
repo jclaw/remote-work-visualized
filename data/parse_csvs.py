@@ -3,175 +3,86 @@ import json
 import os
 from pprint import pprint
 
+partition = json.load(open('../PARTITION.json'))
+state_data = json.load(open('../state_data.json'))
+c_to_v = json.load(open('../NORMALIZED_LABELS.json'))
+
 
 def main():
-    columns_to_keep = {
-        'age': {
-            'subj_total': range_2(5, 19),
-            'default': range_2(99,114),
-            '05': range_2(111, 128)
-        },
-        'class_of_worker': {
-            'subj_total': range_2(5,23),
-            'default': range_2(123,143)
-        },
-        'industry': {
-            'subj_total': range_2(5,33),
-            'default': range_2(183,213)
-        },
-        'median_age': {
-            'subj_total': [3],
-            'missing_grand_total': True,
-            'default': [15]
-        },
-        'occupation': {
-            'subj_total': range_2(5,17),
-            'default': range_2(87,101)
-        },
-        'sex':  {
-            'subj_total':  [35],
-            'default':     [69,103]
-        }
-    }
-
-    jsonfile = open('parsed_data/data.json','wb')
-
-    jsonfile.write( parse(jsonfile, columns_to_keep) )
-
-def parse(jsonfile, columns_to_keep):
-
-    # initialize the json object with years and states
-    data = initialize_json_obj()
-    new_data = {}
-
-    # directories = [x for x in os.listdir('.') if not x.startswith('.') and x.startswith('ACS_')]
-    # for directory_str in directories:
-    #     title = directory_str.lstrip('ACS_')
-    #     subdirectories = [x for x in os.listdir('./' + directory_str) if not x.startswith('.') and x.startswith('ACS_') and not x.endswith('.zip')]
-    #
-    #     for sub_dir_str in subdirectories:
-    #         path = directory_str + '/' + sub_dir_str
-    #         filename = sub_dir_str + '_with_ann.csv'
-    #         csvfile = open(path + '/' + filename, 'rb')
-    #         reader = csv.reader( csvfile )
-    #
-    #         next(reader)
-    #         abbrev_year = sub_dir_str[:-11].lstrip('ACS_')
-    #         year = '20' + abbrev_year
-    #
-    #         new_data[year] = process_file(reader, data[year], columns_to_keep, {
-    #             'abbrev_year': abbrev_year,
-    #             'title': 'age'
-    #         })
+    years = range(2010, 2015 + 1)
+    categories = ['age', 'sex of workers', 'class of worker', 'industry', 'occupation']
 
 
+    for year in years:
+        parse_and_write(year, categories)
 
+def parse_and_write(year, categories):
+    yearfile = open('yearfiles/' + str(year) + '.json', 'wb')
 
-    pprint(data)
+    data = initialize_with_states(categories)
 
-    directory_str = 'ACS_age'
-    title = directory_str.lstrip('ACS_')
-    subdirectories = [x for x in os.listdir('./' + directory_str) if not x.startswith('.') and x.startswith('ACS_') and not x.endswith('.zip')]
+    directories = map(lambda c: 'ACS_' + c.replace(' ', '_'), categories)
 
-    for sub_dir_str in subdirectories:
-        path = directory_str + '/' + sub_dir_str
-        filename = sub_dir_str + '_with_ann.csv'
+    for i, category in enumerate(categories):
+        directory_str = directories[i]
+
+        subdirectories = [x for x in os.listdir('./' + directory_str) if not x.startswith('.') and x.startswith('ACS_') and not x.endswith('.zip')]
+
+        acs_year_dirname = [x for x in subdirectories if x.startswith('ACS_' + str(year)[2:])][0]
+
+        path = directory_str + '/' + acs_year_dirname
+        filename = acs_year_dirname + '_with_ann.csv'
         csvfile = open(path + '/' + filename, 'rb')
         reader = csv.reader( csvfile )
 
         next(reader)
-        abbrev_year = sub_dir_str[:-11].lstrip('ACS_')
-        year = '20' + abbrev_year
 
-        new_data[year] = process_file(reader, data[year], columns_to_keep, {
-            'abbrev_year': abbrev_year,
-            'title': 'age'
-        })
+        fieldnames = next(reader)
 
+        # print fieldnames
 
-    # csvfile = open('ACS_age/ACS_15_1YR_B08501/ACS_15_1YR_B08501_with_ann.csv', 'rb')
-    # reader = csv.reader( csvfile )
-
-
-    # next(reader)
-    # abbrev_year = '15'
-    # year = '20' + abbrev_year
-    #
-    # pprint(data[year])
-    # temp = {}
-    # temp[year] = process_file(reader, data[year], columns_to_keep, {
-    #     'abbrev_year': abbrev_year,
-    #     'title': 'age'
-    # })
-    # pprint(temp)
-    # pprint(data[year])
-    # data[year] = temp
-
-    out = json.dumps( new_data, sort_keys=True, indent=4, separators=(',', ': '))
-
-    return out
+        for r in reader:
+            state = r[2]
+            if state != "District of Columbia":
+                state_abr = state_data['rev_map'][state]
+                data[state_abr][category]['state'] = state_abr
 
 
-def process_file(reader, yeardata, columns_to_keep, info):
-    abbrev_year = info['abbrev_year']
-    title = info['title']
 
-    fieldnames = next(reader)
+                for variable in partition[category]['variables']:
+                    corrected_label = variable['label'].replace('!!', ' - ')
+                    print (year, state, category, corrected_label)
+                    code = variable['code']
 
-    for r in reader:
-        # grab the correct state
-        # pprint (yeardata)
-        state = r[2]
-        state_obj = yeardata[state]
+                    fieldname1 = 'Estimate; Total: - ' + corrected_label
+                    fieldname2 = 'Estimate; ' + corrected_label
 
-        if not 'missing_grand_total' in columns_to_keep[title]:
-            state_obj['g_total'] = r[3] # sval(r[3], r[4])
+                    # index = fieldnames.index(fieldname)
 
-        indices_key = abbrev_year if abbrev_year in columns_to_keep[title] else 'default'
+                    result = [i for i,x in enumerate(fieldnames) if x == fieldname1 or x == fieldname2]
+                    assert (len(result) == 1), ("length of fieldname search is not 1", result)
 
-        print ('YEAR:', abbrev_year)
-        print ('KEY:', indices_key)
-        print (title)
+                    index = result[0]
+                    value = r[index]
 
-        print fieldnames
-        print ('fieldnames length:', len(fieldnames))
-
-        subj_total_obj = {}
-        worked_at_home_obj = {}
-        for i in columns_to_keep[title]['subj_total']:
-            print i
-            fieldname = fieldnames[i].lstrip('Estimate; Total: - ')
-            subj_total_obj[fieldname] = r[i] # sval(r[i], r[i + 1])
-
-        # print subj_total_obj
-
-        # data fields
-        for index, col in enumerate(columns_to_keep[title][indices_key]):
-            # if first element, it is the worked at home total
-            fieldname = 'total' if index == 0 else fieldnames[col].lstrip('Estimate; Total: - Worked at home: - ')
-
-            worked_at_home_obj[fieldname] = r[col] # sval(r[col], r[col + 1])
+                    key = 'total' if code.endswith('_001E') else c_to_v[code]['normalized_label']
+                    data[state_abr][category][key] = value
 
 
-        state_obj['subj_total'] = subj_total_obj
-        state_obj['worked_at_home'] = worked_at_home_obj
-
-        yeardata[state] = state_obj
-
-    return yeardata
+    yearfile.write(json.dumps( data, sort_keys=True, indent=4, separators=(',', ': ')))
 
 
-def initialize_json_obj():
-    years = range(2005,2016)
 
-    with open('states.json', 'rb') as data_file:
-        states = json.load(data_file)['states']
 
-    obj = {}
-    for y in years:
-        obj[str(y)] = states
+def initialize_with_states(categories):
+    data = {}
+    for state in state_data['array']:
+        data[state] = {}
+        for category in categories:
+            data[state][category] = {}
 
-    return obj
+    return data
+
 
 def range_2(start, end):
     return [] if start > end else [start] + range_2(start + 2, end)

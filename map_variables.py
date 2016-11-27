@@ -68,6 +68,12 @@ def main():
 
     maps.write(mapstring)
 
+    PARTITION = open('PARTITION.json', 'wb')
+    PARTITION.write(json.dumps( partitioned_data, sort_keys=True, indent=4, separators=(',', ': ')))
+
+    NORMALIZED_LABELS = open('NORMALIZED_LABELS.json', 'wb')
+    NORMALIZED_LABELS.write(json.dumps( code_to_var, sort_keys=True, indent=4, separators=(',', ': ')))
+
 def desc_to_code(str):
     return str.split('.', 1)[0]
 

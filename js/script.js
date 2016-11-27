@@ -41,26 +41,7 @@
         function cleanStateData(data) {
             for (var state in data) {
                 for (var category in data[state]) {
-                    delete data[state][category]['NAME']
-                    for (key in data[state][category]) {
-                        var new_key = '';
-                        new_key = key.includes('_001E') ? 'total' : c_to_v(key).normalized_label;
-                        // if () {
-                        //     data[state][category]['total'] = data[state][category][key]
-                        //     delete data[state][category][key]
-                        // } else {
-                        //
-                        // }
-
-                        data[state][category][new_key] = parseInt(data[state][category][key])
-                        delete data[state][category][key]
-
-
-                        // else if (c_to_v(key).normalized_label == 'Worked at home') {
-                        //     data[state][category]['wtotal'] = data[state][category][key]
-                        //     delete data[state][category][key]
-                        // }
-                    }
+                    data[state][category] = data[state][category].map(function (x) { return parseInt(x) })
                 }
             }
         }
