@@ -33,9 +33,9 @@
             <!-- <button data-bind="click: drawBars">update</button> -->
         </div>
         <div class="year">
-            <button class="navButton" data-bind="click: yearChange(-1), disable: lowestYear"> < </button>
+            <button class="navButton" data-bind="click: yearChange(-1, event), disable: lowestYear"> < </button>
             <span data-bind="text: selectedYear"></span>
-            <button class="navButton" data-bind="click: yearChange(1), disable: highestYear"> > </button>
+            <button class="navButton" data-bind="click: yearChange(1, event), disable: highestYear"> > </button>
         </div>
         <div id="statebar" class="chart">
             <svg width="960" height="500"></svg>

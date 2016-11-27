@@ -115,9 +115,13 @@
             return self.selectedYear() == self.years[self.years.length - 1];
         }, self);
 
-        self.yearChange = function(n) {
-            var i = self.years.indexOf(self.selectedYear());
-            self.selectedYear(self.years[i + n]);
+        self.yearChange = function(n, e) {
+            if (e.type != "DOMContentLoaded") {
+                var i = self.years.indexOf(self.selectedYear());
+                self.selectedYear(self.years[i + n]);
+                console.log('selectedYear');
+                self.drawBars();
+            }
         }
 
         var SB = new StackedBarOfStates('#statebar');
@@ -125,26 +129,21 @@
         var previousCategory = '';
 
         self.dropdownChanged = function() {
+            console.log('dropdown changed');
             self.drawBars();
         }
 
-
+        
         var subscription = self.selectedMode.subscribe(function() {
+            console.log('selectedMode');
             self.drawBars();
             subscription.dispose();
         });
-
-        self.selectedYear.subscribe(function() {
-            self.drawBars();
-        });
-
 
 
         self.drawBars = function() {
             var yearData = StateData[self.selectedYear()]
             var category = self.selectedCategory();
-            console.log(category);
-
 
             var data = {
                 'rows': [],
@@ -177,7 +176,6 @@
                 data.columns.push(variable.normalized_label);
             }
 
-            console.log(data);
 
             var formatMap = {
                 'per capita': 'percent',
@@ -186,13 +184,17 @@
 
             data.format = formatMap[self.selectedMode()];
 
+            // console.log(data);
+
+
             if (category == previousCategory && category != '') {
-                console.log('updating');
                 // StackedBarOfStates.update("#statebar", data);
+                console.log('updating');
                 SB.update(data);
             } else {
                 previousCategory = category;
                 // StackedBarOfStates.draw("#statebar", data);
+                console.log('drawing');
                 SB.draw(data);
             }
         }

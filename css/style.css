@@ -52,7 +52,7 @@ body {
     font-weight: bold;
     border: none;
     background: transparent;
-    padding: 0 .2em;
+    padding: 0;
 }
 
 .navButton:disabled {

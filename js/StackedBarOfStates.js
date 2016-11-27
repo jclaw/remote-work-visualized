@@ -61,7 +61,8 @@ function StackedBarOfStates(id) {
         rect = serie.selectAll("rect")
             .data(function(d) { return d; })
             .enter().append("rect")
-                .attr("class", function(d) { return "state-" + d.data.state })
+                // .attr("class", function(d) { return "state-" + d.data.state })
+                .attr("class", function(d) { return "state-bar" })
                 .attr("y", height)
                 .attr("height", 1)
                 .attr("width", x.bandwidth())
@@ -135,6 +136,8 @@ function StackedBarOfStates(id) {
             return [n, stateData];
         }).sort(function(a, b) {return a[0] - b[0]}).map(function(s) { return s[1] });
 
+        prevData = data;
+
 
         x.domain(data.rows.map(function(d) { return d.state; }));
         y.domain([0, d3.max(data.rows, function(d) { return d.total; })]).nice();
@@ -179,6 +182,35 @@ function StackedBarOfStates(id) {
             .select('text.axis-label')
                 .text("total working at home");
         }
+
+        this.sort(data)
+    }
+
+    this.sort = function(data) {
+
+        data.rows.sort(function(a, b) { return b.total - a.total; });
+
+        console.log(data);
+        // Copy-on-write since tweens are evaluated after a delay.
+        var x0 = x.domain(data.rows.map(function(d) { return d.state; })).copy();
+        y.domain([0, d3.max(data.rows, function(d) { return d.total; })]).nice();
+        z.domain(data.columns.slice(1, data.columns.length - 1));
+
+
+        // g.selectAll("rect")
+        //     .sort(function(a, b) { console.log('a: ', a); console.log('b: ', b); return x0(a.data.total); });
+
+        var transition = svg.transition().duration(2000).delay(1000),
+        delay = function(d, i) { return i * 50; };
+
+        transition.selectAll("svg g .serie rect")
+        // .delay(delay)
+        .attr("x", function(d) { console.log(d);return x(d.data.state) + xOffset; });
+
+        transition.select(".axis--x")
+        .call(d3.axisBottom(x))
+        .selectAll("g")
+            // .delay(delay);
     }
 
     function toolTipMouseover(d, data) {
@@ -214,7 +246,6 @@ function StackedBarOfStates(id) {
         divTooltip.select('.category').text(category);
         var valueEl = divTooltip.select('.value');
 
-        console.log(data.format);
         if (data.format == 'percent') {
             valueEl.text(function() { return formatPercent(value); })
         } else {
@@ -231,103 +262,5 @@ function StackedBarOfStates(id) {
     }
 }
 
-
-
-    // StackedBarOfStates.sort = function(id, data) {
-    //     var svg = d3.select(id + " > svg");
-    //
-    //
-    //
-    //     data.rows.sort(function(a, b) { return b.total - a.total; });
-    //
-    //
-    //     var svg = d3.select(id + " > svg"),
-    //         margin = {top: 20, right: 20, bottom: 30, left: 40},
-    //         width = +svg.attr("width") - margin.left - margin.right,
-    //         height = +svg.attr("height") - margin.top - margin.bottom,
-    //         g = d3.select($(id + ' svg > g')[0]),
-    //         divTooltip = d3.select(id + ' .toolTip');
-    //
-    //     var stack = d3.stack();
-    //
-    //     var x = d3.scaleBand()
-    //         .rangeRound([0, width])
-    //         .padding(0.1)
-    //         .align(0.1)
-    //
-    //     var x0 = x.domain(data.rows.map(function(d) { return d.state; })).copy();
-    //
-    //
-    //     var serie = g.selectAll(".serie")
-    //         .data(stack.keys(data.columns.slice(1, data.columns.length - 1))(data.rows));
-    //
-    //     serie.enter().append("g")
-    //         .attr("class", "serie")
-    //         .merge(serie)
-    //         .on("mouseover", function(d) {
-    //             var $el = $(id + " svg").find('rect:hover'),
-    //                 el = d3.select($el[0]);
-    //
-    //             var originalFill = el.style('fill');
-    //             el.style('fill', d3.rgb(originalFill).darker(1));
-    //
-    //             divTooltip.style("display", "inline-block");
-    //
-    //             buildToolTip(divTooltip, data.rows[$el.index()], d.key, {
-    //                 x: parseInt($el.attr('x')),
-    //                 y: parseInt($el.attr('y')),
-    //                 height: parseInt($el.attr('height')),
-    //                 width: parseInt($el.attr('width'))
-    //             }, data);
-    //
-    //             el.on('mouseout', function(d) {
-    //                 d3.select(this).style('fill', originalFill);
-    //                 divTooltip.style("display", "none");
-    //             })
-    //         })
-    //     serie.exit().remove();
-
-        // var rect = serie.selectAll("rect")
-        //     .data(function(d) { return d; })
-        //     .enter().append("rect")
-        //     .transition()
-        //         .duration(1000)
-        //         .delay(100)
-        //         .attr("x", function(d) { return x(d.data.state); })
-
-        // var rect = serie.selectAll("rect")
-        //     .data(function(d) { return d; });
-        // rect.enter().append("rect")
-        //     .merge(rect)
-        //     .transition()
-        //         .duration(1000)
-        //         // .delay(100)
-        //     .attr("x", function(d) { return x(d.data.state); })
-        //
-        // rect.exit().remove();
-
-            // .attr("y", function(d) { return y(d[1]); })
-            // .attr("height", function(d) { return y(d[0]) - y(d[1]); })
-
-        // var xAxis = d3.svg.axis()
-        //     .scale(x)
-        //     .orient("bottom");
-
-
-        // var transition = svg.transition().duration(750);
-        // var delay = function(d, i) { return i * 50; };
-        //
-        // transition.selectAll("rect")
-        // .delay(delay)
-        // .attr("x", function(d) { return x0(d.total); });
-        //
-        // transition.select("axis--x")
-        // .call(xAxis)
-        // .selectAll("g")
-        // .delay(delay);
-    // }
-
-
-
-	this.StackedBarOfStates = StackedBarOfStates;
+this.StackedBarOfStates = StackedBarOfStates;
 })();
