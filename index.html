@@ -9,36 +9,32 @@
 
 </head>
 <body id="viz">
-    <div class="chartTitle">
-        People working at home by
-        <div class="select-style"><select data-bind="options: categories, value: selectedCategory, event: {change: dropdownChanged}"></select></div>
-        in each US state,
-        <div class="select-style"><select data-bind="options: modes, value: selectedMode, event: {change: dropdownChanged}"></select></div>
-        <!-- in -->
-        <!-- <div class="select-style"><select data-bind="options: years, value: selectedYear, event: {change: dropdownChanged}"></select></div> -->
+    <div class="header">
+        <div class="chartTitle">
+            People working at home by
+            <div class="select-style"><select data-bind="options: categories, value: selectedCategory, event: {change: dropdownChanged}"></select></div>
+            in each US state,
+            <div class="select-style"><select data-bind="options: modes, value: selectedMode, event: {change: dropdownChanged}"></select></div>
+            <!-- in -->
+            <!-- <div class="select-style"><select data-bind="options: years, value: selectedYear, event: {change: dropdownChanged}"></select></div> -->
 
-        <!-- <button data-bind="click: drawBars">update</button> -->
+            <!-- <button data-bind="click: drawBars">update</button> -->
+            in
+            <div class="year">
+                <button class="navButton" data-bind="click: yearChange(-1, event), disable: lowestYear"> < </button><span data-bind="text: selectedYear"></span><button class="navButton" data-bind="click: yearChange(1, event), disable: highestYear"> > </button>
+            </div>
+        </div>
+
     </div>
-    <div class="year">
-        <button class="navButton" data-bind="click: yearChange(-1, event), disable: lowestYear"> < </button><span data-bind="text: selectedYear"></span><button class="navButton" data-bind="click: yearChange(1, event), disable: highestYear"> > </button>
-    </div>
-    <div id="map">
-        <!-- <div class="year">
-            <button class="navButton" data-bind="click: yearChange(-1, event), disable: lowestYear"> < </button><span data-bind="text: selectedYear"></span><button class="navButton" data-bind="click: yearChange(1, event), disable: highestYear"> > </button>
-            <div class="select-style"><select data-bind="options: modes, value: selectedMode"></select></div>
-        </div> -->
+    <div class="content">
 
-        <div id="tooltip"></div>
-        <svg width="960" height="600" id="statemap"></svg>
-    </div>
-
-
-    <div id="stackedBar">
-
-        <div id="statebar" class="chart">
-            <svg width="960" height="500"></svg>
+        <div id="stackedBar" class="chart"><svg width="960" height="500"></svg></div>
+        <div id="map" class="chart">
+            <div id="tooltip"></div>
+            <svg width="960" height="600" id="statemap"></svg>
         </div>
     </div>
+
 
 
     <script src="js/lib/jquery.min.js"></script>

@@ -131,15 +131,10 @@ function StackedBarOfStates(id) {
 
         // sort based on previous sorting order so that states stay in same order
         var sorting = stateOrder(prevData);
-        console.log('updating');
-        console.log(sorting);
         data.rows = data.rows.map(function(stateData) {
             var n = sorting.indexOf(stateData.state);
             return [n, stateData];
         }).sort(function(a, b) {return a[0] - b[0]}).map(function(s) { return s[1] });
-
-        console.log('organized based on previous');
-        console.log(stateOrder(data));
 
         prevData = $.extend({}, data);
 
@@ -199,8 +194,6 @@ function StackedBarOfStates(id) {
         data.rows.sort(function(a, b) { return b.total - a.total; });
 
         prevData = data;
-        console.log('sorted');
-        console.log(stateOrder(data));
         // Copy-on-write since tweens are evaluated after a delay.
         x.domain(data.rows.map(function(d) { return d.state; }));
         y.domain([0, d3.max(data.rows, function(d) { return d.total; })]).nice();

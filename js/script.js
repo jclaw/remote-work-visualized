@@ -1,6 +1,5 @@
 (function() {
     $(function() {
-        console.log(StateData);
 
         var categories = ['age', 'sex of workers', 'industry', 'occupation'];
         var states =
@@ -61,14 +60,13 @@
             if (e.type != "DOMContentLoaded") {
                 var i = self.years.indexOf(self.selectedYear());
                 self.selectedYear(self.years[i + n]);
-                console.log('selectedYear');
                 drawBars();
                 drawMap();
             }
         }
 
-        var SB = new StackedBarOfStates('#statebar');
-        var US = new uStates("#statemap", tooltipHtml);
+        var SB = new StackedBarOfStates(ids.stackedBar);
+        var US = new uStates(ids.map, tooltipHtml);
 
 
         var previousCategory = '';
@@ -78,24 +76,18 @@
         }
 
         self.dropdownChanged = function() {
-            console.log('dropdown changed');
+            drawGraphs();
+        }
+
+        drawGraphs();
+
+        function drawGraphs() {
+            drawMap();
             drawBars();
         }
 
-
-        var subscription = self.selectedMode.subscribe(function() {
-            console.log('selectedMode');
-            drawBars();
-            subscription.dispose();
-        });
-
-        self.selectedMode.subscribe(function() {
-            drawMap();
-        })
-
-        drawMap();
-
         function drawBars() {
+            console.log('drawBars');
             var yearData = StateData[self.selectedYear()];
             var category = self.selectedCategory();
 
@@ -106,7 +98,6 @@
 
             for (var i = 0; i < states.length; i++) {
                 var state = states[i];
-                // console.log(yearData[state][category]);
 
                 var obj_to_push = $.extend({}, yearData[state][category]);
                 var population_total = obj_to_push.total;
@@ -117,8 +108,6 @@
                 for (key in obj_to_push) {
                     if (self.selectedMode() == 'per capita') {
                         obj_to_push[key] = (obj_to_push[key] / population_total);
-                    } else {
-                        // obj_to_push[key] = obj_to_push[key];
                     }
                 }
 
@@ -130,42 +119,30 @@
                 data.columns.push(variable.normalized_label);
             }
 
-
-
-
             data.format = formatMap[self.selectedMode()];
 
-            // console.log(data);
-
-
             if (category == previousCategory && category != '') {
-                // StackedBarOfStates.update("#statebar", data);
-                console.log('updating');
                 SB.update(data);
             } else {
                 previousCategory = category;
-                // StackedBarOfStates.draw("#statebar", data);
-                console.log('drawing');
                 SB.draw(data);
             }
         }
 
         function drawMap() {
+            console.log('drawMap');
+
             var yearData = StateData[self.selectedYear()];
             var category = self.selectedCategory();
             var maxWorkedAtHome = Math.max(...states.map(function(state) { return yearData[state][category]['Worked at home'] }));
 
             var sampleData = {};
 
-
-
             var mode = formatMap[self.selectedMode()];
 
             states.forEach(function(state) {
                 var total = yearData[state][category]['total'];
                 sampleData[state] = {}
-
-
 
                 var interpolation = d3.interpolate("#ffffcc", "#800026");
                 var workedAtHome = yearData[state][category]['Worked at home'];
@@ -176,25 +153,18 @@
 
                 } else {
                     sampleData[state].value = workedAtHome;
-                    if (state == 'CA') console.log(workedAtHome, maxWorkedAtHome);
                     sampleData[state].color = interpolation(workedAtHome / maxWorkedAtHome);
                 }
-
-
-                // var datapoint = yearData[state][category][code];
             });
-
 
             US.draw(sampleData, mode);
 
             d3.select(self.frameElement).style("height", "600px");
-
         }
 
     }
 
     function tooltipHtml(n, d) {	/* function to create html content string in tooltip div. */
-        // console.log(d);
         var str = '<h4>' + n + '</h4><table>';
         str += '<tr><td>' + d + '</td/></tr>';
 
