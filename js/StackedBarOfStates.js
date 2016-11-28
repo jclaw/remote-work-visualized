@@ -1,5 +1,6 @@
 (function(){
 function StackedBarOfStates(id) {
+    var self = this;
     var container = d3.select(id);
     var svg = container.select("svg");
 
@@ -28,9 +29,12 @@ function StackedBarOfStates(id) {
     var formatComma = d3.format(","),
         formatPercent = d3.format(".1%");
 
+    var updateDuration = 1000,
+        sortDuration = 1000
+
     var serie, rect, divTooltip, legend, xAxis, yAxis;
 
-    this.draw = function(data) {
+    self.draw = function(data) {
         $(g._groups[0][0]).empty();
 
         $(container._groups[0][0]).width(svg.attr('width'));
@@ -43,7 +47,7 @@ function StackedBarOfStates(id) {
         divTooltip.append('span').attr('class', 'value');
 
         data.rows.sort(function(a, b) { return b.total - a.total; });
-        prevData = data;
+        prevData = $.extend({}, data);
 
         x.domain(data.rows.map(function(d) { return d.state; }));
         y.domain([0, d3.max(data.rows, function(d) { return d.total; })]).nice();
@@ -61,14 +65,13 @@ function StackedBarOfStates(id) {
         rect = serie.selectAll("rect")
             .data(function(d) { return d; })
             .enter().append("rect")
-                // .attr("class", function(d) { return "state-" + d.data.state })
-                .attr("class", function(d) { return "state-bar" })
+                .attr("class", function(d) { return "state-bar " + d.data.state})
                 .attr("y", height)
                 .attr("height", 1)
                 .attr("width", x.bandwidth())
                 .attr("x", function(d) { return x(d.data.state) + xOffset; })
                 .transition()
-                    .duration(1000)
+                    .duration(updateDuration)
                     // .delay(100)
                     .attr("y", function(d) { return y(d[1]); })
                     .attr("height", function(d) { return y(d[0]) - y(d[1]); })
@@ -90,8 +93,6 @@ function StackedBarOfStates(id) {
             .attr("y", 6)
             .attr("dy", ".71em")
             .style("text-anchor", "end")
-            // .text("Frequency")
-            // .attr("fill", "#000")
 
 
         if (data.format == 'percent') {
@@ -126,17 +127,22 @@ function StackedBarOfStates(id) {
             .text(function(d) { return d; });
     }
 
-    this.update = function(data) {
-        // data.rows.sort(function(a, b) { return b.total - a.total; });
+    self.update = function(data) {
 
         // sort based on previous sorting order so that states stay in same order
-        var sorting = prevData.rows.map(function(s) { return s.state });
+        var sorting = stateOrder(prevData);
+        console.log('updating');
+        console.log(sorting);
         data.rows = data.rows.map(function(stateData) {
             var n = sorting.indexOf(stateData.state);
             return [n, stateData];
         }).sort(function(a, b) {return a[0] - b[0]}).map(function(s) { return s[1] });
 
-        prevData = data;
+        console.log('organized based on previous');
+        console.log(stateOrder(data));
+
+        prevData = $.extend({}, data);
+
 
 
         x.domain(data.rows.map(function(d) { return d.state; }));
@@ -160,7 +166,7 @@ function StackedBarOfStates(id) {
             .merge(rect)
             .attr("x", function(d) { return x(d.data.state) + xOffset; })
             .transition()
-                .duration(1000)
+                .duration(updateDuration)
                 // .delay(100)
                 .attr("y", function(d) { return y(d[1]); })
                 .attr("height", function(d) { return y(d[0]) - y(d[1]); })
@@ -183,34 +189,32 @@ function StackedBarOfStates(id) {
                 .text("total working at home");
         }
 
-        this.sort(data)
+        window.setTimeout(function() {
+            self.sort($.extend({},data));
+        }, updateDuration)
     }
 
-    this.sort = function(data) {
+    self.sort = function(data) {
 
         data.rows.sort(function(a, b) { return b.total - a.total; });
 
-        console.log(data);
+        prevData = $.extend({}, data);
+        console.log('sorted');
+        console.log(stateOrder(data));
         // Copy-on-write since tweens are evaluated after a delay.
-        var x0 = x.domain(data.rows.map(function(d) { return d.state; })).copy();
+        x.domain(data.rows.map(function(d) { return d.state; }));
         y.domain([0, d3.max(data.rows, function(d) { return d.total; })]).nice();
         z.domain(data.columns.slice(1, data.columns.length - 1));
 
+        rect = serie.selectAll("rect")
+            .sort(function(a, b) {return x(a.data.state) - x(b.data.state) })
+            .transition()
+                .duration(sortDuration)
+                .attr("x", function(d) { return x(d.data.state) + xOffset; });
 
-        // g.selectAll("rect")
-        //     .sort(function(a, b) { console.log('a: ', a); console.log('b: ', b); return x0(a.data.total); });
+        xAxis.transition().duration(sortDuration)
+            .call(d3.axisBottom(x))
 
-        var transition = svg.transition().duration(2000).delay(1000),
-        delay = function(d, i) { return i * 50; };
-
-        transition.selectAll("svg g .serie rect")
-        // .delay(delay)
-        .attr("x", function(d) { console.log(d);return x(d.data.state) + xOffset; });
-
-        transition.select(".axis--x")
-        .call(d3.axisBottom(x))
-        .selectAll("g")
-            // .delay(delay);
     }
 
     function toolTipMouseover(d, data) {
@@ -255,6 +259,10 @@ function StackedBarOfStates(id) {
         divTooltip.style("left", (eldata.x + eldata.width + 47) + 'px');
         divTooltip.style("top", (eldata.y + 21 + ((eldata.height - tipHeight) / 2)) + 'px');
 
+    }
+
+    function stateOrder(data) {
+        return data.rows.map(function(s) { return s.state });
     }
 
     function isInt(n) {
