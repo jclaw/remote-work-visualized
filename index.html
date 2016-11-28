@@ -10,11 +10,9 @@
 </head>
 <body>
     <!-- <div id="map">
-        <select data-bind="foreach: variableData, value: selectedVariable">
-            <optgroup data-bind="attr: {'label': category}, foreach: variables">
-                <option data-bind="option: $data, text: normalized_label"></option>
-            </optgroup>
-        </select>
+        <div class="year">
+            <button class="navButton" data-bind="click: yearChange(-1, event), disable: lowestYear"> < </button><span data-bind="text: selectedYear"></span><button class="navButton" data-bind="click: yearChange(1, event), disable: highestYear"> > </button>
+        </div>
 
         <div id="tooltip"></div>
         <svg width="960" height="600" id="statemap"></svg>

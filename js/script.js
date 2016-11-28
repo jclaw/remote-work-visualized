@@ -23,7 +23,7 @@
         var visualizations = [
             // { vm: new MapVM(StateData, categories, variableData, states),
             //   dom: $('#map')[0] },
-            { vm: new StackedBarVM(StateData, categories, variableData, states),
+            { vm: new StackedBarVM(StateData, categories, states),
               dom: $('#stackedBar')[0] }
         ]
 
@@ -32,42 +32,66 @@
         }
 
         // var $container = $("#map");
-        // var viewModel = new MapVM(StateData, categories, variableData);
-
-
+        // var viewModel = new MapVM(StateData, states);
+        //
+        //
         // ko.applyBindings(viewModel, $container[0]);
 
     })
 
 
-    function MapVM(StateData, categories, variableData, states) {
+    function MapVM(StateData, states) {
         var self = this;
-        self.categories = categories;
-        self.variableData = variableData;
-        self.selectedVariable = ko.observable();
+        self.years = [2010, 2011, 2012, 2013, 2014, 2015]
+        self.selectedYear = ko.observable(2015);
 
-        self.selectedVariable.subscribe(function(obj) {
-            applyData(obj.category, obj.code);
-        })
+        self.lowestYear = ko.computed(function() {
+            return self.selectedYear() == self.years[0];
+        }, self);
+
+        self.highestYear = ko.computed(function() {
+            return self.selectedYear() == self.years[self.years.length - 1];
+        }, self);
+
+
+        self.yearChange = function(n, e) {
+            if (e.type != "DOMContentLoaded") {
+                var i = self.years.indexOf(self.selectedYear());
+                self.selectedYear(self.years[i + n]);
+                console.log('selectedYear');
+                self.drawBars();
+            }
+        }
+
+        var yearData = StateData[self.selectedYear()];
+
+        // self.categories = categories;
+        // self.variableData = variableData;
+        // self.selectedCategory = ko.observable();
+
+        applyData();
+        // self.dropdownChanged = function() {
+        //
+        // }
+
+
 
         function tooltipHtml(n, d) {	/* function to create html content string in tooltip div. */
             // console.log(d);
             var str = '<h4>' + n + '</h4><table>';
-            for (var i = 0; i < d.length; i++) {
-                str += '<tr><td>' + d[i].code + '</td><td>' + d[i].value + '</td/></tr>'
-            }
+            str += '<tr><td>' + d + '</td/></tr>'
+
             str += '</table';
             return str;
         }
 
-        function applyData(category, code) {
-            var sampleData ={};
+        function applyData() {
+            category = 'age';
+            var sampleData = {};
             states.forEach(function(state) {
-                console.log(state, ': ', category, ': ', code);
-                sampleData[state] = {};
-                sampleData[state].variables = []
-                var total = StateData[state][category]['total'];
-
+                console.log(state, ': ', category);
+                var total = yearData[state][category]['total'];
+                sampleData[state] = {}
                 // for (key in StateData[state][category]) {
                 //     if (key != 'total') {
                 //         var value = StateData[state][category][key]
@@ -77,17 +101,17 @@
                 // // sort and remove total
                 // sampleData[state].variables.sort().shift();
                 var arr = [];
-                for (key in StateData[state][category]) {
+                for (key in yearData[state][category]) {
                     arr.push(key);
                 }
 
-                var key = arr.shift();
-                var value = StateData[state][category][key];
-                sampleData[state].variables.push({'code': key, 'value': (value * 100 / total).toFixed(0) + '%' });
+                var workedAtHomeKey = arr.shift();
+                var workedAtHome = yearData[state][category][workedAtHomeKey];
+                sampleData[state].value = workedAtHome / total;
 
-                var datapoint = StateData[state][category][code];
-                console.log(datapoint, total);
-                sampleData[state].color = d3.interpolate("#ffffcc", "#800026")(datapoint / (total / 4));
+                // var datapoint = yearData[state][category][code];
+                console.log(workedAtHome, total);
+                sampleData[state].color = d3.interpolate("#ffffcc", "#800026")(workedAtHome / (total / 300));
             });
 
             uStates.draw("#statemap", sampleData, tooltipHtml);
@@ -97,11 +121,10 @@
 
     }
 
-    function StackedBarVM(StateData, categories, variableData, states) {
+    function StackedBarVM(StateData, categories, states) {
         var self = this;
         self.categories = categories;
         self.modes = ['per capita', 'total'];
-        self.variableData = variableData;
         self.years = [2010, 2011, 2012, 2013, 2014, 2015]
         self.selectedCategory = ko.observable();
         self.selectedMode = ko.observable();
@@ -133,7 +156,7 @@
             self.drawBars();
         }
 
-        
+
         var subscription = self.selectedMode.subscribe(function() {
             console.log('selectedMode');
             self.drawBars();
