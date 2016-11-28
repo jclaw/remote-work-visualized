@@ -8,15 +8,16 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
 </head>
-<body>
-    <!-- <div id="map">
+<body id="viz">
+    <div id="map">
         <div class="year">
             <button class="navButton" data-bind="click: yearChange(-1, event), disable: lowestYear"> < </button><span data-bind="text: selectedYear"></span><button class="navButton" data-bind="click: yearChange(1, event), disable: highestYear"> > </button>
+            <div class="select-style"><select data-bind="options: modes, value: selectedMode"></select></div>
         </div>
 
         <div id="tooltip"></div>
         <svg width="960" height="600" id="statemap"></svg>
-    </div> -->
+    </div>
 
 
     <div id="stackedBar">

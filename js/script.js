@@ -13,13 +13,6 @@
             variableData.push({category: category, variables: PARTITION[category].variables});
         })
 
-        ko.bindingHandlers.option = {
-            update: function(element, valueAccessor) {
-                var value = ko.utils.unwrapObservable(valueAccessor());
-                ko.selectExtensions.writeValue(element, value);
-            }
-        };
-
         var visualizations = [
             // { vm: new MapVM(StateData, categories, variableData, states),
             //   dom: $('#map')[0] },
@@ -31,11 +24,11 @@
             ko.applyBindings(visualizations[i].vm, visualizations[i].dom);
         }
 
-        // var $container = $("#map");
-        // var viewModel = new MapVM(StateData, states);
-        //
-        //
-        // ko.applyBindings(viewModel, $container[0]);
+        var $container = $("#map");
+        var viewModel = new MapVM(StateData, states);
+
+
+        ko.applyBindings(viewModel, $container[0]);
 
     })
 
@@ -43,7 +36,10 @@
     function MapVM(StateData, states) {
         var self = this;
         self.years = [2010, 2011, 2012, 2013, 2014, 2015]
-        self.selectedYear = ko.observable(2015);
+        self.selectedYear = ko.observable(self.years[self.years.length - 1]);
+
+        self.modes = ['per capita', 'total'];
+        self.selectedMode = ko.observable(self.modes[0]);
 
         self.lowestYear = ko.computed(function() {
             return self.selectedYear() == self.years[0];
@@ -53,43 +49,55 @@
             return self.selectedYear() == self.years[self.years.length - 1];
         }, self);
 
-
         self.yearChange = function(n, e) {
             if (e.type != "DOMContentLoaded") {
                 var i = self.years.indexOf(self.selectedYear());
                 self.selectedYear(self.years[i + n]);
                 console.log('selectedYear');
-                self.drawBars();
+                applyData();
             }
         }
 
-        var yearData = StateData[self.selectedYear()];
+        self.selectedMode.subscribe(function() {
+            applyData();
+        })
 
-        // self.categories = categories;
-        // self.variableData = variableData;
-        // self.selectedCategory = ko.observable();
+
+
+        var category = 'age';
+
+        var US = new uStates("#statemap", tooltipHtml);
+
 
         applyData();
-        // self.dropdownChanged = function() {
-        //
-        // }
 
 
 
         function tooltipHtml(n, d) {	/* function to create html content string in tooltip div. */
             // console.log(d);
             var str = '<h4>' + n + '</h4><table>';
-            str += '<tr><td>' + d + '</td/></tr>'
+            str += '<tr><td>' + d + '</td/></tr>';
 
             str += '</table';
             return str;
         }
 
+
+
         function applyData() {
-            category = 'age';
+            var yearData = StateData[self.selectedYear()];
+            var maxWorkedAtHome = Math.max(...states.map(function(state) { return yearData[state][category]['Worked at home'] }));
+
             var sampleData = {};
+
+            var modeMap = {
+                'per capita': 'percent',
+                'total': 'numeral'
+            }
+
+            var mode = modeMap[self.selectedMode()];
+
             states.forEach(function(state) {
-                console.log(state, ': ', category);
                 var total = yearData[state][category]['total'];
                 sampleData[state] = {}
                 // for (key in StateData[state][category]) {
@@ -100,21 +108,27 @@
                 // }
                 // // sort and remove total
                 // sampleData[state].variables.sort().shift();
-                var arr = [];
-                for (key in yearData[state][category]) {
-                    arr.push(key);
+
+
+                var interpolation = d3.interpolate("#ffffcc", "#800026");
+                var workedAtHome = yearData[state][category]['Worked at home'];
+
+                if (mode == 'percent') {
+                    sampleData[state].value = workedAtHome / total;
+                    sampleData[state].color = interpolation(workedAtHome / (total / 10));
+
+                } else {
+                    sampleData[state].value = workedAtHome;
+                    if (state == 'CA') console.log(workedAtHome, maxWorkedAtHome);
+                    sampleData[state].color = interpolation(workedAtHome / maxWorkedAtHome);
                 }
 
-                var workedAtHomeKey = arr.shift();
-                var workedAtHome = yearData[state][category][workedAtHomeKey];
-                sampleData[state].value = workedAtHome / total;
 
                 // var datapoint = yearData[state][category][code];
-                console.log(workedAtHome, total);
-                sampleData[state].color = d3.interpolate("#ffffcc", "#800026")(workedAtHome / (total / 300));
             });
 
-            uStates.draw("#statemap", sampleData, tooltipHtml);
+
+            US.draw(sampleData, mode);
 
             d3.select(self.frameElement).style("height", "600px");
         }

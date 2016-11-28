@@ -47,7 +47,7 @@ function StackedBarOfStates(id) {
         divTooltip.append('span').attr('class', 'value');
 
         data.rows.sort(function(a, b) { return b.total - a.total; });
-        prevData = $.extend({}, data);
+        prevData = data;
 
         x.domain(data.rows.map(function(d) { return d.state; }));
         y.domain([0, d3.max(data.rows, function(d) { return d.total; })]).nice();
@@ -190,7 +190,7 @@ function StackedBarOfStates(id) {
         }
 
         window.setTimeout(function() {
-            self.sort($.extend({},data));
+            self.sort(data);
         }, updateDuration)
     }
 
@@ -198,7 +198,7 @@ function StackedBarOfStates(id) {
 
         data.rows.sort(function(a, b) { return b.total - a.total; });
 
-        prevData = $.extend({}, data);
+        prevData = data;
         console.log('sorted');
         console.log(stateOrder(data));
         // Copy-on-write since tweens are evaluated after a delay.
