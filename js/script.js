@@ -12,21 +12,6 @@
             variableData.push({category: category, variables: PARTITION[category].variables});
         })
 
-        // var visualizations = [
-        //     // { vm: new MapVM(StateData, categories, variableData, states),
-        //     //   dom: $('#map')[0] },
-        //     { vm: new StackedBarVM(StateData, categories, states),
-        //       dom: $('#stackedBar')[0] }
-        // ]
-        //
-        // for (var i = 0; i < visualizations.length; i++) {
-        //     ko.applyBindings(visualizations[i].vm, visualizations[i].dom);
-        // }
-
-        // var $container = $("#map");
-        // var viewModel = new MapVM(StateData, states);
-
-
         var $container = $("#viz");
         var viewModel = new VizVM(StateData, categories, states, {
             map: '#map',
@@ -65,8 +50,8 @@
             }
         }
 
-        var SB = new StackedBarOfStates(ids.stackedBar);
-        var US = new uStates(ids.map, tooltipHtml);
+        var SB = new StackedBarOfStates(ids.stackedBar, onClick(ids));
+        var US = new uStates(ids.map, tooltipHtml, onClick(ids));
 
 
         var previousCategory = '';
@@ -170,6 +155,20 @@
 
         str += '</table';
         return str;
+    }
+
+    function onClick(ids) {
+        return function(d3elements, thisId) {
+            var idsArr = Object.keys(ids).map(function(key, index) {
+                if (ids[key] != thisId) return ids[key]
+            })
+
+            idsArr.forEach(function(id) {
+                // d3elements.on("click", function(d) {
+                    console.log(id);
+                // })
+            })
+        }
     }
 
     function wrap(text, width) {

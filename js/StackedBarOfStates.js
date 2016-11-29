@@ -1,7 +1,7 @@
 (function(){
-function StackedBarOfStates(id) {
+function StackedBarOfStates(containerId, onClick) {
     var self = this;
-    var container = d3.select(id);
+    var container = d3.select(containerId);
     var svg = container.select("svg");
 
     var prevData = {};
@@ -39,7 +39,7 @@ function StackedBarOfStates(id) {
 
         $(container._groups[0][0]).width(svg.attr('width'));
 
-        divTooltip = d3.select(id).append('div').attr('class', 'toolTip');
+        divTooltip = container.append('div').attr('class', 'toolTip');
         divTooltip.append('span').attr('class', 'state-name');
         divTooltip.append('span').text(' - ');
         divTooltip.append('span').attr('class', 'category');
@@ -76,6 +76,7 @@ function StackedBarOfStates(id) {
                     .attr("y", function(d) { return y(d[1]); })
                     .attr("height", function(d) { return y(d[0]) - y(d[1]); })
 
+        onClick(rect, containerId);
 
         g.append("g")
             .attr("class", "axis axis--x")
@@ -211,7 +212,7 @@ function StackedBarOfStates(id) {
     }
 
     function toolTipMouseover(d, data) {
-        var $el = $(id + " svg").find('rect:hover'),
+        var $el = $(containerId + " svg").find('rect:hover'),
             el = d3.select($el[0]);
 
         var originalFill = el.style('fill');
