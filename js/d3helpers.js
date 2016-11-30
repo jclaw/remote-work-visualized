@@ -13,11 +13,11 @@ d3.selection.prototype.moveToBack = function() {
     });
 };
 
-function onClick(ids) {
+function OnClick(ids) {
     var MCtrl = new mapCtrl;
     var SBCtrl = new stackedBarCtrl;
 
-    return function(d3elements, thisId) {
+    this.select = function(d3elements, thisId) {
 
         d3elements.on("click", function(d) {
             var stateAbbrev = {
@@ -27,6 +27,17 @@ function onClick(ids) {
 
             MCtrl.select(stateAbbrev[thisId](d));
             SBCtrl.select(stateAbbrev[thisId](d));
+        })
+
+        return d3elements;
+    }
+
+    this.deselect = function(d3elements) {
+        console.log(d3elements);
+        $(d3elements.node()).on("click", function(e) {
+            if (e.target !== this) return;
+            MCtrl.deselect();
+            SBCtrl.deselect();
         })
 
         return d3elements;
@@ -47,22 +58,25 @@ function onClick(ids) {
             return state;
         }
         this.deselect = function() {
-
+            console.log('map deselect');
+            if (prevElement) prevElement.classed('selected', false);
         }
     }
 
     function stackedBarCtrl() {
         var states;
         this.select = function(stateAbbrev) {
-
-
             $('.select-rect').trigger('show', stateAbbrev)
 
             return states;
         }
 
         this.deselect = function() {
+            console.log('stackedBar deselect');
 
+            $('.select-rect').trigger('hide')
+
+            return states
         }
     }
 }

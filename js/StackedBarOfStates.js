@@ -24,7 +24,8 @@ function StackedBarOfStates(containerId, onClick) {
 
     var stack = d3.stack();
 
-    var xOffset = 24;
+    var xOffset = 24,
+        legendYOffset = $('#map svg').outerHeight();
 
     var formatComma = d3.format(","),
         formatPercent = d3.format(".1%");
@@ -33,7 +34,10 @@ function StackedBarOfStates(containerId, onClick) {
         sortDuration = 1000
 
     var serie, rect, divTooltip, legend, xAxis, yAxis;
-    var highlight = {state: null, el: null}
+    var highlight = {state: null, el: null};
+
+    d3.select('.content').call(onClick.deselect)
+    svg.call(onClick.deselect)
 
     self.draw = function(data) {
         $(g._groups[0][0]).empty();
@@ -54,27 +58,7 @@ function StackedBarOfStates(containerId, onClick) {
         y.domain([0, d3.max(data.rows, function(d) { return d.total; })]).nice();
         z.domain(data.columns.slice(1, data.columns.length - 1));
 
-        // var highlight = g.append('rect').attr('class', 'select-rect')
-        //     .attr("y", height)
-        //     .attr('height', 1)
-        //     .attr('width', x.bandwidth())
-        //     .attr('x', 100)
-        //     .style('display', 'none')
 
-        highlight.el = g.append('rect').attr('class', 'select-rect')
-            .attr("y", height)
-            .attr('height', 1)
-            .attr('width', x.bandwidth())
-            .attr('x', 100)
-            .style('display', 'none')
-
-
-        $('.select-rect').on('show', function(e, stateAbbrev) {
-            updateHighlight(highlight, stateAbbrev)
-            // highlight.el.call(function(el) { })
-        }).on('hide', function() {
-            highlight.style('display', 'none')
-        })
 
         serie = g.selectAll(".serie")
             .data(stack.keys(data.columns.slice(1, data.columns.length - 1))(data.rows))
@@ -91,14 +75,12 @@ function StackedBarOfStates(containerId, onClick) {
                 .attr("height", 1)
                 .attr("width", x.bandwidth())
                 .attr("x", function(d) { return x(d.data.state) + xOffset; })
-                .call(function(els) { return onClick(els, containerId) })
+                .call(function(els) { return onClick.select(els, containerId) })
                 .transition()
                     .duration(updateDuration)
                     // .delay(100)
                     .attr("y", function(d) { return y(d[1]); })
                     .attr("height", function(d) { return y(d[0]) - y(d[1]); })
-
-        // onClick(rect, containerId);
 
         g.append("g")
             .attr("class", "axis axis--x")
@@ -133,7 +115,7 @@ function StackedBarOfStates(containerId, onClick) {
             .data(data.columns.slice(1, data.columns.length - 1).reverse())
             .enter().append("g")
                 .attr("class", "legend")
-                .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; })
+                .attr("transform", function(d, i) { return "translate(" + (xOffset - 16) + "," + (i * 20 + legendYOffset) + ")"; })
                 .style("font-size", "12px");
 
         legend.append("rect")
@@ -148,6 +130,22 @@ function StackedBarOfStates(containerId, onClick) {
             .attr("dy", ".35em")
             .attr("text-anchor", "end")
             .text(function(d) { return d; });
+
+        highlight.el = g.append('rect').attr('class', 'select-rect')
+            .attr("y", height)
+            .attr('height', 1)
+            .attr('width', x.bandwidth())
+            .attr('x', 100)
+            .style('display', 'none')
+
+        updateHighlight(highlight, null, true);
+
+        $('.select-rect').on('show', function(e, stateAbbrev) {
+            updateHighlight(highlight, stateAbbrev)
+            // highlight.el.call(function(el) { })
+        }).on('hide', function() {
+            highlight.el.style('display', 'none')
+        })
     }
 
     self.update = function(data) {
@@ -235,39 +233,46 @@ function StackedBarOfStates(containerId, onClick) {
         updateHighlight(highlight);
     }
 
-    function updateHighlight(hl, stateAbbrev) {
+    function updateHighlight(hl, stateAbbrev, initialAnimation) {
         if (stateAbbrev) hl.state = stateAbbrev;
+        if (hl.state) {
+            var tempData = container.selectAll('.state' + '.' + hl.state).data();
+            var data = {
+                state: hl.state,
+                bottom: tempData[0][0],
+                top: tempData[tempData.length - 1][1]
+            }
 
-        var tempData = container.selectAll('.state' + '.' + hl.state).data();
-        var data = {
-            state: hl.state,
-            bottom: tempData[0][0],
-            top: tempData[tempData.length - 1][1]
-        }
-
-        hl.el
-            .data([data])
-            .enter()
-            .merge(hl.el)
-
-            .style('display', 'inline')
-            .moveToFront()
-
-        if (stateAbbrev) {
             hl.el
-                .attr("x", function(d) { return x(d.state) + xOffset })
-                .attr("y", function(d) { return y(d.top) })
-                .attr("height", function(d) { return y(d.bottom) - y(d.top)} )
-        } else {
-            hl.el.transition()
-                .duration(updateDuration)
-                .attr("x", function(d) { return x(d.state) + xOffset })
-                .attr("y", function(d) { return y(d.top) })
-                .attr("height", function(d) { return y(d.bottom) - y(d.top)} )
+                .data([data])
+                .enter()
+                .merge(hl.el)
+
+                .style('display', 'inline')
+                .moveToFront()
+
+            if (stateAbbrev) {
+                hl.el
+                    .attr("x", function(d) { return x(d.state) + xOffset })
+                    .attr("y", function(d) { return y(d.top) })
+                    .attr("height", function(d) { return y(d.bottom) - y(d.top)} )
+            } else if (initialAnimation) {
+                hl.el
+                    .attr("x", function(d) { return x(d.state) + xOffset })
+                    .transition()
+                        .duration(updateDuration)
+                        .attr("y", function(d) { return y(d.top) })
+                        .attr("height", function(d) { return y(d.bottom) - y(d.top)} )
+            } else {
+                hl.el.transition()
+                    .duration(updateDuration)
+                    .attr("x", function(d) { return x(d.state) + xOffset })
+                    .attr("y", function(d) { return y(d.top) })
+                    .attr("height", function(d) { return y(d.bottom) - y(d.top)} )
+            }
         }
 
-
-        return highlight;
+        return hl;
     }
 
     function toolTipMouseover(data) {

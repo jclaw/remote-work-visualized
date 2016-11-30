@@ -50,10 +50,10 @@
             }
         }
 
-        var onClickFn = onClick(ids);
+        var onClick = new OnClick(ids);
 
-        var SB = new StackedBarOfStates(ids.stackedBar, onClickFn);
-        var US = new uStates(ids.map, tooltipHtml, onClickFn);
+        var SB = new StackedBarOfStates(ids.stackedBar, onClick);
+        var US = new uStates(ids.map, tooltipHtml, onClick);
 
 
         var previousCategory = '';
@@ -71,6 +71,15 @@
         function drawGraphs() {
             drawMap();
             drawBars();
+        }
+
+        self.zoomMap = function() {
+            console.log('here');
+            // $(ids.map).attr('width', )
+        }
+
+        self.shrinkMap = function() {
+
         }
 
         function drawBars() {

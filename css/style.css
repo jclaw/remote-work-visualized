@@ -52,6 +52,9 @@ body {
 
 .content {
     margin-top: 100px;
+    max-width: 960px;
+    margin: 100px auto 0;
+    position: relative;
 }
 
 .chartTitle {
@@ -96,11 +99,26 @@ body {
 .chart {
     position: relative;
     margin: 0 auto;
+    clear: both;
 }
 
 .state {
     cursor: pointer;
 }
+
+#map {
+    position: absolute;
+    right: 0;
+    z-index: 5;
+    width: 144px;
+    transition: width 100ms;
+}
+
+#map svg {
+    transition: width 100ms, height 100ms;
+
+}
+
 
 #map .state {
     fill: none;
@@ -108,13 +126,27 @@ body {
     stroke-width: 1;
 }
 #map .state:hover {
-    fill-opacity:0.5;
+    stroke-width: 4;
 }
 
 #map .state.selected {
     stroke: black;
-    stroke-width: 3;
+    stroke-width: 8;
 }
+
+#map:hover {
+    width: 480px;
+}
+
+#map:hover svg {
+    width: 480px;
+    height: 300px;
+}
+
+#map:hover .state.selected {
+    stroke-width: 6;
+}
+
 
 #stackedBar .select-rect {
     stroke: black;

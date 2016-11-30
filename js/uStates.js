@@ -65,13 +65,16 @@ function uStates(containerId, toolTip, onClick) {
 
     var prevData;
 
+    d3.select('.content').call(onClick.deselect)
+    svg.call(onClick.deselect)
+
+
     self.draw = function(data, mode) {
         if (prevData) {
             update(data, mode);
         } else {
             initialize(data, mode);
         }
-        $(container._groups[0][0]).width(svg.attr('width'));
 
 
 	}
@@ -85,10 +88,7 @@ function uStates(containerId, toolTip, onClick) {
             .attr("d",function(d){ return d.d;})
             .style("fill",function(d){ return data[d.id].color; })
             .on("mouseover", function(d) { mouseOver(d, mode, data) }).on("mouseout", mouseOut)
-        // states.on("click", function(d) { console.log(d);})
-            .call(function(els) { return onClick(els, containerId) })
-        // console.log(onClick);
-        // onClick(states, containerId)
+            .call(function(els) { return onClick.select(els, containerId) })
     }
 
     function update(data, mode) {
