@@ -111,12 +111,11 @@ body {
     right: 0;
     z-index: 5;
     width: 144px;
-    transition: width 100ms;
+    transition: width 150ms;
 }
 
 #map svg {
-    transition: width 100ms, height 100ms;
-
+    transition: width 150ms, height 150ms;
 }
 
 
@@ -141,10 +140,20 @@ body {
 #map:hover svg {
     width: 480px;
     height: 300px;
+
 }
 
 #map:hover .state.selected {
     stroke-width: 6;
+}
+
+#map:hover + #stackedBar {
+    fill-opacity: .5;
+    stroke-opacity: .5;
+}
+
+#stackedBar {
+    transition: fill-opacity 100ms, stroke-opacity 100ms;
 }
 
 
