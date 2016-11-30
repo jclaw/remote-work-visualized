@@ -73,15 +73,6 @@
             drawBars();
         }
 
-        self.zoomMap = function() {
-            console.log('here');
-            // $(ids.map).attr('width', )
-        }
-
-        self.shrinkMap = function() {
-
-        }
-
         function drawBars() {
             console.log('drawBars');
             var yearData = StateData[self.selectedYear()];
