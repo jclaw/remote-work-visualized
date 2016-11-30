@@ -53,30 +53,52 @@ function StackedBarOfStates(containerId, onClick) {
         y.domain([0, d3.max(data.rows, function(d) { return d.total; })]).nice();
         z.domain(data.columns.slice(1, data.columns.length - 1));
 
+        var highlight = g.append('rect').attr('class', 'select-rect')
+            .attr("y", height)
+            .attr('height', 1)
+            .attr('width', x.bandwidth())
+            .attr('x', 100)
+            .style('fill', 'transparent')
+            .style('stroke', 'black')
+            .style('stroke-width', 3)
+            .style('display', 'none')
+            .style('pointer-events', 'none')
+
+        $('.select-rect').on('show', function(e, data) {
+            highlight
+                .attr("x", x(data.state) + xOffset)
+                .attr("y", y(data.top))
+                .attr("height", y(data.bottom) - y(data.top))
+                .style('display', 'inline')
+                .moveToFront()
+        }).on('hide', function() {
+            highlight.style('display', 'none')
+        })
+
         serie = g.selectAll(".serie")
             .data(stack.keys(data.columns.slice(1, data.columns.length - 1))(data.rows))
             .enter().append("g")
                 .attr("class", "serie")
                 .attr("fill", function(d) { return z(d.key); })
-                .on("mouseover", function(d) {
-                    toolTipMouseover(d, data);
-                })
+                .on("mouseover", toolTipMouseover(data))
 
         rect = serie.selectAll("rect")
             .data(function(d) { return d; })
             .enter().append("rect")
-                .attr("class", function(d) { return "state-bar " + d.data.state})
+                .attr("class", function(d) { return "state " + d.data.state})
                 .attr("y", height)
                 .attr("height", 1)
                 .attr("width", x.bandwidth())
                 .attr("x", function(d) { return x(d.data.state) + xOffset; })
+                .call(function(els) { return onClick(els, containerId) })
                 .transition()
                     .duration(updateDuration)
                     // .delay(100)
                     .attr("y", function(d) { return y(d[1]); })
                     .attr("height", function(d) { return y(d[0]) - y(d[1]); })
 
-        onClick(rect, containerId);
+
+        // onClick(rect, containerId);
 
         g.append("g")
             .attr("class", "axis axis--x")
@@ -151,9 +173,7 @@ function StackedBarOfStates(containerId, onClick) {
         serie.enter().append("g")
             .attr("class", "serie")
             .merge(serie)
-            .on("mouseover", function(d) {
-                toolTipMouseover(d, data);
-            })
+            .on("mouseover", toolTipMouseover(data))
         serie.exit().remove();
 
         rect = serie.selectAll("rect")
@@ -211,26 +231,32 @@ function StackedBarOfStates(containerId, onClick) {
 
     }
 
-    function toolTipMouseover(d, data) {
-        var $el = $(containerId + " svg").find('rect:hover'),
-            el = d3.select($el[0]);
+    function toolTipMouseover(data) {
+        var prevElement;
+        // TODO: finish updating this to use prevelement and set a class instead of redefining the fill
+        return function(d) {
+            var $el = $(containerId + " svg").find('rect:hover'),
+                el = d3.select($el[0]);
 
-        var originalFill = el.style('fill');
-        el.style('fill', d3.rgb(originalFill).darker(1));
 
-        divTooltip.style("display", "inline-block");
+            var originalFill = el.style('fill');
+            el.style('fill', d3.rgb(originalFill).darker(1));
 
-        setToolTip(data.rows[$el.index()], d.key, {
-            x: parseInt($el.attr('x')),
-            y: parseInt($el.attr('y')),
-            height: parseInt($el.attr('height')),
-            width: parseInt($el.attr('width'))
-        }, data);
+            divTooltip.style("display", "inline-block");
 
-        el.on('mouseout', function(d) {
-            d3.select(this).style('fill', originalFill);
-            divTooltip.style("display", "none");
-        })
+            setToolTip(data.rows[$el.index()], d.key, {
+                x: parseInt($el.attr('x')),
+                y: parseInt($el.attr('y')),
+                height: parseInt($el.attr('height')),
+                width: parseInt($el.attr('width'))
+            }, data);
+
+            el.on('mouseout', function(d) {
+                d3.select(this).style('fill', originalFill);
+                divTooltip.style("display", "none");
+            })
+        }
+
     }
 
     function setToolTip(sdata, category, eldata, data) {

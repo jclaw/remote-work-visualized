@@ -67,9 +67,9 @@ function uStates(containerId, toolTip, onClick) {
 
     self.draw = function(data, mode) {
         if (prevData) {
-            initialize(data, mode);
-        } else {
             update(data, mode);
+        } else {
+            initialize(data, mode);
         }
         $(container._groups[0][0]).width(svg.attr('width'));
 
@@ -80,17 +80,22 @@ function uStates(containerId, toolTip, onClick) {
         prevData = data;
         svg.empty();
         states = svg.selectAll(".state")
-            .data(uStatePaths).enter().append("path").attr("class","state").attr("d",function(d){ return d.d;})
+            .data(uStatePaths).enter().append("path")
+            .attr("class",function(d) { return "state " + d.id })
+            .attr("d",function(d){ return d.d;})
             .style("fill",function(d){ return data[d.id].color; })
-            .on("mouseover", mouseOver).on("mouseout", mouseOut);
-        onClick(states, containerId)
+            .on("mouseover", function(d) { mouseOver(d, mode, data) }).on("mouseout", mouseOut)
+        // states.on("click", function(d) { console.log(d);})
+            .call(function(els) { return onClick(els, containerId) })
+        // console.log(onClick);
+        // onClick(states, containerId)
     }
 
     function update(data, mode) {
         states = svg.selectAll(".state").data(uStatePaths)
 
         states.enter().append("path")
-            .attr("class","state")
+            .attr("class",function(d) { "state state-" + d.id })
             .merge(states)
                 .attr("d",function(d){ return d.d;})
     		    .on("mouseover", function(d) { mouseOver(d, mode, data) }).on("mouseout", mouseOut)

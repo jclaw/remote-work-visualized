@@ -6,7 +6,7 @@ body {
 .select-style {
     display: inline-flex;
     /*border: 1px solid #ccc;*/
-    border-bottom: 3px solid #000;
+    border-bottom: 3px solid #ff8c00;
 
     /*border-radius: 3px;*/
     overflow: hidden;
@@ -25,6 +25,10 @@ body {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+}
+
+.select-style select:hover {
+    cursor: pointer;
 }
 
 .select-style select:focus {
@@ -57,45 +61,58 @@ body {
 
 .year {
     display: inline-block;
-    /*font-size: 2rem;*/
-    /*text-align: center;*/
-    /*margin-bottom: 20px;*/
 }
 
-.navButton {
+.year span {
+    margin: 0 0.25em;
+
+}
+
+.nav-button {
+    color: #ff8c00;
     font-family: inherit;
-    font-size: 1em;
+    font-size: 1.2em;
     font-weight: bold;
     border: none;
     background: transparent;
     padding: 0 .5em;
     cursor: pointer;
+
+    border-bottom: 3px solid #ff8c00;
+    padding-bottom: 4px;
 }
 
-.navButton:disabled {
+.nav-button:disabled {
     cursor: auto;
-    color: #c7c7c7;
+    color: #dedede;
     font-weight: normal;
+    border: none;
 }
 
-.navButton:focus {
+.nav-button:focus {
     outline: none;
 }
-
 
 .chart {
     position: relative;
     margin: 0 auto;
 }
 
-.state{
+#map .state {
     fill: none;
     stroke: #a9a9a9;
     stroke-width: 1;
 }
-.state:hover{
+#map .state:hover{
     fill-opacity:0.5;
 }
+
+#map .state.selected, #stackedBar .select-rect {
+    stroke: black;
+    stroke-width: 2;
+}
+
+
 #tooltip {
     position: absolute;
     text-align: center;

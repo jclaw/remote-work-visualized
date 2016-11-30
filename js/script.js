@@ -50,8 +50,10 @@
             }
         }
 
-        var SB = new StackedBarOfStates(ids.stackedBar, onClick(ids));
-        var US = new uStates(ids.map, tooltipHtml, onClick(ids));
+        var onClickFn = onClick(ids);
+
+        var SB = new StackedBarOfStates(ids.stackedBar, onClickFn);
+        var US = new uStates(ids.map, tooltipHtml, onClickFn);
 
 
         var previousCategory = '';
@@ -157,19 +159,7 @@
         return str;
     }
 
-    function onClick(ids) {
-        return function(d3elements, thisId) {
-            var idsArr = Object.keys(ids).map(function(key, index) {
-                if (ids[key] != thisId) return ids[key]
-            })
 
-            idsArr.forEach(function(id) {
-                // d3elements.on("click", function(d) {
-                    console.log(id);
-                // })
-            })
-        }
-    }
 
     function wrap(text, width) {
         text.each(function() {
