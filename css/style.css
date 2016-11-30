@@ -98,18 +98,29 @@ body {
     margin: 0 auto;
 }
 
+.state {
+    cursor: pointer;
+}
+
 #map .state {
     fill: none;
     stroke: #a9a9a9;
     stroke-width: 1;
 }
-#map .state:hover{
+#map .state:hover {
     fill-opacity:0.5;
 }
 
-#map .state.selected, #stackedBar .select-rect {
+#map .state.selected {
     stroke: black;
     stroke-width: 2;
+}
+
+#stackedBar .select-rect {
+    stroke: black;
+    stroke-width: 3;
+    fill: transparent;
+    pointer-events: none;
 }
 
 

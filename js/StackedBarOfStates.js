@@ -58,11 +58,7 @@ function StackedBarOfStates(containerId, onClick) {
             .attr('height', 1)
             .attr('width', x.bandwidth())
             .attr('x', 100)
-            .style('fill', 'transparent')
-            .style('stroke', 'black')
-            .style('stroke-width', 3)
             .style('display', 'none')
-            .style('pointer-events', 'none')
 
         $('.select-rect').on('show', function(e, data) {
             highlight
