@@ -35,7 +35,9 @@ function onClick(ids) {
     function mapCtrl() {
         var prevElement, state;
         this.select = function(stateAbbrev) {
+            console.log(stateAbbrev);
             state = d3.select(ids.map).select('.state' + '.' + stateAbbrev);
+            console.log(state.datum());
             state.classed('selected', true)
                 .moveToFront();
 
@@ -52,12 +54,9 @@ function onClick(ids) {
     function stackedBarCtrl() {
         var states;
         this.select = function(stateAbbrev) {
-            states = d3.select(ids.stackedBar).selectAll('.state' + '.' + stateAbbrev);
-            var data = states.data();
-            var bottom = data[0][0];
-            var top = data[data.length - 1][1];
 
-            $('.select-rect').trigger('show', { state: stateAbbrev, bottom: bottom, top: top })
+
+            $('.select-rect').trigger('show', stateAbbrev)
 
             return states;
         }

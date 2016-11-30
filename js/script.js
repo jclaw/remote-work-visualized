@@ -131,7 +131,7 @@
                 var total = yearData[state][category]['total'];
                 sampleData[state] = {}
 
-                var interpolation = d3.interpolate("#ffffcc", "#800026");
+                var interpolation = d3.interpolate("#fff", "#000");
                 var workedAtHome = yearData[state][category]['Worked at home'];
 
                 if (mode == 'percent') {

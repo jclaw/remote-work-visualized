@@ -92,16 +92,14 @@ function uStates(containerId, toolTip, onClick) {
     }
 
     function update(data, mode) {
-        states = svg.selectAll(".state").data(uStatePaths)
+        // states = svg.selectAll(".state").data(uStatePaths)
 
-        states.enter().append("path")
-            .attr("class",function(d) { "state state-" + d.id })
-            .merge(states)
-                .attr("d",function(d){ return d.d;})
-    		    .on("mouseover", function(d) { mouseOver(d, mode, data) }).on("mouseout", mouseOut)
-                .transition()
-                    .duration(1000)
-                    .style("fill",function(d){ return data[d.id].color; })
+        states
+            .attr("d",function(d){ return d.d;})
+		    .on("mouseover", function(d) { mouseOver(d, mode, data) }).on("mouseout", mouseOut)
+            .transition()
+                .duration(1000)
+                .style("fill",function(d){ return data[d.id].color; })
 
         states.exit().remove();
 

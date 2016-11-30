@@ -33,6 +33,7 @@ function StackedBarOfStates(containerId, onClick) {
         sortDuration = 1000
 
     var serie, rect, divTooltip, legend, xAxis, yAxis;
+    var highlight = {state: null, el: null}
 
     self.draw = function(data) {
         $(g._groups[0][0]).empty();
@@ -53,20 +54,24 @@ function StackedBarOfStates(containerId, onClick) {
         y.domain([0, d3.max(data.rows, function(d) { return d.total; })]).nice();
         z.domain(data.columns.slice(1, data.columns.length - 1));
 
-        var highlight = g.append('rect').attr('class', 'select-rect')
+        // var highlight = g.append('rect').attr('class', 'select-rect')
+        //     .attr("y", height)
+        //     .attr('height', 1)
+        //     .attr('width', x.bandwidth())
+        //     .attr('x', 100)
+        //     .style('display', 'none')
+
+        highlight.el = g.append('rect').attr('class', 'select-rect')
             .attr("y", height)
             .attr('height', 1)
             .attr('width', x.bandwidth())
             .attr('x', 100)
             .style('display', 'none')
 
-        $('.select-rect').on('show', function(e, data) {
-            highlight
-                .attr("x", x(data.state) + xOffset)
-                .attr("y", y(data.top))
-                .attr("height", y(data.bottom) - y(data.top))
-                .style('display', 'inline')
-                .moveToFront()
+
+        $('.select-rect').on('show', function(e, stateAbbrev) {
+            updateHighlight(highlight, stateAbbrev)
+            // highlight.el.call(function(el) { })
         }).on('hide', function() {
             highlight.style('display', 'none')
         })
@@ -92,7 +97,6 @@ function StackedBarOfStates(containerId, onClick) {
                     // .delay(100)
                     .attr("y", function(d) { return y(d[1]); })
                     .attr("height", function(d) { return y(d[0]) - y(d[1]); })
-
 
         // onClick(rect, containerId);
 
@@ -201,9 +205,12 @@ function StackedBarOfStates(containerId, onClick) {
                 .text("total working at home");
         }
 
+        updateHighlight(highlight);
+
         window.setTimeout(function() {
             self.sort(data);
         }, updateDuration)
+
     }
 
     self.sort = function(data) {
@@ -225,6 +232,42 @@ function StackedBarOfStates(containerId, onClick) {
         xAxis.transition().duration(sortDuration)
             .call(d3.axisBottom(x))
 
+        updateHighlight(highlight);
+    }
+
+    function updateHighlight(hl, stateAbbrev) {
+        if (stateAbbrev) hl.state = stateAbbrev;
+
+        var tempData = container.selectAll('.state' + '.' + hl.state).data();
+        var data = {
+            state: hl.state,
+            bottom: tempData[0][0],
+            top: tempData[tempData.length - 1][1]
+        }
+
+        hl.el
+            .data([data])
+            .enter()
+            .merge(hl.el)
+
+            .style('display', 'inline')
+            .moveToFront()
+
+        if (stateAbbrev) {
+            hl.el
+                .attr("x", function(d) { return x(d.state) + xOffset })
+                .attr("y", function(d) { return y(d.top) })
+                .attr("height", function(d) { return y(d.bottom) - y(d.top)} )
+        } else {
+            hl.el.transition()
+                .duration(updateDuration)
+                .attr("x", function(d) { return x(d.state) + xOffset })
+                .attr("y", function(d) { return y(d.top) })
+                .attr("height", function(d) { return y(d.bottom) - y(d.top)} )
+        }
+
+
+        return highlight;
     }
 
     function toolTipMouseover(data) {

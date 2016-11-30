@@ -113,7 +113,7 @@ body {
 
 #map .state.selected {
     stroke: black;
-    stroke-width: 2;
+    stroke-width: 3;
 }
 
 #stackedBar .select-rect {
