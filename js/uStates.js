@@ -106,6 +106,7 @@ function uStates(containerId, toolTip, onClick) {
     }
 
     function mouseOver(d, mode, data) {
+        d3.select(this).moveToFront();
         d3.select("#tooltip").transition().duration(200).style("opacity", .9);
 
         d3.select("#tooltip").html(mode == 'percent' ?

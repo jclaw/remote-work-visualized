@@ -125,7 +125,7 @@ body {
     stroke-width: 1;
 }
 #map .state:hover {
-    stroke-width: 4;
+    stroke-width: 5;
 }
 
 #map .state.selected {
