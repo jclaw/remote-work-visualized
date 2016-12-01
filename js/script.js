@@ -74,7 +74,6 @@
         }
 
         function drawBars() {
-            console.log('drawBars');
             var yearData = StateData[self.selectedYear()];
             var category = self.selectedCategory();
 
@@ -117,8 +116,6 @@
         }
 
         function drawMap() {
-            console.log('drawMap');
-
             var yearData = StateData[self.selectedYear()];
             var category = self.selectedCategory();
             var maxWorkedAtHome = Math.max(...states.map(function(state) { return yearData[state][category]['Worked at home'] }));

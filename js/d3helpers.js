@@ -33,7 +33,6 @@ function OnClick(ids) {
     }
 
     this.deselect = function(d3elements) {
-        console.log(d3elements);
         $(d3elements.node()).on("click", function(e) {
             if (e.target !== this) return;
             MCtrl.deselect();
@@ -46,9 +45,7 @@ function OnClick(ids) {
     function mapCtrl() {
         var prevElement, state;
         this.select = function(stateAbbrev) {
-            console.log(stateAbbrev);
             state = d3.select(ids.map).select('.state' + '.' + stateAbbrev);
-            console.log(state.datum());
             state.classed('selected', true)
                 .moveToFront();
 
@@ -58,7 +55,6 @@ function OnClick(ids) {
             return state;
         }
         this.deselect = function() {
-            console.log('map deselect');
             if (prevElement) prevElement.classed('selected', false);
         }
     }
@@ -67,15 +63,11 @@ function OnClick(ids) {
         var states;
         this.select = function(stateAbbrev) {
             $('.select-rect').trigger('show', stateAbbrev)
-
             return states;
         }
 
         this.deselect = function() {
-            console.log('stackedBar deselect');
-
             $('.select-rect').trigger('hide')
-
             return states
         }
     }
