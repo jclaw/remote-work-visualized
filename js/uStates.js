@@ -87,7 +87,10 @@ function uStates(containerId, toolTip, onClick) {
             .attr("class",function(d) { return "state " + d.id })
             .attr("d",function(d){ return d.d;})
             .style("fill",function(d){ return data[d.id].color; })
-            .on("mouseover", function(d) { mouseOver(d, mode, data) }).on("mouseout", mouseOut)
+            .on("mouseover", function(d) {
+                d3.select(this).moveToFront();
+                mouseOver(d, mode, data)
+            }).on("mouseout", mouseOut)
             .call(function(els) { return onClick.select(els, containerId) })
     }
 
@@ -96,7 +99,10 @@ function uStates(containerId, toolTip, onClick) {
 
         states
             .attr("d",function(d){ return d.d;})
-		    .on("mouseover", function(d) { mouseOver(d, mode, data) }).on("mouseout", mouseOut)
+		    .on("mouseover", function(d) {
+                d3.select(this).moveToFront();
+                mouseOver(d, mode, data)
+            }).on("mouseout", mouseOut)
             .transition()
                 .duration(1000)
                 .style("fill",function(d){ return data[d.id].color; })
@@ -106,7 +112,6 @@ function uStates(containerId, toolTip, onClick) {
     }
 
     function mouseOver(d, mode, data) {
-        d3.select(this).moveToFront();
         d3.select("#tooltip").transition().duration(200).style("opacity", .9);
 
         d3.select("#tooltip").html(mode == 'percent' ?

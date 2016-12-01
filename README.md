@@ -12,3 +12,5 @@ Todo:
 * add more years
 * make sorting optional
 * fix or remove map tooltip
+* consider mobile
+* add user-selected parameters to url
