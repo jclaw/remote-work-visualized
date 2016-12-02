@@ -89,6 +89,7 @@ function uStates(containerId, toolTip, onClick) {
             .style("fill",function(d){ return data[d.id].color; })
             .on("mouseover", function(d) {
                 d3.select(this).moveToFront();
+                svg.select('.selected').moveToFront();
                 mouseOver(d, mode, data)
             }).on("mouseout", mouseOut)
             .call(function(els) { return onClick.select(els, containerId) })
@@ -101,6 +102,7 @@ function uStates(containerId, toolTip, onClick) {
             .attr("d",function(d){ return d.d;})
 		    .on("mouseover", function(d) {
                 d3.select(this).moveToFront();
+                svg.select('.selected').moveToFront();
                 mouseOver(d, mode, data)
             }).on("mouseout", mouseOut)
             .transition()
