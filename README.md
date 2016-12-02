@@ -13,3 +13,4 @@ Todo:
 * consider mobile
 * add user-selected parameters to url
 * clean up extra files
+* fix the display of the industry category
