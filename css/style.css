@@ -50,6 +50,12 @@ body {
     z-index: 20;
 }
 
+.caption {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.75rem;
+}
+
 .content {
     margin-top: 100px;
     max-width: 960px;

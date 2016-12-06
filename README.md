@@ -2,9 +2,10 @@
 A project for Industrial and Organizational Psychology
 
 Todo:
+* fix styling of header in Firefox
+* test on IE
 * check performance
 * write README with attribution to other D3 projects
-* write source of data
 * make y-axis consistent
 * remove Puerto Rico
 * add more years

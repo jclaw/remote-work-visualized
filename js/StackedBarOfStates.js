@@ -55,7 +55,8 @@ function StackedBarOfStates(containerId, onClick) {
         prevData = data;
 
         x.domain(data.rows.map(function(d) { return d.state; }));
-        y.domain([0, d3.max(data.rows, function(d) { return d.total; })]).nice();
+        // hard-coding y-axis
+        y.domain([0, 0.08]).nice();
         z.domain(data.columns.slice(1, data.columns.length - 1));
 
 
@@ -159,10 +160,7 @@ function StackedBarOfStates(containerId, onClick) {
 
         prevData = $.extend({}, data);
 
-
-
         x.domain(data.rows.map(function(d) { return d.state; }));
-        y.domain([0, d3.max(data.rows, function(d) { return d.total; })]).nice();
         z.domain(data.columns.slice(1, data.columns.length - 1));
 
         serie = g.selectAll(".serie")
