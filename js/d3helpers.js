@@ -56,6 +56,7 @@ function OnClick(ids) {
         }
         this.deselect = function() {
             if (prevElement) prevElement.classed('selected', false);
+            prevElement = undefined;
         }
     }
 

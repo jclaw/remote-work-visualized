@@ -96,7 +96,6 @@ function uStates(containerId, toolTip, onClick) {
     }
 
     function update(data, mode) {
-        // states = svg.selectAll(".state").data(uStatePaths)
 
         states
             .attr("d",function(d){ return d.d;})

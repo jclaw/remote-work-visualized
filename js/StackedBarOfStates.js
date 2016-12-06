@@ -106,12 +106,17 @@ function StackedBarOfStates(containerId, onClick) {
             .attr("y", height)
             .attr('height', 1)
             .attr('x', 100)
-            .style('display', 'none')
+            .style('display', 'none');
+
+        highlight.initialBuild = true;
 
         $('.select-rect').on('show', function(e, stateAbbrev) {
             updateHighlight(highlight, stateAbbrev)
         }).on('hide', function() {
-            highlight.el.style('display', 'none')
+            highlight.el
+                .attr("height", 0 )
+                .style('display', 'none')
+            highlight.state = null;
         })
 
         self.update(data);
@@ -171,7 +176,6 @@ function StackedBarOfStates(containerId, onClick) {
         xAxis.call(d3.axisBottom(x));
 
 
-
         highlight.el.attr('width', x.bandwidth());
 
         updateHighlight(highlight);
@@ -203,7 +207,7 @@ function StackedBarOfStates(containerId, onClick) {
         updateHighlight(highlight);
     }
 
-    function updateHighlight(hl, stateAbbrev, initialAnimation) {
+    function updateHighlight(hl, stateAbbrev) {
         if (stateAbbrev) hl.state = stateAbbrev;
         if (hl.state) {
             var tempData = container.selectAll('.state' + '.' + hl.state).data();
@@ -222,18 +226,24 @@ function StackedBarOfStates(containerId, onClick) {
                 .moveToFront()
 
             if (stateAbbrev) {
+                console.log('stateAbbrev');
                 hl.el
                     .attr("x", function(d) { return x(d.state) + xOffset })
                     .attr("y", function(d) { return y(d.top) })
                     .attr("height", function(d) { return y(d.bottom) - y(d.top)} )
-            } else if (initialAnimation) {
+            } else if (hl.initialBuild) {
+                console.log('initialAnimation');
+
                 hl.el
                     .attr("x", function(d) { return x(d.state) + xOffset })
                     .transition()
                         .duration(updateDuration)
                         .attr("y", function(d) { return y(d.top) })
                         .attr("height", function(d) { return y(d.bottom) - y(d.top)} )
+                hl.initialBuild = false;
             } else {
+                console.log('else');
+
                 hl.el.transition()
                     .duration(updateDuration)
                     .attr("x", function(d) { return x(d.state) + xOffset })

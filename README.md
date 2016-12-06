@@ -6,8 +6,6 @@ Todo:
 * test on IE
 * check performance
 * write README with attribution to other D3 projects
-* make y-axis consistent
-* remove Puerto Rico
 * add more years
 * make sorting optional
 * fix or remove map tooltip
