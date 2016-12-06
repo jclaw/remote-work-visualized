@@ -20292,3 +20292,7 @@ var StateData = {
         }
     }
 }
+var Maximums = {
+    "numeral": 970039,
+    "percent": 0.07452419316242043
+}

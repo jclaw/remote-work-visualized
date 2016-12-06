@@ -4,7 +4,7 @@ function StackedBarOfStates(containerId, onClick) {
     var container = d3.select(containerId);
     var svg = container.select("svg");
 
-    var prevData = {};
+    var prevData;
 
     var margin = {top: 20, right: 20, bottom: 30, left: 40},
         width = +svg.attr("width") - margin.left - margin.right,
@@ -31,13 +31,13 @@ function StackedBarOfStates(containerId, onClick) {
         formatPercent = d3.format(".1%");
 
     var updateDuration = 1000,
-        sortDuration = 1000
+        sortDuration = 1000;
 
     var serie, rect, divTooltip, legend, xAxis, yAxis;
     var highlight = {state: null, el: null};
 
-    d3.select('.content').call(onClick.deselect)
-    svg.call(onClick.deselect)
+    d3.select('.content').call(onClick.deselect);
+    svg.call(onClick.deselect);
 
     self.draw = function(data) {
         $(g._groups[0][0]).empty();
@@ -51,14 +51,6 @@ function StackedBarOfStates(containerId, onClick) {
         divTooltip.append('span').text(': ');
         divTooltip.append('span').attr('class', 'value');
 
-        data.rows.sort(function(a, b) { return b.total - a.total; });
-        prevData = data;
-
-        x.domain(data.rows.map(function(d) { return d.state; }));
-        // hard-coding y-axis
-        y.domain([0, 0.08]).nice();
-        z.domain(data.columns.slice(1, data.columns.length - 1));
-
 
 
         serie = g.selectAll(".serie")
@@ -71,26 +63,16 @@ function StackedBarOfStates(containerId, onClick) {
         rect = serie.selectAll("rect")
             .data(function(d) { return d; })
             .enter().append("rect")
-                .attr("class", function(d) { return "state " + d.data.state})
                 .attr("y", height)
                 .attr("height", 1)
-                .attr("width", x.bandwidth())
-                .attr("x", function(d) { return x(d.data.state) + xOffset; })
                 .call(function(els) { return onClick.select(els, containerId) })
-                .transition()
-                    .duration(updateDuration)
-                    // .delay(100)
-                    .attr("y", function(d) { return y(d[1]); })
-                    .attr("height", function(d) { return y(d[0]) - y(d[1]); })
 
-        g.append("g")
+        xAxis = g.append("g")
             .attr("class", "axis axis--x")
             .attr("transform", "translate(" + xOffset + "," + height + ")")
-            .call(d3.axisBottom(x));
 
         yAxis = g.append("g")
             .attr("class", "axis axis--y");
-
 
         yAxis.append("text")
             .attr("transform", "rotate(-90)")
@@ -99,18 +81,6 @@ function StackedBarOfStates(containerId, onClick) {
             .attr("y", 6)
             .attr("dy", ".71em")
             .style("text-anchor", "end")
-
-
-        if (data.format == 'percent') {
-            yAxis.call(d3.axisLeft(y).ticks(10).tickFormat(formatPercent))
-            .select('text.axis-label')
-                .text("% working at home");
-        } else {
-            yAxis.call(d3.axisLeft(y).ticks(10, 's'))
-            .select('text.axis-label')
-                .text("total working at home");
-        }
-
 
         legend = g.selectAll(".legend")
             .data(data.columns.slice(1, data.columns.length - 1).reverse())
@@ -135,33 +105,46 @@ function StackedBarOfStates(containerId, onClick) {
         highlight.el = g.append('rect').attr('class', 'select-rect')
             .attr("y", height)
             .attr('height', 1)
-            .attr('width', x.bandwidth())
             .attr('x', 100)
             .style('display', 'none')
 
-        updateHighlight(highlight, null, true);
-
         $('.select-rect').on('show', function(e, stateAbbrev) {
             updateHighlight(highlight, stateAbbrev)
-            // highlight.el.call(function(el) { })
         }).on('hide', function() {
             highlight.el.style('display', 'none')
         })
+
+        self.update(data);
     }
 
     self.update = function(data) {
-
-        // sort based on previous sorting order so that states stay in same order
-        var sorting = stateOrder(prevData);
-        data.rows = data.rows.map(function(stateData) {
-            var n = sorting.indexOf(stateData.state);
-            return [n, stateData];
-        }).sort(function(a, b) {return a[0] - b[0]}).map(function(s) { return s[1] });
+        if (prevData) {
+            // sort based on previous sorting order so that states stay in same order
+            var sorting = stateOrder(prevData);
+            data.rows = data.rows.map(function(stateData) {
+                var n = sorting.indexOf(stateData.state);
+                return [n, stateData];
+            }).sort(function(a, b) {return a[0] - b[0]}).map(function(s) { return s[1] });
+        } else {
+            data.rows.sort(function(a, b) { return b.total - a.total; });
+        }
 
         prevData = $.extend({}, data);
 
         x.domain(data.rows.map(function(d) { return d.state; }));
         z.domain(data.columns.slice(1, data.columns.length - 1));
+
+        if (data.format == 'percent') {
+            y.domain([0, data.maximums['percent'] ]).nice();
+            yAxis.call(d3.axisLeft(y).ticks(10).tickFormat(formatPercent))
+                .select('text.axis-label')
+                .text("% working at home");
+        } else {
+            y.domain([0, data.maximums['numeral'] ]).nice();
+            yAxis.call(d3.axisLeft(y).ticks(10, 's'))
+                .select('text.axis-label')
+                .text("total working at home");
+        }
 
         serie = g.selectAll(".serie")
             .data(stack.keys(data.columns.slice(1, data.columns.length - 1))(data.rows));
@@ -176,30 +159,20 @@ function StackedBarOfStates(containerId, onClick) {
             .data(function(d) { return d; });
         rect.enter().append("rect")
             .merge(rect)
+            .attr("class", function(d) { return "state " + d.data.state})
+            .attr("width", x.bandwidth())
             .attr("x", function(d) { return x(d.data.state) + xOffset; })
             .transition()
                 .duration(updateDuration)
-                // .delay(100)
                 .attr("y", function(d) { return y(d[1]); })
                 .attr("height", function(d) { return y(d[0]) - y(d[1]); })
-
         rect.exit().remove();
 
-        xAxis = g.select('.axis--x')
-            .attr("transform", "translate(" + xOffset + "," + height + ")")
-            .call(d3.axisBottom(x));
+        xAxis.call(d3.axisBottom(x));
 
-        yAxis = g.select('.axis--y');
 
-        if (data.format == 'percent') {
-            yAxis.call(d3.axisLeft(y).ticks(10).tickFormat(formatPercent))
-            .select('text.axis-label')
-                .text("% working at home");
-        } else {
-            yAxis.call(d3.axisLeft(y).ticks(10, 's'))
-            .select('text.axis-label')
-                .text("total working at home");
-        }
+
+        highlight.el.attr('width', x.bandwidth());
 
         updateHighlight(highlight);
 
@@ -216,7 +189,6 @@ function StackedBarOfStates(containerId, onClick) {
         prevData = data;
         // Copy-on-write since tweens are evaluated after a delay.
         x.domain(data.rows.map(function(d) { return d.state; }));
-        y.domain([0, d3.max(data.rows, function(d) { return d.total; })]).nice();
         z.domain(data.columns.slice(1, data.columns.length - 1));
 
         rect = serie.selectAll("rect")

@@ -106,6 +106,7 @@
             }
 
             data.format = formatMap[self.selectedMode()];
+            data.maximums = Maximums;
 
             if (category == previousCategory && category != '') {
                 SB.update(data);

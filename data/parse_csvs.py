@@ -19,7 +19,12 @@ def main():
     for year in years:
         data[year] = parse_and_write(year, categories)
 
-    yearsfile.write('var StateData = ' + json.dumps( data, sort_keys=True, indent=4, separators=(',', ': ')))
+    maximums = find_maximums(data, categories)
+
+    print maximums
+
+    yearsfile.write("var StateData = " + pretty_print_json(data) + "\n"
+                    "var Maximums = " + pretty_print_json(maximums))
 
 
 def parse_and_write(year, categories):
@@ -44,15 +49,11 @@ def parse_and_write(year, categories):
 
         fieldnames = next(reader)
 
-        # print fieldnames
-
         for r in reader:
             state = r[2]
             state = "Washington DC" if state == "District of Columbia" else state
             state_abr = state_data['rev_map'][state]
             data[state_abr][category]['state'] = state_abr
-
-
 
             for variable in partition[category]['variables']:
                 corrected_label = variable['label'].replace('!!', ' - ')
@@ -61,8 +62,6 @@ def parse_and_write(year, categories):
 
                 fieldname1 = 'Estimate; Total: - ' + corrected_label
                 fieldname2 = 'Estimate; ' + corrected_label
-
-                # index = fieldnames.index(fieldname)
 
                 result = [i for i,x in enumerate(fieldnames) if x == fieldname1 or x == fieldname2]
                 assert (len(result) == 1), ("length of fieldname search is not 1", result)
@@ -73,11 +72,20 @@ def parse_and_write(year, categories):
                 key = 'total' if code.endswith('_001E') else c_to_v[code]['normalized_label']
                 data[state_abr][category][key] = int(value)
 
-
-    # yearfile.write('var StateData' + str(year) + ' = ' + json.dumps( data, sort_keys=True, indent=4, separators=(',', ': ')) + '\n')
     return data
 
-
+def find_maximums(data, categories):
+    arrs = {'numeral': [], 'percent': []};
+    for category in categories:
+        for year, yeardata in data.items():
+            for state, statedata in yeardata.items():
+                arrs['numeral'].append(statedata[category]['Worked at home'])
+                arrs['percent'].append(float(statedata[category]['Worked at home']) / float(statedata[category]['total']))
+    m = {
+        'numeral': max(arrs['numeral']),
+        'percent': max(arrs['percent'])
+    }
+    return m
 
 def initialize_with_states(categories):
     data = {}
@@ -94,6 +102,9 @@ def range_2(start, end):
 
 def sval(est, moe):
     return {'est': est, 'moe': moe}
+
+def pretty_print_json(data):
+    return json.dumps( data, sort_keys=True, indent=4, separators=(",", ": "))
 
 if __name__ == '__main__':
     main()
