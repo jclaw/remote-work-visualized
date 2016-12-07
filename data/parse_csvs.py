@@ -3,9 +3,9 @@ import json
 import os
 from pprint import pprint
 
-partition = json.load(open('../PARTITION.json'))
-state_data = json.load(open('../state_data.json'))
-c_to_v = json.load(open('../NORMALIZED_LABELS.json'))
+partition = json.load(open('PARTITION.json'))
+state_data = json.load(open('state_data.json'))
+c_to_v = json.load(open('NORMALIZED_LABELS.json'))
 
 
 def main():

@@ -3,44 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Remote Work Visualization</title>
-    <!-- <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet"> -->
-    <!-- <link href="inconsolata_local" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
 </head>
 <body id="viz" style="display: none;" data-bind="visible: true">
     <div class="header">
-        <div class="chartTitle">
-            People working at home by
-            <div class="select-style"><select data-bind="options: categories, value: selectedCategory, event: {change: dropdownChanged}"></select></div>
-            in each US state,
-            <div class="select-style"><select data-bind="options: modes, value: selectedMode, event: {change: dropdownChanged}"></select></div>
-            <!-- in -->
-            <!-- <div class="select-style"><select data-bind="options: years, value: selectedYear, event: {change: dropdownChanged}"></select></div> -->
 
-            <!-- <button data-bind="click: drawBars">update</button> -->
-            in
-            <div class="year">
-                <button class="nav-button" data-bind="click: yearChange(-1, event), disable: lowestYear"> < </button><span data-bind="text: selectedYear"></span><button class="nav-button" data-bind="click: yearChange(1, event), disable: highestYear"> > </button>
-            </div>
-        </div>
 
     </div>
     <div class="content">
+        <div class="section charts">
+            <div class="chartTitle">
+                <h2>Working at home in America</h2>
+                Amount of people working at home by
+                <div class="select-style"><select data-bind="options: categories, value: selectedCategory, event: {change: dropdownChanged}"></select></div>
+                in each US state,
+                <div class="select-style"><select data-bind="options: modes, value: selectedMode, event: {change: dropdownChanged}"></select></div>
+                in
+                <div class="year">
+                    <button class="nav-button" data-bind="click: yearChange(-1, event), disable: lowestYear"> < </button><span data-bind="text: selectedYear"></span><button class="nav-button" data-bind="click: yearChange(1, event), disable: highestYear"> > </button>
+                </div>
+            </div>
+            <div class="charts-wrapper">
+                <div id="map" class="chart">
+                    <div id="tooltip"></div>
+                    <svg width="144" height="90" id="statemap" preserveAspectRatio="xMinYMin meet" viewBox="0 0 960 600"></svg>
+                </div>
 
-
-        <div id="map" class="chart">
-            <div id="tooltip"></div>
-            <svg width="144" height="90" id="statemap" preserveAspectRatio="xMinYMin meet" viewBox="0 0 960 600"></svg>
+                <div id="stackedBar" class="chart"><svg width="960" height="500"></svg></div>
+                <p class="caption">Data was collected from the <a href="https://www.census.gov/programs-surveys/acs/" target="blank">
+                    American Community Survey</a> using their
+                    <a href="http://factfinder.census.gov/faces/nav/jsf/pages/searchresults.xhtml" target="blank">American Fact Finder</a>.
+                </p>
+            </div>
         </div>
 
-        <div id="stackedBar" class="chart"><svg width="960" height="500"></svg></div>
-        <p class="caption">Data was collected from the <a href="https://www.census.gov/programs-surveys/acs/" target="blank">
-            American Community Survey</a> using their
-            <a href="http://factfinder.census.gov/faces/nav/jsf/pages/searchresults.xhtml" target="blank">American Fact Finder</a>.
-        </p>
-    </div>
 
+    </div>
 
 
     <script src="js/lib/jquery.min.js"></script>

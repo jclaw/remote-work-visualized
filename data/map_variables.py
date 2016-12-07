@@ -44,18 +44,11 @@ def main():
                         'code': desc_to_code(obj['desc'])
                     }
 
-    # for key in partitioned_data:
-    #     base_code = key['info']['code']
-    #     key['variables'].insert(0, {
-    #         'code': base_code + '_001E',
-    #         'label': 'Total:'
-    #     })
-
     jsonfile = open('variables_unique.json', 'wb')
     out = json.dumps( unique_data, sort_keys=True, indent=4, separators=(',', ': '))
     jsonfile.write(out)
 
-    maps = open('js/mappings.js', 'wb')
+    maps = open('../js/mappings.js', 'wb')
 
     mapstring = ''
 

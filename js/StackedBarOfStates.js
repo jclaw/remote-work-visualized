@@ -86,7 +86,7 @@ function StackedBarOfStates(containerId, onClick) {
             .data(data.columns.slice(1, data.columns.length - 1).reverse())
             .enter().append("g")
                 .attr("class", "legend")
-                .attr("transform", function(d, i) { return "translate(" + (xOffset - 16) + "," + (i * 20 + legendYOffset) + ")"; })
+                .attr("transform", function(d, i) { return "translate(" + (xOffset - 32) + "," + (i * 20 + legendYOffset) + ")"; })
                 .style("font-size", "12px");
 
         legend.append("rect")

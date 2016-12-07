@@ -1,5 +1,5 @@
 body {
-    font-family: 'Inconsolata', monospace;
+    font-family: 'Roboto', 'Helvetica', sans-serif;
     font-size: 1rem;
 }
 
@@ -40,12 +40,10 @@ body {
 }
 
 .header {
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     background: white;
-    border-bottom: 1px solid grey;
     padding-top: 20px;
     z-index: 20;
 }
@@ -57,10 +55,25 @@ body {
 }
 
 .content {
-    margin-top: 100px;
+}
+
+.section {
+    border-bottom: 1px solid rgb(241, 241, 239);
+    margin: 0 auto;
     max-width: 960px;
-    margin: 100px auto 0;
+    padding: 50px 0;
+}
+
+.charts {
+    font-family: 'Inconsolata', monospace;
+    padding: 0;
+    border-bottom: none;
+}
+
+.charts-wrapper {
     position: relative;
+    max-width: 942px;
+
 }
 
 .chartTitle {
