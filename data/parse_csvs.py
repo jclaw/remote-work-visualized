@@ -1,7 +1,6 @@
 import csv
 import json
 import os
-from pprint import pprint
 
 partition = json.load(open('PARTITION.json'))
 state_data = json.load(open('state_data.json'))
@@ -20,8 +19,6 @@ def main():
         data[year] = parse_and_write(year, categories)
 
     maximums = find_maximums(data, categories)
-
-    print maximums
 
     yearsfile.write("var StateData = " + pretty_print_json(data) + "\n"
                     "var Maximums = " + pretty_print_json(maximums))
