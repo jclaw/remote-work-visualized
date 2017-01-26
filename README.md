@@ -2,6 +2,7 @@
 A project for Industrial and Organizational Psychology
 
 Todo:
+* "Fork me" banner
 * fix styling of header in Firefox
 * test on IE
 * check performance
